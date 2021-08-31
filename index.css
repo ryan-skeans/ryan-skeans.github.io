@@ -1,0 +1,117 @@
+body {
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px;
+}
+
+.top-left {
+justify-self: left;
+padding-top:19px;
+padding-left: 10px;
+font-size: 12px;
+word-spacing: 3px;
+
+}
+
+.top-right {
+    display: grid;
+    grid-template-columns: 30px 20px 30px 30px 30px 8px 30px;
+    padding-top: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    word-spacing: 3px;
+    justify-items: stretch;
+    align-items: center;
+    justify-content: end;
+}
+
+.google {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 70px;
+    height: 120px;
+}
+
+.search-form {
+    display: grid;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: auto;
+    justify-content: center;
+}
+
+.searchbar {
+    width: 450px;
+    border: none;
+    height: 23px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+
+.button1 {
+    margin-right: 5px;
+    border-radius: 4px;
+    border: none;
+    height: 25px;
+
+}
+
+.button2 {
+    margin-left: 5px;
+    border-radius: 4px;
+    border: none;
+    height: 25px;
+
+}
+
+.footer {
+    background-color: rgba(219, 216, 216, 0.507);
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    padding-top: 13px;  
+}
+
+.searchbar-container {
+    display: grid;
+    border: 1px solid lightgray;
+    grid-template-columns: 30px 450px 30px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    border-radius:25px;
+    height: 30px;
+}
+
+.searchbar-container:hover {
+box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.buttons {
+    margin-top: 25px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.button1:hover {
+    border: 1px solid lightgray;
+}
+
+.button2:hover {
+    border: 1px solid lightgray;
+}
