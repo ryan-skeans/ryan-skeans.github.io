@@ -11,7 +11,7 @@ header {
 
 .top-left {
 justify-self: left;
-padding-top:19px;
+padding-top:24px;
 padding-left: 10px;
 font-size: 12px;
 word-spacing: 3px;
@@ -47,7 +47,7 @@ word-spacing: 3px;
 }
 
 .searchbar {
-    width: 450px;
+    width: 300px;
     border: none;
     height: 23px;
     border-radius: 25px;
@@ -84,7 +84,7 @@ word-spacing: 3px;
 .searchbar-container {
     display: grid;
     border: 1px solid lightgray;
-    grid-template-columns: 30px 450px 30px;
+    grid-template-columns: 30px 300px 30px;
     justify-content: center;
     align-items: center;
     justify-items: center;
