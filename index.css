@@ -110,8 +110,10 @@ a:hover {
 
 .button1:hover {
     border: 1px solid lightgray;
+    background-color: whitesmoke
 }
 
 .button2:hover {
     border: 1px solid lightgray;
+    background-color: whitesmoke;
 }
