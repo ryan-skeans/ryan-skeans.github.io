@@ -110,10 +110,10 @@ a:hover {
 
 .button1:hover {
     border: 1px solid lightgray;
-    background-color: whitesmoke
+    background-color: rgba(211, 211, 211, 0.616)
 }
 
 .button2:hover {
     border: 1px solid lightgray;
-    background-color: whitesmoke;
+    background-color: rgba(211, 211, 211, 0.616);
 }
