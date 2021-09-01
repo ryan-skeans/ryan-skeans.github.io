@@ -3,44 +3,94 @@
     <head>
         <link href="index.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
     <body>
-        <script>
-        let ryan='Thank you for viewing my website, try to search for something!'
-          alert(ryan)
-          </script>
-        <header class="header">
-            <div class="top-left">
-                <a class="header-buttons" href="" style=" color: black; ">About</a>	&nbsp;
-                <a href="" style=" color: black;">Store</a>
-            </div>
-            <div class="top-right">
-                <a href="" style="color: black; ">Gmail</a> 	&nbsp;
-                <a href="" style="color: black; ">Images</a>	&nbsp;
-                <img style="width: 16px;height:16px;" src="data:image/png;base64,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">
-                &nbsp; <img style="width: 30px;height:30px; border-radius: 50%;" src="https://lh3.googleusercontent.com/ogw/ADea4I4aSrgKKN31DCUMVamZcVOvT-sGpTgHreJepu1y5A=s32-c-mo">
-            </div>
-        </header>
-
-        <google>
-            <img  class="google" style="margin: 0 auto;" src="https://lh3.googleusercontent.com/2pZC2SvTFQTT9C2iQXskTiE8VP-GMKQzdMTRAdcOCeQrZmg-gOawf0ti58M6e0-5IvMg8R86tI-ZiFa7E8En4Adr5uBwKvultrQsoXaLUliqB8-JwDtjAQ">
-        </google>
-        <search>
-            <div class="search-form">
-                <form action="https://youtu.be/1eMHU634Y5Q?t=37">
-                    <div class="searchbar-container">
-                        <img style="width: 18px; height: 18px; z-index: 10; position: relative;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLDsCuCgl2Bt9vDXVLMLlMUuh37WyJoK29a1Nt02GeWutXw67loDoUHQ5mYD6_lb24r_E&usqp=CAU">
-                        <input class="searchbar" type="text" name="search">
-                        <img style="width: 12px; height: 17px;" src="https://freepngimg.com/download/microphone/70666-voice-microphone-google-search-logo-png-file-hd.png">
+            <ul style="padding-top: 10px; padding-bottom: 10px;" class="navbar">
+                <li><a href="">About</a></li>
+                <li><a href="">Projects</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+        <div class="about">
+          <!--  <div class="profile-mobile">
+                <img id="profile-mobile" src="starwars.jpg">
+            </div> -->
+            <!-- <div class="socials">
+                <ul style="list-style-type: none;">
+                    <li><a href="https://github.com/skeanster"><img id="github" src="GitHub-Mark.png"></a></li>
+                    <li><a href="https://www.linkedin.com/in/ryanskeans/"><img id="linkedin" src="linkedin.png"></a></li>
+                </ul>
+            </div> -->
+            <div class="about-container">
+                <div class="socials">
+                    <ul style="list-style-type: none;">
+                        <li><a href="https://github.com/skeanster"><img id="github" src="GitHub-Mark.png"></a></li>
+                        <li><a href="https://www.linkedin.com/in/ryanskeans/"><img id="linkedin" src="linkedin.png"></a></li>
+                    </ul>
+                </div>
+                <div class="text">
+                    <div class="big-name">
+                    Hi, I'm Ryan 
                     </div>
-                    <div class="buttons">
-                        <button class="button1" type="submit" >Google Search</button>
-                        <button class="button2" type="submit">I'm Feeling Lucky</button>
+                    <hr>
+                    <div class="title">
+                    Senior Product Management Associate
+                    </div>
+                    <div class="bio">
+                    orem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi 
+                    </div>
+                </div>
+            </div>
+            <div class="profile-desktop">
+                <img id="profile-desktop" src="image0.jpeg">
+            </div>
+        </div>
+        <div class="projects">
+            <div class="project1">
+                <div class="project-title">
+                    Project One
+                    </div>
+                    <div class="repository">
+                        Repository: <a style="width: 40px; height:40px";" href="https://github.com/skeanster"><img style="border-radius: 10px;" id="project-github" src="GitHub-Mark.png"></a>
+                    </div>
+                    <div class="bio">
+                        orem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi 
                     </div>
             </div>
-        </form>
-        </search>
+            <div class="project2">
+                <div class="project-title">
+                    Project Two 
+                    </div>
+                    <div class="repository">
+                        Repository: <a style="width: 40px; height:40px";" href="https://github.com/skeanster"><img style="border-radius: 10px;" id="project-github" src="GitHub-Mark.png"></a>
+                    </div>
+                    <div class="bio">
+                        orem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi 
+                    </div>
+            </div>
+            <div class="project3">
+                <div class="project-title">
+                    Project Three 
+                    </div>
+                    <div class="repository">
+                        Repository: <a style="width: 40px; height:40px";" href="https://github.com/skeanster"><img style="border-radius: 10px;" id="project-github" src="GitHub-Mark.png"></a>
+                    </div>
+                    <div class="bio">
+                        orem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi 
+                    </div>
+            </div>
+            <div class="project4">
+                <div class="project-title">
+                    Project Four 
+                    </div>
+                    <div class="repository">
+                        Repository: <a style="width: 40px; height:40px";" href="https://github.com/skeanster"><img style="border-radius: 10px;" id="project-github" src="GitHub-Mark.png"></a>
+                    </div>
+                    <div class="bio">
+                        orem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi 
+                    </div>
+            </div>
+        </div>
     </body>
 </html>

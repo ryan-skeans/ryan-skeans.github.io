@@ -1,109 +1,211 @@
 body {
-    overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0px;
+    background-color: rgb(31, 31, 31);
 }
 
-header {
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 50px;
-}
-
-.top-left {
-justify-self: left;
-padding-top:24px;
-padding-left: 10px;
-font-size: 12px;
-word-spacing: 3px;
-
-}
-
-.top-right {
-    display: grid;
-    grid-template-columns: 30px 20px 30px 30px 30px 8px 30px;
-    padding-top: 10px;
-    padding-right: 10px;
-    font-size: 12px;
-    word-spacing: 3px;
-    justify-items: stretch;
-    align-items: center;
-    justify-content: end;
-}
-
-.google {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 70px;
-    height: 120px;
-}
-
-.search-form {
-    display: grid;
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: auto;
-    justify-content: center;
-}
-
-.searchbar {
-    width: 300px;
-    border: none;
-    height: 23px;
-    border-radius: 25px;
-    border: none;
-    outline: none;
-}
-
-.button1 {
-    margin-right: 5px;
-    border-radius: 4px;
-    border: none;
-    height: 25px;
-
-}
-
-.button2 {
-    margin-left: 5px;
-    border-radius: 4px;
-    border: none;
-    height: 25px;
-
-}
-
-.searchbar-container {
-    display: grid;
-    border: 1px solid lightgray;
-    grid-template-columns: 30px 300px 30px;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: 25% 25% 25%;
     justify-items: center;
-    border-radius:25px;
-    height: 30px;
+    justify-content: space-between;    border-top: none;
+    border-right: none;
+    border-left: none;
+    background-color: rgb(48, 48, 48);
 }
 
-.searchbar-container:hover {
-box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+@media only screen and (max-width: 1199px) {
+    .socials {
+        display:none;
+    }
 }
 
-.buttons {
-    margin-top: 25px;
-}
 
-a:link {
+a {
     text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
 
-a:hover {
-    text-decoration: underline;
+#github {
+    width: 40px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 80px black;
+    border-radius: 10px;
 }
 
-.button1:hover {
-    border: 1px solid lightgray;
-    background-color: rgba(211, 211, 211, 0.616)
+#github:hover {
+    transform: scale(1.1);
 }
 
-.button2:hover {
-    border: 1px solid lightgray;
-    background-color: rgba(211, 211, 211, 0.616);
+#linkedin {
+    width: 40px;
+    box-shadow: 0px 0px 80px black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#linkedin:hover {
+    transform: scale(1.1);
+}
+
+#project-github:hover {
+    transform: scale(1.1);
+}
+
+.about {
+    color: white;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    background-color: white;
+    padding: 30px;
+    justify-content: center;
+    gap: 110px;
+    background-color: rgb(48, 48, 48);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+.projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 30px;
+    grid-gap: 80px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgb(48, 48, 48);
+
+}
+
+
+ul {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+#profile-desktop {
+  border-radius: 10px;  
+  width: 300px;
+  height: 500px;
+}
+
+#profile-mobile {
+    border-radius: 50%;  
+    width: 270px;
+    box-shadow: 0px 8px 30px black;
+    margin-bottom: 30px;
+  }
+
+  /* @media only screen and (max-width: 1198px) {
+    #profile-desktop {
+        display:none;
+    }  */
+
+@media only screen and (min-width: 1199px) {
+    #profile-mobile {
+        display:none;
+    }
+}
+
+.bio {
+    padding-top: 15px;
+    font-size: 20px;
+}
+
+.title {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    padding-top: 10px;
+    font-size: 25px;
+}
+.big-name {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 1199px) {
+    .desktop-padding1 {
+        display:none;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .desktop-padding2 {
+        display:none;
+    }
+}
+
+.about-container {
+    display: flex;
+    width: 810px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 10px;
+    /* background-color: rgb(112, 112, 112); */
+    background-color: rgb(48, 48, 48);
+    border: 2px solid rgb(112, 112, 112);
+    padding: 30px;
+    gap: 30px;
+}
+
+
+.project1 {
+    width: 580px;
+    background-color: rgb(63, 63, 63);
+    border: 2px solid rgb(112, 112, 112);    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.project2 {
+    width: 580px;
+    background-color: rgb(63, 63, 63);
+    border: 2px solid rgb(112, 112, 112);    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.project3 {
+    width: 580px;
+    background-color: rgb(63, 63, 63);
+    border: 2px solid rgb(112, 112, 112);    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.project4 {
+    width: 580px;
+    background-color: rgb(63, 63, 63);
+    border: 2px solid rgb(112, 112, 112);    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.project-title {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#project-github {
+    width: 40px;
+
+}
+
+.repository {
+    display: grid;
+    grid-template-columns: 135px 1fr;
+    padding-top: 10px;
+    font-size: 25px;
+    align-items: center;
+    justify-items: start;
+    justify-content: start;
 }
