@@ -65,7 +65,6 @@ a {
     justify-content: center;
     gap: 110px;
     background-color: rgb(48, 48, 48);
-    margin-top: 30px;
     margin-bottom: 30px;
 }
 
@@ -160,7 +159,7 @@ ul {
 
 .project1 {
     width: 580px;
-    background-color: rgb(63, 63, 63);
+    background-color: rgb(48, 48, 48);
     border: 2px solid rgb(112, 112, 112);    color: white;
     padding: 10px;
     border-radius: 10px;
@@ -168,7 +167,7 @@ ul {
 
 .project2 {
     width: 580px;
-    background-color: rgb(63, 63, 63);
+    background-color: rgb(48, 48, 48);
     border: 2px solid rgb(112, 112, 112);    color: white;
     padding: 10px;
     border-radius: 10px;
@@ -176,7 +175,7 @@ ul {
 
 .project3 {
     width: 580px;
-    background-color: rgb(63, 63, 63);
+    background-color: rgb(48, 48, 48);
     border: 2px solid rgb(112, 112, 112);    color: white;
     padding: 10px;
     border-radius: 10px;
@@ -184,7 +183,7 @@ ul {
 
 .project4 {
     width: 580px;
-    background-color: rgb(63, 63, 63);
+    background-color: rgb(48, 48, 48);
     border: 2px solid rgb(112, 112, 112);    color: white;
     padding: 10px;
     border-radius: 10px;
