@@ -23,7 +23,7 @@ background-color: white;
     font-weight: bold;
     font-size: 40px;
     color: rgb(255, 188, 64);
-    -webkit-text-stroke: 1px black;
+    /* -webkit-text-stroke: 1px black; */
 }
 
 @media only screen and (max-width: 1199px) {
@@ -59,7 +59,7 @@ a {
 #github {
     width: 40px;
     margin-bottom: 10px;
-    box-shadow: 0px 0px 5px black;
+    box-shadow: 0px 0px 3px black;
     border-radius: 10px;
 }
 
@@ -69,16 +69,17 @@ a {
 
 #linkedin {
     width: 40px;
-    box-shadow: 0px 0px 5px black;
+    box-shadow: 0px 0px 3px black;
     border-radius: 10px;
-    background-color: white;
+    color: black;
 }
 
-#linkedin:hover {
+
+#project-github:hover {
     transform: scale(1.1);
 }
 
-#project-github:hover {
+#linkedin:hover {
     transform: scale(1.1);
 }
 
@@ -91,6 +92,13 @@ a {
     margin-top: 0;
 }
 
+
+.projects-title {
+    padding: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
 
 .projects {
     display: flex;
@@ -167,6 +175,11 @@ ul {
     width: 162px;
     border-radius: 10px;
 }
+
+.cv1:hover {
+    transform: scale(1.05);
+}
+
 
 @media only screen and (max-width: 1199px) {
     .desktop-padding1 {
