@@ -129,24 +129,6 @@ ul {
   height: 300px;
 }
 
-#profile-mobile {
-    border-radius: 50%;  
-    width: 270px;
-    box-shadow: 0px 8px 30px black;
-    margin-bottom: 30px;
-  }
-
-  /* @media only screen and (max-width: 1198px) {
-    #profile-desktop {
-        display:none;
-    }  */
-
-@media only screen and (min-width: 1199px) {
-    #profile-mobile {
-        display:none;
-    }
-}
-
 @media only screen and (max-width: 1024px) {
     .desktop-padding {
         display:none;
