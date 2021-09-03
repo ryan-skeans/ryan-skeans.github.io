@@ -83,6 +83,10 @@ a {
     transform: scale(1.1);
 }
 
+#project-website:hover {
+    transform: scale(1.1);
+}
+
 .about {
     display: flex;
     flex-wrap: wrap-reverse;
@@ -248,12 +252,28 @@ ul {
 
 }
 
+#project-website {
+    width: 30px;
+
+}
+
+
 .repository {
     display: grid;
     grid-template-columns: 135px 1fr;
     padding-top: 10px;
     font-size: 25px;
     align-items: center;
+    justify-items: start;
+    justify-content: start;
+}
+
+.live-website {
+    display: grid;
+    grid-template-columns: 155px 1fr;
+    padding-top: 10px;
+    font-size: 25px;
+    align-items: stretch;
     justify-items: start;
     justify-content: start;
 }
