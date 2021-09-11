@@ -28,17 +28,14 @@ height: 100%;
 }
 
 .navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 135px 34% 12% 12% 12%;
-    justify-items: end;
+    display: flex;
+    justify-items: start;
     justify-content: space-between;
     padding: 15px;
     padding-top: 20px;
     padding-bottom: 0;
     align-items: center;
+    font-size: 20px;
 }
 
 #skeans {
@@ -49,26 +46,81 @@ height: 100%;
     transform: skewx(-10deg);
 }
 
+#navbarContact {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#navbarContact:hover {
+    transform: scale(1.1);
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border: 2px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    padding: 20px;
+    width: 800px;
+    max-width: 80%;
+    transition: 200ms ease-in-out;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.modalTitle {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.modalExit {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.modalExit:hover {
+    transform: scale(1.1);
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, .5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
 @media only screen and (max-width: 1199px) {
     .socials {
-        display:none;
-    }
-}
-
-@media only screen and (max-width: 975px) {
-    #navbar-about {
-        display:none;
-    }
-}
-
-@media only screen and (max-width: 975px) {
-    #navbar-projects {
-        display:none;
-    }
-}
-
-@media only screen and (max-width: 975px) {
-    #navbar-contact {
         display:none;
     }
 }
@@ -87,7 +139,7 @@ a {
 }
 
 #github:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 #github-footer {
@@ -105,15 +157,19 @@ a {
 
 
 #project-github:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+#github-footer:hover {
+    transform: scale(1.05);
 }
 
 #linkedin:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 #project-website:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .about {
@@ -143,13 +199,6 @@ a {
     grid-gap: 80px;
     padding-top: 50px;
     padding-bottom: 50px;
-}
-
-
-ul {
-    padding: 0;
-    margin: 0;
-    font-size: 20px;
 }
 
 #profile-desktop {

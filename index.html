@@ -2,18 +2,30 @@
 <html>
     <head>
         <link href="index.css" rel="stylesheet">
+        <script src="index.js" defer></script>
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
     <body>
         <div class="pageWrap">
-                <ul class="navbar">
-                    <li id="skeans">Skeans</li>
-                    <li></li>
-                    <li><a id="navbar-about" href="">About</a></li>
-                    <li><a id="navbar-projects" href="">Projects</a></li>
-                    <li><a id="navbar-contact" href="">Contact</a></li>
-                </ul>
+                <div class="navbar">
+                    <div id="skeans">
+                        Skeans
+                    </div>
+                    <div class="">
+                        <button type="button" class="navbarContact" id="navbarContact" onclick="activateModal()">Contact Me</button>
+                    </div>
+                </div>
+            <div class="modal" id="modal">
+                <div class="modalHeader">
+                    <div class="modalTitle">Modal</div>
+                    <button class="modalExit" id="modalExit" onclick="closeModal()">&times;</button>
+                </div>
+                <div class="modalBody">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quos nulla, sint illo consectetur exercitationem ab at incidunt corporis! Libero?
+                </div>
+            </div>
+            <div id="overlay" class="" onclick="closeModal()"></div>
             <div class="desktop-padding">
                 <br><br><br>
             </div>
