@@ -4,13 +4,19 @@
 
 html {
     height: 100%;
+    overflow-x: hidden;
+
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0px;
-background-color: white;
+background-color: #f3f3f3;
 height: 100%;
+}
+
+ul {
+    padding-left: 0;
 }
 
 .pageWrap {
@@ -31,7 +37,7 @@ height: 100%;
     display: flex;
     justify-items: start;
     justify-content: space-between;
-    padding: 15px;
+    padding: 150px;
     padding-top: 20px;
     padding-bottom: 0;
     align-items: center;
@@ -50,9 +56,10 @@ height: 100%;
     text-align: right;
     font-size: 20px;
     font-weight: bold;
-    background-color: white;
+    background: none;
     border: none;
     cursor: pointer;
+    color: white;    
 }
 
 #navbarContact:hover {
@@ -71,7 +78,7 @@ height: 100%;
     padding: 20px;
     width: 800px;
     max-width: 80%;
-    transition: 200ms ease-in-out;
+    transition: 200ms ;
 }
 
 .modal.active {
@@ -104,6 +111,7 @@ height: 100%;
 }
 
 #overlay {
+    z-index: 9;
     position: fixed;
     opacity: 0;
     top: 0;
@@ -119,9 +127,27 @@ height: 100%;
     pointer-events: all;
 }
 
-@media only screen and (max-width: 1199px) {
+@media only screen and (max-width: 760px) {
     .socials {
         display:none;
+    }
+}
+
+@media only screen and (max-width: 2000px) {
+    #repositoryTitle {
+        display:none;
+    }
+}
+
+@media only screen and (max-width: 2000px) {
+    #liveWebsiteTitle {
+        display:none;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    #navbar {
+        padding: 20px;
     }
 }
 
@@ -155,9 +181,12 @@ a {
     color: black;
 }
 
+.repository:hover {
+    transform: scale(1.05)
+}
 
-#project-github:hover {
-    transform: scale(1.05);
+.live-website:hover {
+    transform: scale(1.05)
 }
 
 #github-footer:hover {
@@ -168,8 +197,11 @@ a {
     transform: scale(1.05);
 }
 
-#project-website:hover {
-    transform: scale(1.05);
+
+.aboutWrap {
+    height: 100vh;
+    background-color: #1c1d25;
+
 }
 
 .about {
@@ -177,8 +209,9 @@ a {
     flex-wrap: wrap-reverse;
     padding: 15px;
     justify-content: center;
-    margin-bottom: 30px;
-    margin-top: 0;
+    align-items: center;
+    max-width: 100%;
+    margin-top: 20px;
 }
 
 
@@ -187,6 +220,16 @@ a {
     font-size: 30px;
     font-weight: bold;
     text-align: center;
+    color: #1c1d25;
+    padding-top: 40px;
+}
+
+.projectsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .projects {
@@ -194,11 +237,10 @@ a {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: white;
-    padding: 15px;
-    grid-gap: 80px;
-    padding-top: 50px;
+    grid-gap: 30px;
     padding-bottom: 50px;
+    width: 1500px;
+    max-width: 95%;
 }
 
 #profile-desktop {
@@ -207,15 +249,63 @@ a {
   height: 300px;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1249px) {
     .desktop-padding {
         display:none;
     }
 }
 
+@media only screen and (min-width: 1249px) {
+    #profile-desktop {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media only screen and (min-width: 1249px) {
+    #big-name {
+        font-size: 70px;
+    }
+    
+}
+
+@media only screen and (max-width: 500px) {
+    #bio {
+        font-size: 16px;
+    }
+    
+}
+
+@media only screen and (max-width: 500px) {
+    #project-title {
+        font-size: 25px;
+    }
+    
+}
+
+@media only screen and (max-width: 500px) {
+    #scrollDown {
+        width: 100px;
+        position: absolute;
+        margin: none;
+        left: 70%;
+        right: 0px;
+        bottom: 0px;
+    }
+    
+}
+
+@media only screen and (max-width: 300px) {
+    #scrollDown {
+        display: none;
+    }
+    
+}
+
 .bio {
     padding-top: 15px;
     font-size: 20px;
+    color: white;
 }
 
 .title {
@@ -223,10 +313,12 @@ a {
     grid-template-columns: 75% 25%;
     padding-top: 10px;
     font-size: 25px;
+    color: white;
 }
 .big-name {
     font-size: 40px;
     font-weight: bold;
+    color: white;
 }
 
 .cv1 {
@@ -244,67 +336,84 @@ a {
     transform: scale(1.05);
 }
 
-
-@media only screen and (max-width: 1199px) {
-    .desktop-padding1 {
-        display:none;
-    }
-}
-
-@media only screen and (max-width: 1199px) {
-    .desktop-padding2 {
-        display:none;
-    }
-}
-
 .about-container {
     display: flex;
-    width: 810px;
+    width: 700px;
+    max-width: 95%;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
     border-radius: 10px;
-    padding: 30px;
+    padding: 10px;
     padding-top: 40px;
     gap: 30px;
 }
 
+.scrollDown {
+    width: 100px;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.projectImage {
+    max-width: 100%;
+    max-height: 100%;
+    filter: brightness(70%);
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+
+}
+
+
+#projectImage:hover {
+    color:rgb(255, 188, 64);
+}
 
 .project1 {
-    width: 580px;
+    width: 1100px;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0px 0px 5px black;
-    
+    position: relative;
+
 }
 
 .project2 {
-    width: 580px;
+    width: 1100px;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0px 0px 5px black;
+    position: relative;
+
 
 }
 
 .project3 {
-    width: 580px;
+    width: 1100px;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0px 0px 5px black;
+    position: relative;
 
 }
 
 .project4 {
-    width: 580px;  
+    width: 1100px;  
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0px 0px 5px black;
+    position: relative;
 
 }
 
 .project-title {
     font-size: 35px;
     font-weight: bold;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: rgb(255, 188, 64);
+    padding: 2px;
+    border-radius: 10px;
+    color: #1c1d25;
 }
 
 #project-github {
@@ -320,26 +429,46 @@ a {
 
 .repository {
     display: grid;
-    grid-template-columns: 135px 1fr;
+    grid-template-columns: 1fr auto;
+    font-size: 25px;
+    align-items: center;
+    justify-items: start;
+    justify-content: start;
+    position: absolute;
+    bottom: 50px;
+    right: 0%;
+    background:rgb(255, 188, 64);
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.live-website {
+    display: grid;
+    grid-template-columns: 1fr auto;
     padding-top: 10px;
     font-size: 25px;
     align-items: center;
     justify-items: start;
     justify-content: start;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    background:rgb(255, 188, 64);
+    padding: 2px;
+    border-radius: 10px;
 }
 
-.live-website {
-    display: grid;
-    grid-template-columns: 155px 1fr;
-    padding-top: 10px;
-    font-size: 25px;
-    align-items: stretch;
-    justify-items: start;
-    justify-content: start;
+.projectWebsiteIcon {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .footer {
-    background-color: black;
+    background-color: #1c1d25;
     color: white;
     font-size: 20px;
     padding: 15px;

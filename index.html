@@ -8,120 +8,115 @@
     </head>
     <body>
         <div class="pageWrap">
-                <div class="navbar">
-                    <div id="skeans">
-                        Skeans
-                    </div>
-                    <div class="">
-                        <button type="button" class="navbarContact" id="navbarContact" onclick="activateModal()">Contact Me</button>
-                    </div>
-                </div>
-            <div class="modal" id="modal">
-                <div class="modalHeader">
-                    <div class="modalTitle">Modal</div>
-                    <button class="modalExit" id="modalExit" onclick="closeModal()">&times;</button>
-                </div>
-                <div class="modalBody">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quos nulla, sint illo consectetur exercitationem ab at incidunt corporis! Libero?
-                </div>
-            </div>
-            <div id="overlay" class="" onclick="closeModal()"></div>
-            <div class="desktop-padding">
-                <br><br><br>
-            </div>
-            <div class="about">
-                <div class="about-container">
-                    <div class="socials">
-                        <ul style="list-style-type: none;">
-                            <li><a href="https://github.com/skeanster"><img id="github" src="images/GitHub-Mark.png"></a></li>
-                            <li><a href="https://www.linkedin.com/in/ryanskeans/"><img id="linkedin" src="images/linkedin.png"></a></li>
-                        </ul>
-                    </div>
-                    <div class="text">
-                        <div class="big-name">
-                        Hi, I'm Ryan 
+            <div class="aboutWrap">
+                    <div class="navbar" id="navbar">
+                        <div id="skeans">
+                            Skeans
                         </div>
-                        <hr>
-                        <div class="title">
-                        Senior Product Management Associate
-                        </div>
-                        <div class="bio">
-                        orem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi 
-                        </div>
-                        <div class="cv1">
-                            <a href="images/starwars.jpg" download>
-                                Download my CV
-                            </a>
+                        <div class="">
+                            <button type="button" class="navbarContact" id="navbarContact" onclick="activateModal()">Contact</button>
                         </div>
                     </div>
+                <div class="modal" id="modal">
+                    <div class="modalHeader">
+                        <div class="modalTitle">Modal</div>
+                        <button class="modalExit" id="modalExit" onclick="closeModal()">&times;</button>
+                    </div>
+                    <div class="modalBody">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quos nulla, sint illo consectetur exercitationem ab at incidunt corporis! Libero?
+                    </div>
                 </div>
-                <div class="profile-desktop">
-                    <img id="profile-desktop" src="images/image0.png">
+                <div id="overlay" class="" onclick="closeModal()"></div>
+                <div class="desktop-padding"><br><br><br><br><br><br><br></div>
+                <div class="about">
+                    <div class="about-container">
+                        <div class="socials">
+                            <ul style="list-style-type: none;">
+                                <li><a href="https://github.com/skeanster"><img id="github" src="images/GitHub-Mark.png"></a></li>
+                                <li><a href="https://www.linkedin.com/in/ryanskeans/"><img id="linkedin" src="images/linkedin.png"></a></li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <div class="big-name" id="big-name">
+                            Hi, I'm Ryan 
+                            </div>
+                            <hr>
+                            <div class="title">
+                            Senior Product Management Associate
+                            </div>
+                            <div class="bio" id="bio">
+                            orem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi 
+                            </div>
+                            <div class="cv1">
+                                <a href="images/starwars.jpg" download>
+                                    Download my CV
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-desktop">
+                        <img id="profile-desktop" src="images/image0.png">
+                    </div>
                 </div>
+                <img class ="scrollDown" id="scrollDown" src="images/scroll.gif">
             </div>
             <div class="projects-title">
                 My Favorite Projects
             </div>
-            <div class="projects">
-                <div class="project1">
-                    <div class="project-title">
-                        Project One
+            <div class="projectsContainer">
+                
+                <div class="projects">
+                    <div class="project1">
+                        <img class ="projectImage" src="images/padres.png">
+                        <div class="project-title" id="project-title">
+                            Friar Faithful
                         </div>
                         <div class="repository">
-                            Repository: <a style="width: 40px; height:40px;" href="https://github.com/skeanster"><img style="border-radius: 10px;" id="project-github" src="images/GitHub-Mark.png"></a>
+                            <div id="repositoryTitle">Repository: </div><a style="width: 40px; height:40px;" href="https://github.com/skeanster/padres"><img style="border-radius: 10px;" id="project-github" src="images/GitHub-Mark.png"></a>
                         </div>
                         <div class="live-website">
-                            Live Website: <a style="width: 40px; height: 40px;" href=""><img style="border-radius: 10px;" id="project-website" src="images/website.png"></a>
+                            <div id="liveWebsiteTitle">Live Website: </div><a class="projectWebsiteIcon" style="width: 40px; height: 40px;" href="https://skeanster.github.io/padres/"><img style="border-radius: 10px;" id="project-website" src="images/website.png"></a>
                         </div>
-                        <div class="bio">
-                            orem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi 
-                        </div>
-                </div>
-                <div class="project1">
-                    <div class="project-title">
-                        Project One
+                    </div>
+                    <div class="project2">
+                        <img class ="projectImage" id ="projectImage" src="images/rps.png">
+                        <div class="project-title" id="project-title">
+                            Rock, Paper, Scissors
                         </div>
                         <div class="repository">
-                            Repository: <a style="width: 40px; height:40px;" href="https://github.com/skeanster"><img style="border-radius: 10px;" id="project-github" src="images/GitHub-Mark.png"></a>
+                            <div id="repositoryTitle">Repository: </div><a style="width: 40px; height:40px;" href="https://github.com/skeanster/rps"><img style="border-radius: 10px;" id="project-github" src="images/GitHub-Mark.png"></a>
                         </div>
                         <div class="live-website">
-                            Live Website: <a style="width: 40px; height: 40px;" href=""><img style="border-radius: 10px;" id="project-website" src="images/website.png"></a>
+                            <div id="liveWebsiteTitle">Live Website: </div><a class="projectWebsiteIcon" style="width: 40px; height: 40px;" href="https://skeanster.github.io/rps/"><img style="border-radius: 10px;" id="project-website" src="images/website.png"></a>
                         </div>
-                        <div class="bio">
-                            orem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi 
-                        </div>
-                </div>
-                <div class="project1">
-                    <div class="project-title">
-                        Project One
+                    </div>
+                    <div class="project3">
+                        <img class ="projectImage" src="images/padres.png">
+                        <div class="project-title" id="project-title">
+                            Project One
                         </div>
                         <div class="repository">
-                            Repository: <a style="width: 40px; height:40px;" href="https://github.com/skeanster"><img style="border-radius: 10px;" id="project-github" src="images/GitHub-Mark.png"></a>
+                            <div id="repositoryTitle">Repository: </div><a style="width: 40px; height:40px;" href="https://github.com/skeanster"><img style="border-radius: 10px;" id="project-github" src="images/GitHub-Mark.png"></a>
                         </div>
                         <div class="live-website">
-                            Live Website: <a style="width: 40px; height: 40px;" href=""><img style="border-radius: 10px;" id="project-website" src="images/website.png"></a>
+                            <div id="liveWebsiteTitle">Live Website: </div><a class="projectWebsiteIcon" style="width: 40px; height: 40px;" href=""><img style="border-radius: 10px;" id="project-website" src="images/website.png"></a>
                         </div>
-                        <div class="bio">
-                            orem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi 
-                        </div>
-                </div>
-                <div class="project1">
-                    <div class="project-title">
-                        Project One
+                    </div>
+                    <div class="project4">
+                        <img class ="projectImage" src="images/padres.png">
+                        <div class="project-title" id="project-title">
+                            Project One
                         </div>
                         <div class="repository">
-                            Repository: <a style="width: 40px; height:40px;" href="https://github.com/skeanster"><img style="border-radius: 10px;" id="project-github" src="images/GitHub-Mark.png"></a>
+                            <div id="repositoryTitle">Repository: </div><a style="width: 40px; height:40px;" href="https://github.com/skeanster"><img style="border-radius: 10px;" id="project-github" src="images/GitHub-Mark.png"></a>
                         </div>
                         <div class="live-website">
-                            Live Website: <a style="width: 40px; height: 40px;" href=""><img style="border-radius: 10px;" id="project-website" src="images/website.png"></a>
+                            <div id="liveWebsiteTitle">Live Website: </div><a class="projectWebsiteIcon" style="width: 40px; height: 40px;" href=""><img style="border-radius: 10px;" id="project-website" src="images/website.png"></a>
                         </div>
-                        <div class="bio">
-                            orem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi volutpat vel.Vivamus mollis ex ipsum, sed sollicitudin nisi 
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
         <div class="footer">
             <a href="https://github.com/skeanster"><img id="github-footer" src="images/GitHub-Mark.png"></a>
             <a href="https://www.linkedin.com/in/ryanskeans/"><img id="linkedin" src="images/linkedin.png"></a><br>
