@@ -201,7 +201,6 @@ a {
 .aboutWrap {
     height: 100vh;
     background-color: #1c1d25;
-
 }
 
 .about {
@@ -249,7 +248,7 @@ a {
   height: 300px;
 }
 
-@media only screen and (max-width: 1249px) {
+@media only screen and (max-width: 1049px) {
     .desktop-padding {
         display:none;
     }
@@ -278,7 +277,7 @@ a {
 
 @media only screen and (max-width: 500px) {
     #bio {
-        font-size: 16px;
+        display: none;
     }
     
 }
