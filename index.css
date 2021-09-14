@@ -66,35 +66,169 @@ ul {
     transform: scale(1.1);
 }
 
+#vl1 {
+    border: 8px solid rgb(255, 188, 64);
+    height: 162px;
+    width: 40px;
+    border-radius: 30px;
+    position: absolute;
+    top: -50px;
+    right: 5px;
+}
+#vl2 {
+    border: 8px solid rgb(255, 188, 64);
+    height: 40px;
+    width: 40px;
+    border-radius: 30px;
+    position: absolute;
+    top: 135px;
+    right: 5px;
+}
+#vl3 {
+    border: 8px solid rgb(255, 188, 64);
+    height: 162px;
+    width: 40px;
+    border-radius: 30px;
+    position: absolute;
+    top: -80px;
+    right: 70px;
+}
+
+#vl4 {
+    border: 8px solid rgb(255, 188, 64);
+    height: 162px;
+    width: 40px;
+    border-radius: 30px;
+    position: absolute;
+    top: 105px;
+    right: 70px;
+}
+
+#vl5 {
+    border: 8px solid rgb(255, 188, 64);
+    height: 162px;
+    width: 40px;
+    border-radius: 30px;
+    position: absolute;
+    top: 200px;
+    right: 5px;
+}
+
+#vl6 {
+    border: 8px solid rgb(255, 188, 64);
+    height: 40px;
+    width: 40px;
+    border-radius: 30px;
+    position: absolute;
+    top: 290px;
+    right: 70px;
+}
+
+#vl7 {
+    border: 8px solid rgb(255, 188, 64);
+    height: 162px;
+    width: 40px;
+    border-radius: 30px;
+    position: absolute;
+    top: 385px;
+    right: 5px;
+}
+
+#vl8 {
+    border: 8px solid rgb(255, 188, 64);
+    height: 40px;
+    width: 40px;
+    border-radius: 30px;
+    position: absolute;
+    top: 570px;
+    right: 5px;
+}
+
+#vl9 {
+    border: 8px solid rgb(255, 188, 64);
+    height: 162px;
+    width: 40px;
+    border-radius: 30px;
+    position: absolute;
+    top: 633px;
+    right: 5px;
+}
+
+#vl10 {
+    border: 8px solid rgb(255, 188, 64);
+    height: 162px;
+    width: 40px;
+    border-radius: 30px;
+    position: absolute;
+    top: 353px;
+    right: 70px;
+}
+
+#vl11 {
+    border: 8px solid rgb(255, 188, 64);
+    height: 162px;
+    width: 40px;
+    border-radius: 30px;
+    position: absolute;
+    top: 538px;
+    right: 70px;
+}
+
+
 .modal {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    border: 2px solid black;
-    border-radius: 10px;
     z-index: 10;
-    background-color: white;
+    background: linear-gradient(-16deg, rgb(240, 240, 240) 38%, rgba(165, 165, 165, 0.61) 20%, white 30%);
     padding: 20px;
-    width: 800px;
-    max-width: 80%;
-    transition: 200ms ;
+    width: 90%;
+    max-width: 90%;
+    height: 90%;
+    transition: 500ms ;
 }
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
 
 .modal.active {
     transform: translate(-50%, -50%) scale(1);
+    animation: fadeIn .5s;
+    -webkit-animation: fadeIn .5s;
+    -moz-animation: fadeIn .5s;
+    -o-animation: fadeIn .5s;
+    -ms-animation: fadeIn .5s;
 }
 
 .modalHeader {
+    font-size: 40px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
-
-.modalTitle {
-    font-size: 25px;
-    font-weight: bold;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .modalExit {
@@ -102,13 +236,49 @@ ul {
     border: none;
     outline: none;
     background: none;
-    font-size: 25px;
+    font-size: 50px;
     font-weight: bold;
 }
 
 .modalExit:hover {
     transform: scale(1.1);
 }
+
+.emailMe {
+    display: flex;
+    height: 70vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalEmail {
+    font-weight: bold;
+    font-size: 80px;
+}
+
+.modalEmail:hover {
+    color: rgb(255, 188, 64);
+    text-decoration: underline;
+}
+
+.modalSocials {
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 85px;
+}
+
+.socialsTitle {
+    position: absolute;
+    bottom: 17%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 48px;
+}
+
 
 #overlay {
     z-index: 9;
@@ -129,6 +299,30 @@ ul {
 
 @media only screen and (max-width: 760px) {
     .socials {
+        display:none;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .modalEmail {
+        font-size:40px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .modalEmail {
+        font-size:28px;
+    }
+}
+
+@media only screen and (max-width: 1372px) {
+    .graphic1 {
+        display:none;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    .graphic {
         display:none;
     }
 }
@@ -163,6 +357,12 @@ a {
     box-shadow: 0px 0px 3px black;
     border-radius: 10px;
 }
+#modalGithub {
+    width: 40px;
+    box-shadow: 0px 0px 3px black;
+    border-radius: 10px;
+
+}
 
 #github:hover {
     transform: scale(1.05);
@@ -175,6 +375,13 @@ a {
 }
 
 #linkedin {
+    width: 40px;
+    box-shadow: 0px 0px 3px black;
+    border-radius: 10px;
+    color: black;
+}
+
+#modalLinkedin {
     width: 40px;
     box-shadow: 0px 0px 3px black;
     border-radius: 10px;
@@ -246,6 +453,7 @@ a {
   border-radius: 50%;  
   width: 300px;
   height: 300px;
+  z-index: 5;
 }
 
 @media only screen and (max-width: 1049px) {
