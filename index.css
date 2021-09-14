@@ -38,9 +38,7 @@ ul {
     display: flex;
     justify-items: start;
     justify-content: space-between;
-    padding: 150px;
-    padding-top: 20px;
-    padding-bottom: 0;
+    padding: 8px;
     align-items: center;
     font-size: 20px;
 }
@@ -355,12 +353,6 @@ ul {
     }
 }
 
-@media only screen and (max-width: 1100px) {
-    #navbar {
-        padding: 9px;
-    }
-}
-
 a {
     text-decoration: none;
     font-weight: bold;
@@ -536,7 +528,7 @@ a {
 .bio {
     padding-top: 15px;
     font-size: 20px;
-    color: b;
+    color: black;
 }
 
 .title {
