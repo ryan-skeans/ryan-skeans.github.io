@@ -238,6 +238,7 @@ ul {
     background: none;
     font-size: 50px;
     font-weight: bold;
+    width: 40px;
 }
 
 .modalExit:hover {
