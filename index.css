@@ -41,6 +41,12 @@ ul {
     padding: 8px;
     align-items: center;
     font-size: 20px;
+    z-index: -5;
+}
+
+button {
+    background: none;
+    border: none;
 }
 
 #skeans {
@@ -55,14 +61,7 @@ ul {
 }
 
 #navbarContact {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-align: right;
-    font-size: 20px;
-    font-weight: bold;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #1c1d25;    
+    width: 70px;
 }
 
 #navbarContact:hover {
@@ -265,7 +264,7 @@ ul {
 }
 
 #modalEmail:hover {
-    color: #193241;
+    color: #EB9A28;
     text-decoration: underline;
 }
 
@@ -306,8 +305,8 @@ ul {
 }
 
 @media only screen and (max-width: 760px) {
-    #skeans {
-        font-size:22px;
+     #navbarContact{
+        width: 30px;
     }
 }
 
@@ -356,7 +355,7 @@ ul {
 a {
     text-decoration: none;
     font-weight: bold;
-    color: #f3f3f3;
+    color: #193241;
 }
 
 #github {
@@ -415,7 +414,17 @@ a {
 
 .aboutWrap {
     height: 100vh;
-    background-color: #edeae5;
+}
+
+.test {
+    height: 92vh;
+    width: 100vw;
+    position: absolute;
+    top: 20px;
+    background: #193241;
+    z-index: -1;
+    transform: skewy(-8deg);
+
 }
 
 .about {
@@ -434,7 +443,7 @@ a {
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-    color: #1c1d25;
+    color: black;
     padding-top: 40px;
 }
 
@@ -458,7 +467,7 @@ a {
 }
 
 #profile-desktop {
-    background: linear-gradient(-16deg, #1c1d25 40%, #2F4858, #8DB3A0 );
+    background: linear-gradient(-16deg, #EB9A28 40%,white );
   border-radius: 50%;  
   width: 300px;
   height: 300px;
@@ -528,7 +537,7 @@ a {
 .bio {
     padding-top: 15px;
     font-size: 20px;
-    color: black;
+    color: white;
 }
 
 .title {
@@ -536,18 +545,18 @@ a {
     grid-template-columns: 75% 25%;
     padding-top: 10px;
     font-size: 25px;
-    color: #1c1d25;
+    color: white;
 }
 .big-name {
     font-size: 40px;
     font-weight: bold;
-    color: #1c1d25;
+    color: white;
 }
 
 .cv1 {
     margin-top: 15px;
-    background-color: #193241;
-    color: white;
+    background-color: white;
+    color: #659dbd;
     font-size: 20px;
     font-weight: bold;
     padding: 15px;
@@ -636,7 +645,7 @@ a {
     background-color: #193241;
     padding: 2px;
     border-radius: 10px;
-    color: #fcf8cf;
+    color: white;
 }
 
 #project-github {
