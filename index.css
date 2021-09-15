@@ -12,12 +12,18 @@ html {
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0px;
-background-color: #f3f3f3;
+background-color: #FFFCF2;
 height: 100%;
 }
 
 ul {
     padding-left: 0;
+}
+
+hr {
+    height: 2px;
+    background-color: black;
+    border: none;
 }
 
 .pageWrap {
@@ -36,12 +42,14 @@ ul {
 
 .navbar {
     display: flex;
+    height: 45px;
     justify-items: start;
     justify-content: space-between;
     padding: 8px;
     align-items: center;
     font-size: 20px;
     z-index: -5;
+    background: #003F5A;
 }
 
 button {
@@ -50,18 +58,30 @@ button {
 }
 
 #skeans {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    font-size: 28px;
     font-weight: bold;
-    font-size: 40px;
-    color: #1c1d25;
-    /*background-color: #6b6e70;*/
-    transform: skewx(-10deg);
-    padding: 1px;
-    padding-left: 6px;
-    padding-right: 6px;
+    color: #F0E3C8;
+}
+
+#logo {
+    position: absolute;
+    top: 40px;
+    left: 5px;
+    width: 90px;
+    height: 5px;
 }
 
 #navbarContact {
-    width: 70px;
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+
 }
 
 #navbarContact:hover {
@@ -264,7 +284,7 @@ button {
 }
 
 #modalEmail:hover {
-    color: #EB9A28;
+    color: #FFBC40;
     text-decoration: underline;
 }
 
@@ -306,7 +326,8 @@ button {
 
 @media only screen and (max-width: 760px) {
      #navbarContact{
-        width: 30px;
+        width: 40px;
+        top: 10px;
     }
 }
 
@@ -340,13 +361,13 @@ button {
     }
 }
 
-@media only screen and (max-width: 2000px) {
+@media only screen and (max-width: 4000px) {
     #repositoryTitle {
         display:none;
     }
 }
 
-@media only screen and (max-width: 2000px) {
+@media only screen and (max-width: 4000px) {
     #liveWebsiteTitle {
         display:none;
     }
@@ -361,13 +382,13 @@ a {
 #github {
     width: 40px;
     margin-bottom: 10px;
-    box-shadow: 0px 0px 3px black;
-    border-radius: 10px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 #modalGithub {
     width: 40px;
-    box-shadow: 0px 0px 3px black;
-    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 50%;
 
 }
 
@@ -377,22 +398,20 @@ a {
 
 #github-footer {
     width: 40px;
-    box-shadow: 0px 0px 3px black;
-    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 50%;
 }
 
 #linkedin {
     width: 40px;
-    box-shadow: 0px 0px 3px black;
-    border-radius: 10px;
-    color: black;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 50%;
 }
 
 #modalLinkedin {
     width: 40px;
-    box-shadow: 0px 0px 3px black;
-    border-radius: 10px;
-    color: black;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 50%;
 }
 
 .repository:hover {
@@ -413,18 +432,9 @@ a {
 
 
 .aboutWrap {
-    height: 100vh;
-}
-
-.test {
-    height: 92vh;
-    width: 100vw;
-    position: absolute;
-    top: 20px;
-    background: #193241;
-    z-index: -1;
-    transform: skewy(-8deg);
-
+    height: 90vh;
+    min-height: 770px;
+    background: #F0E3C8;
 }
 
 .about {
@@ -467,10 +477,8 @@ a {
 }
 
 #profile-desktop {
-    background: linear-gradient(-16deg, #EB9A28 40%,white );
-  border-radius: 50%;  
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   z-index: 5;
 }
 
@@ -480,6 +488,13 @@ a {
     }
 }
 
+@media only screen and (max-height: 780px) {
+    .desktop-padding {
+        display:none;
+    }
+}
+
+
 @media only screen and (min-width: 1249px) {
     #profile-desktop {
         width: 400px;
@@ -487,10 +502,17 @@ a {
     }
 }
 
+@media only screen and (max-width: 1057px) {
+    #profile-desktop {
+        width: 300px;
+        height: 300px;
+    }
+}
+
 @media only screen and (max-width: 650px) {
     #profile-desktop {
-        width: 200px;
-        height: 200px;
+        width: 300px;
+        height: 300px;
     }
 }
 
@@ -515,29 +537,13 @@ a {
     
 }
 
-@media only screen and (max-width: 500px) {
-    #scrollDown {
-        width: 100px;
-        position: absolute;
-        margin: none;
-        left: 70%;
-        right: 0px;
-        bottom: 0px;
-    }
-    
-}
 
-@media only screen and (max-width: 300px) {
-    #scrollDown {
-        display: none;
-    }
-    
-}
+
 
 .bio {
     padding-top: 15px;
     font-size: 20px;
-    color: white;
+    color: black;
 }
 
 .title {
@@ -545,50 +551,41 @@ a {
     grid-template-columns: 75% 25%;
     padding-top: 10px;
     font-size: 25px;
-    color: white;
+    color: black;
 }
 .big-name {
     font-size: 40px;
     font-weight: bold;
-    color: white;
+    color: black;
 }
 
 .cv1 {
-    margin-top: 15px;
-    background-color: white;
-    color: #659dbd;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 15px;
-    width: 162px;
-    border-radius: 10px;
+    height: 50px;
+    width: 133.5px;
+}
+
+#resume {
+    height: 50px;
 }
 
 .cv1:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .about-container {
     display: flex;
-    width: 700px;
+    width: 600px;
     max-width: 95%;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
     border-radius: 10px;
     padding: 10px;
+    padding-right: 20px;
     padding-top: 40px;
     gap: 30px;
 }
 
-.scrollDown {
-    width: 100px;
-    position: absolute;
-    bottom: 0px;
-    right: 0;
-    left: 0;
-    margin: auto;
-}
 
 .projectImage {
     max-width: 100%;
@@ -645,7 +642,7 @@ a {
     background-color: #193241;
     padding: 2px;
     border-radius: 10px;
-    color: white;
+    color: #F0E3C8;
 }
 
 #project-github {
@@ -653,7 +650,7 @@ a {
 }
 
 #project-website {
-    width: 30px;
+    width: 40px;
 
 }
 
@@ -670,7 +667,7 @@ a {
     right: 0%;
     background:#193241;
     padding: 2px;
-    border-radius: 10px;
+    border-radius: 50%;
 }
 
 .live-website {
@@ -686,12 +683,11 @@ a {
     right: 0%;
     background:#193241;
     padding: 2px;
-    border-radius: 10px;
+    border-radius: 50%;
 }
 
 .projectWebsiteIcon {
-    background-color: white;
-    border-radius: 10px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     flex-direction: column;
