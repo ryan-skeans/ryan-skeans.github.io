@@ -20,12 +20,6 @@ ul {
     padding-left: 0;
 }
 
-hr {
-    height: 2px;
-    background-color: black;
-    border: none;
-}
-
 .pageWrap {
     min-height: 100%;
     margin-bottom: -169px;
@@ -49,7 +43,7 @@ hr {
     align-items: center;
     font-size: 20px;
     z-index: -5;
-    background: #121212;
+    background: rgba(0,0,0,0.8);
 }
 
 button {
@@ -280,11 +274,7 @@ button {
     }
 }
 
-a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #193241;
-}
+
 
 #github {
     width: 40px;
@@ -339,7 +329,7 @@ a {
 
 
 .aboutWrap {
-    height: 90vh;
+    height: 100vh;
     min-height: 770px;
     background-image: linear-gradient(to right bottom, #000000, #422224, #7f4033, #b76935, #e19d2c, #ecba3b, #f5d74e, #fbf465, #fcf788, #fdfaa8, #fefcc7, #fffee5);
 }
@@ -360,7 +350,7 @@ a {
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-    color: black;
+    color: #1d1d1f;
     padding-top: 40px;
 }
 
@@ -471,29 +461,69 @@ a {
     
 }
 
+@media only screen and (max-width: 760px) {
+    .about-container{
+        text-align: center;
+    }
+    
+}
+
+@media only screen and (max-width: 760px) {
+    #resumeFlex{
+        align-items: center;
+    }
+    
+}
+
+
+
+@media only screen and (max-width: 500px) {
+    .aboutWrap{
+        height: 88vh;
+        min-height: 500px;
+    }
+    
+}
+
 
 .bio {
     padding-top: 15px;
     font-size: 20px;
-    color: black;
+    color: #1d1d1f;
 }
 
 .title {
-    display: grid;
-    grid-template-columns: 75% 25%;
     padding-top: 10px;
     font-size: 20px;
-    color: black;
+    color: #1d1d1f;
 }
 .big-name {
     font-size: 40px;
     font-weight: bold;
-    color: black;
+    color: #1d1d1f;
+}
+
+#resumeFlex {
+    display: flex;
+    flex-direction: column;
 }
 
 .cv1 {
-    height: 50px;
-    width: 133.5px;
+    border: 2px solid #1d1d1f;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    width: 72px;
+}
+
+#download {
+    text-decoration: none;
+    color: #1d1d1f;
+    font-size: 20px;
 }
 
 #resume {
@@ -501,23 +531,25 @@ a {
     padding-top: 20px;
 }
 
-.cv1:hover {
-    transform: scale(1.02);
+#cv1:hover {
+    background: #1d1d1f;
+    color: #ecba3b;
 }
+
 
 .about-container {
     display: flex;
     width: 600px;
     max-width: 95%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
     border-radius: 10px;
     padding: 10px;
-    padding-right: 20px;
     padding-top: 40px;
     gap: 30px;
 }
+
 
 
 .projectImage {
@@ -574,8 +606,8 @@ a {
     left: 0%;
     background-color: white;
     padding: 2px;
-    color: black;
-    border: 2px solid black;
+    color: #1d1d1f;
+    border: 2px solid #1d1d1f;
 }
 
 #project-github {
@@ -626,7 +658,7 @@ a {
 }
 
 .footer {
-    background-color: #121212;
+    background-color: #1d1d1f;
     color: white;
     font-size: 20px;
     padding: 15px;
