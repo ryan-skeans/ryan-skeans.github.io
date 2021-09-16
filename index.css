@@ -88,113 +88,7 @@ button {
     transform: scale(1.1);
 }
 
-#vl1 {
-    border: 8px solid #628F8C;
-    height: 162px;
-    width: 40px;
-    border-radius: 30px;
-    position: absolute;
-    top: -50px;
-    right: 5px;
-}
-#vl2 {
-    border: 8px solid #8DB3A0;
-    height: 40px;
-    width: 40px;
-    border-radius: 30px;
-    position: absolute;
-    top: 135px;
-    right: 5px;
-}
-#vl3 {
-    border: 8px solid #436B75;
-    height: 162px;
-    width: 40px;
-    border-radius: 30px;
-    position: absolute;
-    top: -80px;
-    right: 70px;
-}
 
-#vl4 {
-    border: 8px solid #2F4858;
-    height: 162px;
-    width: 40px;
-    border-radius: 30px;
-    position: absolute;
-    top: 105px;
-    right: 70px;
-}
-
-#vl5 {
-    border: 8px solid #628F8C;
-    height: 162px;
-    width: 40px;
-    border-radius: 30px;
-    position: absolute;
-    top: 200px;
-    right: 5px;
-}
-
-#vl6 {
-    border: 8px solid #8DB3A0;
-    height: 40px;
-    width: 40px;
-    border-radius: 30px;
-    position: absolute;
-    top: 290px;
-    right: 70px;
-}
-
-#vl7 {
-    border: 8px solid #436B75;
-    height: 162px;
-    width: 40px;
-    border-radius: 30px;
-    position: absolute;
-    top: 385px;
-    right: 5px;
-}
-
-#vl8 {
-    border: 8px solid #628F8C;
-    height: 40px;
-    width: 40px;
-    border-radius: 30px;
-    position: absolute;
-    top: 570px;
-    right: 5px;
-}
-
-#vl9 {
-    border: 8px solid #2F4858;
-    height: 162px;
-    width: 40px;
-    border-radius: 30px;
-    position: absolute;
-    top: 633px;
-    right: 5px;
-}
-
-#vl10 {
-    border: 8px solid #628F8C;
-    height: 162px;
-    width: 40px;
-    border-radius: 30px;
-    position: absolute;
-    top: 353px;
-    right: 70px;
-}
-
-#vl11 {
-    border: 8px solid #436B75;
-    height: 162px;
-    width: 40px;
-    border-radius: 30px;
-    position: absolute;
-    top: 538px;
-    right: 70px;
-}
 
 
 .modal {
@@ -566,6 +460,7 @@ a {
 
 #resume {
     height: 50px;
+    padding-top: 20px;
 }
 
 .cv1:hover {
