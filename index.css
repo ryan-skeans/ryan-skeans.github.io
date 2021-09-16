@@ -12,7 +12,7 @@ html {
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0px;
-background-color: #FFFCF2;
+background-color: white;
 height: 100%;
 }
 
@@ -49,7 +49,7 @@ hr {
     align-items: center;
     font-size: 20px;
     z-index: -5;
-    background: #003F5A;
+    background: #121212;
 }
 
 button {
@@ -72,6 +72,10 @@ button {
     left: 5px;
     width: 90px;
     height: 5px;
+}
+
+#toonprofile {
+    width: 50px;
 }
 
 #navbarContact {
@@ -226,6 +230,15 @@ button {
 }
 
 @media only screen and (max-width: 760px) {
+    #toonprofile{
+       width: 40px;
+       top: 10px;
+   }
+}
+
+
+
+@media only screen and (max-width: 760px) {
     .socials {
         display:none;
     }
@@ -328,7 +341,7 @@ a {
 .aboutWrap {
     height: 90vh;
     min-height: 770px;
-    background: #F0E3C8;
+    background-image: linear-gradient(to right bottom, #000000, #422224, #7f4033, #b76935, #e19d2c, #ecba3b, #f5d74e, #fbf465, #fcf788, #fdfaa8, #fefcc7, #fffee5);
 }
 
 .about {
@@ -371,9 +384,26 @@ a {
 }
 
 #profile-desktop {
-  width: 400px;
-  height: 400px;
-  z-index: 5;
+    width: 400px;
+    height: 400px;
+    z-index: 5;
+      -webkit-animation: bounce 3s ease-in-out infinite; 
+      animation: bounce 3s ease-in-out infinite;
+      transition: transform 300ms cubic-bezier(0,0,0.3,1), -webkit-transform 300ms cubic-bezier(0,0,0.3,1);
+      will-change: transform;
+}
+
+@keyframes bounce {
+    0%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    
+    }
+
+    50% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
 }
 
 @media only screen and (max-width: 1049px) {
@@ -400,15 +430,10 @@ a {
     #profile-desktop {
         width: 300px;
         height: 300px;
+        transform: rotate(40deg);
     }
 }
 
-@media only screen and (max-width: 650px) {
-    #profile-desktop {
-        width: 300px;
-        height: 300px;
-    }
-}
 
 @media only screen and (min-width: 1249px) {
     #big-name {
@@ -431,7 +456,20 @@ a {
     
 }
 
+@media only screen and (min-width: 2000px) {
+    #profile-desktop {
+        width: 700px;
+        height: 700px;
+    }
+    
+}
 
+@media only screen and (min-width: 2000px) {
+    #big-name{
+        font-size: 100px;
+    }
+    
+}
 
 
 .bio {
@@ -491,8 +529,8 @@ a {
 }
 
 
-#projectImage:hover {
-    color:#FFBC40;
+.projectImage:hover {
+    filter: brightness(90%);
 }
 
 .project1 {
@@ -534,10 +572,10 @@ a {
     position: absolute;
     top: 0%;
     left: 0%;
-    background-color: #193241;
+    background-color: white;
     padding: 2px;
-    border-radius: 10px;
-    color: #F0E3C8;
+    color: black;
+    border: 2px solid black;
 }
 
 #project-github {
@@ -560,7 +598,6 @@ a {
     position: absolute;
     bottom: 50px;
     right: 0%;
-    background:#193241;
     padding: 2px;
     border-radius: 50%;
 }
@@ -576,7 +613,6 @@ a {
     position: absolute;
     bottom: 0%;
     right: 0%;
-    background:#193241;
     padding: 2px;
     border-radius: 50%;
 }
@@ -590,7 +626,7 @@ a {
 }
 
 .footer {
-    background-color: #193241;
+    background-color: #121212;
     color: white;
     font-size: 20px;
     padding: 15px;
