@@ -39,7 +39,8 @@ ul {
     height: 45px;
     justify-items: start;
     justify-content: space-between;
-    padding: 8px;
+    padding-right: 8px;
+    padding-left: 8px;
     align-items: center;
     font-size: 20px;
     z-index: -5;
@@ -69,11 +70,14 @@ button {
 }
 
 #toonprofile {
-    width: 50px;
+    width: 35px;
+    position:absolute;
+    top: 5px;
+    left: 5px;
 }
 
 #navbarContact {
-    width: 50px;
+    width: 35px;
     border-radius: 50%;
     position: absolute;
     right: 5px;
@@ -215,22 +219,6 @@ button {
     opacity: 1;
     pointer-events: all;
 }
-
-@media only screen and (max-width: 760px) {
-     #navbarContact{
-        width: 40px;
-        top: 10px;
-    }
-}
-
-@media only screen and (max-width: 760px) {
-    #toonprofile{
-       width: 40px;
-       top: 10px;
-   }
-}
-
-
 
 @media only screen and (max-width: 760px) {
     .socials {
