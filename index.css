@@ -318,8 +318,7 @@ button {
 
 .aboutWrap {
     height: auto;
-    background-image: linear-gradient(to right bottom, #000000, #422224, #7f4033, #b76935, #e19d2c, #ecba3b, #f5d74e, #fbf465, #fcf788, #fdfaa8, #fefcc7, #fffee5);
-}
+    background-image: linear-gradient(to right bottom, #000000, #3d2123, #773d34, #ae623b, #db913a, #eaa938, #f7c236, #ffdc37, #ffdc37, #ffdc37, #ffdc37, #ffdc37);}
 
 .about {
     display: flex;
@@ -548,6 +547,11 @@ button {
 .projectImage:hover {
     filter: brightness(90%);
 }
+
+.project1-container {
+    display: flex;
+}
+
 
 .project1 {
     width: 1100px;
