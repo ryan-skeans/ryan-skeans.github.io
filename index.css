@@ -317,8 +317,7 @@ button {
 
 
 .aboutWrap {
-    height: 100vh;
-    min-height: 770px;
+    height: auto;
     background-image: linear-gradient(to right bottom, #000000, #422224, #7f4033, #b76935, #e19d2c, #ecba3b, #f5d74e, #fbf465, #fcf788, #fdfaa8, #fefcc7, #fffee5);
 }
 
@@ -326,6 +325,8 @@ button {
     display: flex;
     flex-wrap: wrap-reverse;
     padding: 15px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     justify-content: center;
     align-items: center;
     max-width: 100%;
@@ -384,15 +385,10 @@ button {
     }
 }
 
-@media only screen and (max-width: 1049px) {
-    .desktop-padding {
-        display:none;
-    }
-}
-
-@media only screen and (max-height: 780px) {
-    .desktop-padding {
-        display:none;
+@media only screen and (max-width: 800px) {
+    .about {
+        padding-top:20px;
+        padding-bottom: 20px;
     }
 }
 
@@ -467,7 +463,6 @@ button {
 
 @media only screen and (max-width: 500px) {
     .aboutWrap{
-        height: 88vh;
         min-height: 500px;
     }
     
