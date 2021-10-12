@@ -320,7 +320,6 @@ button {
     height: auto;
     background-image: linear-gradient(to right bottom, #000000, #3d2123, #773d34, #ae623b, #db913a, #eaa938, #f7c236, #ffdc37, #ffdc37, #ffdc37, #ffdc37, #ffdc37);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
-
 }
 
 .about {
@@ -333,6 +332,8 @@ button {
     align-items: center;
     max-width: 100%;
     margin-top: 20px;
+    animation: 1.5s ease 0s 1 normal none running fadeIn;
+
 }
 
 
@@ -343,6 +344,7 @@ button {
     text-align: center;
     color: #1d1d1f;
     padding-top: 40px;
+    animation: 3.5s ease 0s 1 normal none running fadeIn;
 }
 
 .projectsContainer {
@@ -372,6 +374,7 @@ button {
       animation: bounce 3s ease-in-out infinite;
       transition: transform 300ms cubic-bezier(0,0,0.3,1), -webkit-transform 300ms cubic-bezier(0,0,0.3,1);
       will-change: transform;
+
 }
 
 @keyframes bounce {
@@ -494,6 +497,7 @@ button {
     font-size: 40px;
     font-weight: bold;
     color: #1d1d1f;
+    animation: .5s ease 0s 1 normal none running fadeIn;
 }
 
 .resumeFlex {
@@ -569,6 +573,7 @@ button {
     padding: 10px;
     border-radius: 10px;
     position: relative;
+    animation: 3.5s ease 0s 1 normal none running fadeIn;
 
 }
 
