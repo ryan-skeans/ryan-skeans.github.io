@@ -584,6 +584,14 @@ button {
   display: flex;
 }
 
+.project0 {
+  width: 1100px;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  animation: 3.5s ease 0s 1 normal none running fadeIn;
+}
+
 .project1 {
   width: 1100px;
   padding: 10px;
