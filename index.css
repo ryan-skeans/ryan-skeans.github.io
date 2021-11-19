@@ -374,7 +374,7 @@ button {
 
 .projects-title {
   padding: 30px;
-  font-size: 30px;
+  font-size: calc(20px + 3vmin);
   font-weight: bold;
   text-align: center;
   color: #1d1d1f;
@@ -584,48 +584,12 @@ button {
   display: flex;
 }
 
-.project0 {
-  width: 1100px;
+.project {
+  width: 1800px;
   padding: 10px;
   border-radius: 10px;
   position: relative;
   animation: 3.5s ease 0s 1 normal none running fadeIn;
-}
-
-.project1 {
-  width: 1100px;
-  padding: 10px;
-  border-radius: 10px;
-  position: relative;
-  animation: 3.5s ease 0s 1 normal none running fadeIn;
-}
-
-.project2 {
-  width: 1100px;
-  padding: 10px;
-  border-radius: 10px;
-  position: relative;
-}
-
-.project3 {
-  width: 1100px;
-  padding: 10px;
-  border-radius: 10px;
-  position: relative;
-}
-
-.project4 {
-  width: 1100px;
-  padding: 10px;
-  border-radius: 10px;
-  position: relative;
-}
-
-.project5 {
-  width: 1100px;
-  padding: 10px;
-  border-radius: 10px;
-  position: relative;
 }
 
 .project-title {
