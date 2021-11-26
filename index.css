@@ -44,7 +44,7 @@ ul {
   animation-iteration-count: infinite;
   position: absolute;
   bottom: 40px;
-  left: 50%;
+  left: calc(50% - 10px);
   transform: translateX(-50%);
 }
 
@@ -370,6 +370,9 @@ button {
 @media only screen and (max-width: 500px) {
   #project-title {
     font-size: 25px;
+  }
+  .arrow1 {
+    bottom: 0px;
   }
 }
 
