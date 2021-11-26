@@ -116,25 +116,6 @@ button {
   transform: scale(1.1);
 }
 
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  z-index: 10;
-  background: linear-gradient(
-    -16deg,
-    rgb(240, 240, 240) 38%,
-    rgba(165, 165, 165, 0.61) 20%,
-    white 30%
-  );
-  padding: 20px;
-  width: 90%;
-  max-width: 90%;
-  height: 90%;
-  transition: 500ms;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -180,65 +161,6 @@ button {
   }
 }
 
-.modal.active {
-  transform: translate(-50%, -50%) scale(1);
-  animation: fadeIn 0.5s;
-  -webkit-animation: fadeIn 0.5s;
-  -moz-animation: fadeIn 0.5s;
-  -o-animation: fadeIn 0.5s;
-  -ms-animation: fadeIn 0.5s;
-}
-
-.modalHeader {
-  font-size: 40px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.modalExit {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: none;
-  font-size: 50px;
-  width: 40px;
-}
-
-.modalExit:hover {
-  transform: scale(1.1);
-}
-
-.emailMe {
-  display: flex;
-  height: 70vh;
-  align-items: center;
-  justify-content: center;
-}
-
-.modalEmail {
-  font-size: 80px;
-}
-
-#modalEmail {
-  color: black;
-}
-
-#modalEmail:hover {
-  color: #ffbc40;
-  text-decoration: underline;
-}
-
-.modalSocials {
-  position: absolute;
-  bottom: 10%;
-  right: 0;
-  left: 0;
-  margin: auto;
-  width: 85px;
-}
-
 .socialsTitle {
   position: absolute;
   bottom: 19%;
@@ -263,30 +185,6 @@ button {
 #overlay.active {
   opacity: 1;
   pointer-events: all;
-}
-
-@media only screen and (max-width: 950px) {
-  .modalEmail {
-    font-size: 40px;
-  }
-}
-
-@media only screen and (max-width: 460px) {
-  .modalEmail {
-    font-size: 28px;
-  }
-}
-
-@media only screen and (max-width: 1372px) {
-  .graphic1 {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 1150px) {
-  .graphic {
-    display: none;
-  }
 }
 
 @media only screen and (max-width: 4000px) {
