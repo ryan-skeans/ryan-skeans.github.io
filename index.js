@@ -1,13 +1,5 @@
-const modal = document.querySelector("#modal");
-const overlay = document.querySelector("#overlay");
-const modalExit = document.querySelector("#modalExit");
+let picture = document.getElementById('profile-desktop');
 
-function activateModal() {
-  modal.classList.add("active");
-  overlay.classList.add("active");
-}
-
-function closeModal() {
-  modal.classList.remove("active");
-  overlay.classList.remove("active");
-}
+document.body.onload = function () {
+  picture.classList.add('profile-desktop');
+};

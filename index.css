@@ -332,7 +332,19 @@ button {
   width: 400px;
   height: 400px;
   z-index: 5;
+  transition: all 4s ease-in-out;
+}
+
+.profile-desktop {
+  transition: all 4s ease-in-out;
   border-radius: 50%;
+  background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);
+  background: linear-gradient(to right, #f7b733, #fc4a1a);
+}
+
+#profile-desktop:hover {
+  transform: rotate(3000deg);
+  transition: all 4s ease-in-out;
 }
 
 @media only screen and (max-width: 920px) {
