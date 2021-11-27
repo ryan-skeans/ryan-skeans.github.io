@@ -541,7 +541,7 @@ button {
   transform: scale(1.07);
 }
 
-#project-github {
+.project-github {
   width: 40px;
   border-radius: 8px;
 }
