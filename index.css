@@ -254,6 +254,7 @@ button {
 
 .aboutWrap {
   height: 100vh;
+  min-height: 600px;
   width: 100%;
   background-image: url(/images/test.svg);
   background-position: center;
@@ -379,6 +380,12 @@ button {
   }
 }
 
+@media only screen and (max-height: 700px) {
+  .arrow1 {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 680px) {
   .projectTextDescripion {
     display: none;
@@ -403,7 +410,7 @@ button {
   }
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 768px) {
   .about-container {
     text-align: center;
   }
