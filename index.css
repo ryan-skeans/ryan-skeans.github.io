@@ -383,6 +383,9 @@ button {
   .projectTextDescripion {
     display: none;
   }
+  .projectText {
+    opacity: 0.9 !important;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -575,6 +578,7 @@ button {
   display: flex;
   flex-direction: row;
   gap: 20px;
+  padding-top: 10px;
 }
 
 .projectImage:hover + .projectText,
