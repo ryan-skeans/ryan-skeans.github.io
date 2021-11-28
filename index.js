@@ -1,5 +1,5 @@
 let picture = document.getElementById('profile-desktop');
 
-document.body.onload = function () {
+picture.onload = function () {
   picture.classList.add('profile-desktop');
 };
