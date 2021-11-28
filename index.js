@@ -1,5 +1,5 @@
 let picture = document.getElementById('profile-desktop');
 
-document.body.onload = function () {
+setTimeout(function () {
   picture.classList.add('profile-desktop');
-};
+}, 200);
