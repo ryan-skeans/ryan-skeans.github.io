@@ -16,9 +16,14 @@
     <meta charset="UTF-8" />
     <meta name="theme-color" content="#1b1b1b" />
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <script>
+      function cb(response) {
+        console.log(response.value);
+      }
+    </script>
     <script
-      src="https://api.countapi.xyz/hit/skeanster.github.io/visits?callback=liveViews"
       async
+      src="https://api.countapi.xyz/hit/skeanster.github.io/visits?callback=cb"
     ></script>
   </head>
   <body>
