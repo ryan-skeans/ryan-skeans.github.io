@@ -6,4 +6,5 @@ setTimeout(function () {
 
 function liveViews(response) {
   console.log(response.value);
+  console.log('test');
 }
