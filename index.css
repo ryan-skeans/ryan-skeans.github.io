@@ -349,7 +349,6 @@ button {
 }
 
 #profile-desktop:hover {
-  transform: rotate(3000deg);
   transition: all 4s ease-in-out;
 }
 
