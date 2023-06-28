@@ -390,7 +390,7 @@ button {
   }
 }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 1024px) {
   .projectTextDescripion {
     display: none;
   }
