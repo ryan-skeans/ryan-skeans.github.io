@@ -1,398 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Ryan Skeans</title>
-    <link href="index.css" rel="stylesheet" />
-    <script type="module" src="index.js" defer></script>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
-    />
-    <link rel="shortcut icon" type="image/jpg" href="./images/favicon.ico" />
-    <meta name="description" content="Ryan's Portfolio" />
-    <meta name="keywords" content="HTML, CSS, JavaScript, Ryan, Ryan Skeans" />
-    <meta name="author" content="Ryan Skeans" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta charset="UTF-8" />
-    <meta name="theme-color" content="#1b1b1b" />
-    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
-  </head>
-  <body>
-    <div class="pageWrap">
-      <div class="aboutWrap">
-        <div id="overlay" class="" onclick="closeModal()"></div>
-        <div class="about">
-          <div class="about-container">
-            <div class="text">
-              <h1 class="big-name" id="big-name">Hi, I'm Ryan</h1>
-              <p class="bio" id="bio">
-                I excel at working with diverse groups in order to deliver
-                intuitive products that my users love. Scroll down to see some
-                of my projects outside the workplace.
+
+<head>
+  <title>Ryan Skeans</title>
+  <link href="index.css" rel="stylesheet" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script type="module" src="index.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+  <link rel="shortcut icon" type="image/jpg" href="./images/favicon.ico" />
+  <meta name="description" content="Ryan's Portfolio" />
+  <meta name="keywords" content="HTML, CSS, JavaScript, Ryan, Ryan Skeans" />
+  <meta name="author" content="Ryan Skeans" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="UTF-8" />
+  <meta name="theme-color" content="#1b1b1b" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+</head>
+
+<body>
+  <div class="pageWrap">
+    <div class="aboutWrap">
+      <div class="about">
+        <div class="about-container">
+          <div class="text">
+            <h1 class="big-name" id="big-name">Hi, I'm Ryan</h1>
+            <p class="bio" id="bio">
+              I excel at working with diverse groups in order to deliver
+              intuitive products that my users love. Scroll down to see some
+              of my projects outside the workplace.
+            </p>
+            <div class="resumeFlex" id="resumeFlex">
+              <a class="cv1" id="resume1" href="files/Resume.pdf" download id="download">
+                Resume
+              </a>
+              <a class="cv1" id="linkedin1" href="https://www.linkedin.com/in/ryanskeans/" id="download" target="_blank"
+                rel="noopener" rel="noreferrer">
+                Linkedin
+              </a>
+              <a class="cv1" id="github1" href="https://github.com/skeanster" id="download" target="_blank"
+                rel="noopener" rel="noreferrer">
+                Github
+              </a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img id="profile-desktop" src="images/IMG_4031.PNG" alt="profile picture" />
+        </div>
+      </div>
+      <img src="/images/arrow_down.svg" class="arrow1" alt="scroll down" />
+    </div>
+    <div class="skills-title">
+      <div class="line"></div>
+      <h2>Languages and Tools</h2>
+    </div>
+    <div class="skillsSection">
+      <div class="skillsCard">
+        <div class="languagesContainer">
+          <h3 class="languagesTitle">Languages</h3>
+          <div class="language">
+            <img class="iconClass" src="images/icon_html.svg" alt="html icon" />
+            HTML
+          </div>
+          <div class="language">
+            <img class="iconClass" src="images/icon_css.svg" alt="css icon" />
+            CSS
+          </div>
+          <div class="language">
+            <img class="iconClass" src="images/icon_sass.svg" alt="sass icon" />
+            SASS
+          </div>
+          <div class="language">
+            <img class="iconClass" src="images/icon_javascript.svg" alt="javascript icon" />
+            Javascript
+          </div>
+          <div class="language">
+            <img class="iconClass" src="images/icon_react.svg" alt="react icon" />
+            React
+          </div>
+          <div class="language">
+            <img class="iconClass" src="images/icon_nodejs.svg" alt="node.js icon" />
+            Node.Js
+          </div>
+          <div class="language">
+            <img class="iconClass" src="images/icon_express.svg" alt="express icon" />
+            Express
+          </div>
+          <div class="language">
+            <img class="iconClass" src="images/icon_mysql.svg" alt="MySQLIcon" />
+            MySQL
+          </div>
+          <div class="language">
+            <img class="iconClass" src="images/python-127-svgrepo-com.svg" alt="PythonIcon" />
+            Python
+          </div>
+        </div>
+      </div>
+      <div class="toolsCard">
+        <div class="toolsContainer">
+          <h3 class="toolsTitle">Tools</h3>
+          <div class="tool">
+            <img class="iconClass" src="images/icon_git.svg" alt="git icon" />
+            Git
+          </div>
+          <div class="tool">
+            <img class="iconClass" src="images/icon_github.svg" alt="github icon" />
+            Github
+          </div>
+          <div class="tool">
+            <img class="iconClass" src="images/icon_firebase.svg" alt="Firebase icon" />
+            Firebase
+          </div>
+          <div class="tool">
+            <img class="iconClass" src="images/icon_webpack.svg" alt="Webpackicon" />
+            Webpack
+          </div>
+          <div class="tool">
+            <img class="iconClass" src="images/icon_figma.svg" alt="Figma icon" />
+            Figma
+          </div>
+          <div class="tool">
+            <img class="iconClass" src="images/icon_linux.svg" alt="Linux icon" />
+            Linux
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="projects-title">
+      <h2>My Favorite Projects</h2>
+      <div class="line"></div>
+    </div>
+    <div class="projectsContainer">
+      <div class="projects">
+        <div class="project">
+          <img class="projectImage" src="images/facebook.png" alt="facebook project screenshot" />
+          <div class="projectText">
+            <div class="projectTextContainer">
+              <h4 class="projectTextHeading">Facebook Clone</h4>
+              <p class="projectTextDescripion">
+                Built with React and Firebase, this app lets users log in, post, comment, like, and update their
+                username.
+
+
               </p>
-              <div class="resumeFlex" id="resumeFlex">
-                <a
-                  class="cv1"
-                  id="resume1"
-                  href="files/Resume.pdf"
-                  download
-                  id="download"
-                >
-                  Resume
+              <div class="project-tech-list">
+                <p>React</p>
+                <p>Firebase</p>
+                <p>CSS</p>
+              </div>
+              <div class="projectTextLinks">
+                <a class="projectLinks" href="https://github.com/skeanster/facebook-clone-react" target="_blank"
+                  rel="noopener" rel="noreferrer"><img class="project-github" src="images/github.svg"
+                    alt="project github link" />
                 </a>
-                <a
-                  class="cv1"
-                  id="linkedin1"
-                  href="https://www.linkedin.com/in/ryanskeans/"
-                  id="download"
-                  target="_blank"
-                  rel="noopener"
-                  rel="noreferrer"
-                >
-                  Linkedin
-                </a>
-                <a
-                  class="cv1"
-                  id="github1"
-                  href="https://github.com/skeanster"
-                  id="download"
-                  target="_blank"
-                  rel="noopener"
-                  rel="noreferrer"
-                >
-                  Github
+                <a class="projectLinks" href="https://skeanster.github.io/facebook-clone-react/" target="_blank"
+                  rel="noopener" rel="noreferrer"><img id="project-website" src="images/external-link-svg.svg"
+                    alt="project website link" />
                 </a>
               </div>
             </div>
           </div>
-          <div>
-            <img
-              id="profile-desktop"
-              src="images/IMG_4031.PNG"
-              alt="profile picture"
-            />
-          </div>
         </div>
-        <img src="/images/arrow_down.svg" class="arrow1" alt="scroll down" />
-      </div>
-      <div class="skills-title">
-        <div class="line"></div>
-        <h2>Languages and Tools</h2>
-      </div>
-      <div class="skillsSection">
-        <div class="skillsCard">
-          <div class="languagesContainer">
-            <h3 class="languagesTitle">Languages</h3>
-            <div class="language">
-              <img
-                class="iconClass"
-                src="images/icon_html.svg"
-                alt="html icon"
-              />
-              HTML
-            </div>
-            <div class="language">
-              <img class="iconClass" src="images/icon_css.svg" alt="css icon" />
-              CSS
-            </div>
-            <div class="language">
-              <img
-                class="iconClass"
-                src="images/icon_sass.svg"
-                alt="sass icon"
-              />
-              SASS
-            </div>
-            <div class="language">
-              <img
-                class="iconClass"
-                src="images/icon_javascript.svg"
-                alt="javascript icon"
-              />
-              Javascript
-            </div>
-            <div class="language">
-              <img
-                class="iconClass"
-                src="images/icon_react.svg"
-                alt="react icon"
-              />
-              React
-            </div>
-            <div class="language">
-              <img
-                class="iconClass"
-                src="images/icon_nodejs.svg"
-                alt="node.js icon"
-              />
-              Node.Js
-            </div>
-            <div class="language">
-              <img
-                class="iconClass"
-                src="images/icon_express.svg"
-                alt="express icon"
-              />
-              Express
-            </div>
-            <div class="language">
-              <img
-                class="iconClass"
-                src="images/icon_mysql.svg"
-                alt="MySQLIcon"
-              />
-              MySQL
-            </div>
-            <div class="language">
-              <img
-                class="iconClass"
-                src="images/python-127-svgrepo-com.svg"
-                alt="PythonIcon"
-              />
-              Python
-            </div>
-          </div>
-        </div>
-        <div class="toolsCard">
-          <div class="toolsContainer">
-            <h3 class="toolsTitle">Tools</h3>
-            <div class="tool">
-              <img class="iconClass" src="images/icon_git.svg" alt="git icon" />
-              Git
-            </div>
-            <div class="tool">
-              <img
-                class="iconClass"
-                src="images/icon_github.svg"
-                alt="github icon"
-              />
-              Github
-            </div>
-            <div class="tool">
-              <img
-                class="iconClass"
-                src="images/icon_firebase.svg"
-                alt="Firebase icon"
-              />
-              Firebase
-            </div>
-            <div class="tool">
-              <img
-                class="iconClass"
-                src="images/icon_webpack.svg"
-                alt="Webpackicon"
-              />
-              Webpack
-            </div>
-            <div class="tool">
-              <img
-                class="iconClass"
-                src="images/icon_figma.svg"
-                alt="Figma icon"
-              />
-              Figma
-            </div>
-            <div class="tool">
-              <img
-                class="iconClass"
-                src="images/icon_linux.svg"
-                alt="Linux icon"
-              />
-              Linux
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="projects-title">
-        <h2>My Favorite Projects</h2>
-        <div class="line"></div>
-      </div>
-      <div class="projectsContainer">
-        <div class="projects">
-          <div class="project">
-            <img
-              class="projectImage"
-              src="images/facebook.png"
-              alt="facebook project screenshot"
-            />
-            <div class="projectText">
-              <div class="projectTextContainer">
-                <h4 class="projectTextHeading">Facebook Clone</h4>
-                <p class="projectTextDescripion">
-                  This project was built with a React frontend and a Firebase
-                  backend. Users can log in, post, comment, like, and change
-                  their username
-                </p>
-                <div class="projectTextLinks">
-                  <a
-                    class="projectLinks"
-                    href="https://github.com/skeanster/facebook-clone-react"
-                    target="_blank"
-                    rel="noopener"
-                    rel="noreferrer"
-                    ><img
-                      class="project-github"
-                      src="images/github.svg"
-                      alt="project github link"
-                    />
-                    code</a
-                  >
-                  <a
-                    class="projectLinks"
-                    href="https://skeanster.github.io/facebook-clone-react/"
-                    target="_blank"
-                    rel="noopener"
-                    rel="noreferrer"
-                    ><img
-                      id="project-website"
-                      src="images/website.svg"
-                      alt="project website link"
-                    />
-                    live</a
-                  >
-                </div>
+        <div class="project">
+          <img class="projectImage" src="images/baseball.png" alt="webstore project screenshot" />
+          <div class="projectText">
+            <div class="projectTextContainer">
+              <h4 class="projectTextHeading">Padres Pitcher/Batter Anlysis</h4>
+              <p class="projectTextDescripion">
+                A full-stack app for analyzing Padres pitcher and batter stats from July 2024.
+              </p>
+              <div class="project-tech-list">
+                <p>React</p>
+                <p>Flask</p>
+                <p>MySql</p>
+              </div>
+              <div class="projectTextLinks">
+                <a class="projectLinks" href="https://github.com/skeanster/baseball-data-analysis-app" target="_blank"
+                  rel="noopener" rel="noreferrer"><img class="project-github" src="images/github.svg"
+                    alt="project github link" />
+                </a>
               </div>
             </div>
           </div>
-          <div class="project">
-            <img
-              class="projectImage"
-              src="images/fakestore.png"
-              alt="webstore project screenshot"
-            />
-            <div class="projectText">
-              <div class="projectTextContainer">
-                <h4 class="projectTextHeading">Fake Ecommerce</h4>
-                <p class="projectTextDescripion">
-                  This fake web store was built using React. Browse, add or
-                  remove items from your cart, and checkout when you're ready!
-                </p>
-                <div class="projectTextLinks">
-                  <a
-                    class="projectLinks"
-                    href="https://github.com/skeanster/web-store"
-                    target="_blank"
-                    rel="noopener"
-                    rel="noreferrer"
-                    ><img
-                      class="project-github"
-                      src="images/github.svg"
-                      alt="project github link"
-                    />
-                    code</a
-                  >
-                  <a
-                    class="projectLinks"
-                    href="https://skeanster.github.io/web-store/"
-                    target="_blank"
-                    rel="noopener"
-                    rel="noreferrer"
-                    ><img
-                      id="project-website"
-                      src="images/website.svg"
-                      alt="project website link"
-                    />
-                    live</a
-                  >
-                </div>
+        </div>
+        <div class="project">
+          <img class="projectImage" src="images/ios_app.png" alt="ios app project screenshot" />
+          <div class="projectText">
+            <div class="projectTextContainer">
+              <h4 class="projectTextHeading">iOS Market Data App</h4>
+              <p class="projectTextDescripion">
+                A fun project to challenge myself with a new language and Xcode—an eye-opening shift from my usual
+                VSCode workflow.
+              </p>
+              <div class="project-tech-list">
+                <p>Swift</p>
+                <p>Financial Modeling Prep API</p>
+                <p>Xcode</p>
+              </div>
+              <div class="projectTextLinks">
+                <a class="projectLinks" href="https://github.com/skeanster/stock-app" target="_blank" rel="noopener"
+                  rel="noreferrer"><img class="project-github" src="images/github.svg" alt="project github link" />
+                </a>
               </div>
             </div>
           </div>
-          <div class="project">
-            <img
-              class="projectImage"
-              src="images/python-project.png"
-              alt="python project screenshot"
-            />
-            <div class="projectText">
-              <div class="projectTextContainer">
-                <h4 class="projectTextHeading">Python Mock Backend</h4>
-                <p class="projectTextDescripion">
-                  Built using Python, Flask, and MySQL. This mock backend is a
-                  collection of endpoints built to leverage Airbnb data sourced
-                  from
-                  <a href="http://insideairbnb.com/get-the-data/"
-                    >Inside Airbnb</a
-                  >. There is also a Postman collection included in the
-                  sourcecode.
-                </p>
-                <div class="projectTextLinks">
-                  <a
-                    class="projectLinks"
-                    href="https://github.com/skeanster/python-backend-project"
-                    target="_blank"
-                    rel="noopener"
-                    rel="noreferrer"
-                    ><img
-                      target="_blank"
-                      class="project-github"
-                      src="images/github.svg"
-                      alt="project github link"
-                    />
-                    code</a
-                  >
-                </div>
+        </div>
+        <div class="project">
+          <img class="projectImage" src="images/python-project.png" alt="python project screenshot" />
+          <div class="projectText">
+            <div class="projectTextContainer">
+              <h4 class="projectTextHeading">Python Mock Backend</h4>
+              <p class="projectTextDescripion">
+                Built using Python, Flask, and MySQL. This mock backend is a
+                collection of endpoints built to interact with Airbnb data sourced
+                from
+                <a href="http://insideairbnb.com/get-the-data/">Inside Airbnb</a>.
+              </p>
+              <div class="project-tech-list">
+                <p>Python</p>
+                <p>Flask</p>
+                <p>MySQL</p>
               </div>
-            </div>
-          </div>
-          <div class="project">
-            <img
-              class="projectImage"
-              src="images/ios_app.png"
-              alt="ios app project screenshot"
-            />
-            <div class="projectText">
-              <div class="projectTextContainer">
-                <h4 class="projectTextHeading">iOS Market Data App</h4>
-                <p class="projectTextDescripion">
-                  This project was built to test my ability to learn new
-                  languages and try something fun! Working in the xcode
-                  environment was a very interesting learning experience coming
-                  from mostly using vscode up to this point.
-                </p>
-                <div class="projectTextLinks">
-                  <a
-                    class="projectLinks"
-                    href="https://github.com/skeanster/stock-app"
-                    target="_blank"
-                    rel="noopener"
-                    rel="noreferrer"
-                    ><img
-                      class="project-github"
-                      src="images/github.svg"
-                      alt="project github link"
-                    />
-                    code</a
-                  >
-                </div>
+              <div class="projectTextLinks">
+                <a class="projectLinks" href="https://github.com/skeanster/python-backend-project" target="_blank"
+                  rel="noopener" rel="noreferrer"><img target="_blank" class="project-github" src="images/github.svg"
+                    alt="project github link" />
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="footer">
-      <a
-        href="https://github.com/skeanster"
-        target="_blank"
-        rel="noopener"
-        rel="noreferrer"
-        ><img
-          id="github-footer"
-          src="images/icon_github.svg"
-          alt="github footer link"
-      /></a>
-      <a
-        href="https://www.linkedin.com/in/ryanskeans/"
-        target="_blank"
-        rel="noopener"
-        rel="noreferrer"
-        ><img
-          id="linkedin"
-          src="images/linkeding.svg"
-          alt="linkedin footer link"
-      /></a>
-      ryanskeans@gmail.com
-    </div>
-  </body>
+  </div>
+  <div class="footer">
+    <a href="https://github.com/skeanster" target="_blank" rel="noopener" rel="noreferrer"><img id="github-footer"
+        src="images/icon_github.svg" alt="github footer link" /></a>
+    <a href="https://www.linkedin.com/in/ryanskeans/" target="_blank" rel="noopener" rel="noreferrer"><img id="linkedin"
+        src="images/linkeding.svg" alt="linkedin footer link" /></a>
+    ryanskeans@gmail.com
+  </div>
+</body>
+
 </html>
