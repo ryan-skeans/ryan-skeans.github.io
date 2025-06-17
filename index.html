@@ -8,25 +8,23 @@
   <meta name="description" content="Ryan Skeans – Software Engineer" />
   <link rel="shortcut icon" type="image/jpg" href="./images/favicon.ico" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.2/dist/tailwind.min.css" rel="stylesheet">
+  <script type="module" src="index.js" defer></script>
 </head>
 
 <body class="m-0 bg-gray-900 text-gray-100 antialiased">
 
-<!-- Nav -->
-<nav
-  class="w-[90%] max-w-[1200px] mx-auto fixed inset-x-0 top-4 z-50 bg-gray-800/40 backdrop-blur-md border border-white/10 drop-shadow-[0_4px_12px_rgba(255,255,255,0.1)] rounded-xl">
-  <div class="px-6 py-4 flex justify-between items-center">
-    <a href="#" class="text-2xl font-semibold text-white">Ryan Skeans</a>
-    <div class="space-x-6 text-white">
-      <a href="#projects" class="hover:text-indigo-300 transition">Projects</a>
-      <a href="#skills" class="hover:text-indigo-300 transition">Skills</a>
-      <a href="#contact" class="hover:text-indigo-300 transition">Contact</a>
+  <!-- Nav -->
+  <nav
+    class="w-[90%] max-w-[1300px] mx-auto fixed inset-x-0 top-4 z-50 backdrop-blur-md border border-white/10 drop-shadow-[0_2px_6px_rgba(255,255,255,0.1)] rounded-xl">
+    <div class="px-4 py-3 flex justify-between items-center">
+      <a href="#" class="text-2xl font-medium text-white">Ryan Skeans</a>
+      <div class="space-x-6 text-white">
+        <a href="#projects" class="hover:text-indigo-400 transition">Projects</a>
+        <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
+        <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
+      </div>
     </div>
-  </div>
-</nav>
-
-
+  </nav>
 
   <!-- Hero -->
   <header class="relative bg-gray-800">
@@ -40,7 +38,7 @@
         <!-- Button and Icons Container -->
         <div class="flex items-center space-x-6">
           <a href="files/Resume.pdf" download
-            class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+            class="inline-flex items-center px-6 py-3 bg-indigo-700 text-white rounded-lg hover:bg-indigo-600">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -63,7 +61,7 @@
 
       <div class="flex justify-center md:justify-end">
         <img src="images/IMG_4031.PNG" alt="Ryan Skeans"
-          class="w-80 h-80 object-cover rounded-full shadow-lg ring-4 ring-gray-700" />
+          class="w-100 h-100 object-cover rounded-full shadow-lg ring-4 ring-indigo-700" />
       </div>
     </div>
 
@@ -99,11 +97,11 @@
           <div class="mt-auto flex space-x-4">
             <a href="https://github.com/skeanster/facebook-clone-react" target="_blank"
               class="text-gray-400 hover:text-gray-100">
-              <img src="images/github.svg" alt="GitHub" class="w-6 h-6 invert" />
-            </a>
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/github.svg" alt="GitHub"
+                class="w-5 h-5 invert" /> </a>
             <a href="https://skeanster.github.io/facebook-clone-react/" target="_blank"
               class="text-gray-400 hover:text-gray-100">
-              <img src="images/external-link-svg.svg" alt="Live Demo" class="w-6 h-6 invert" />
+              <img src="images/external-link-svg.svg" alt="Live Demo" class="transform scale-125 w-5 h-5 invert" />
             </a>
           </div>
         </div>
@@ -118,11 +116,11 @@
             <span class="px-2 py-1 bg-green-700 text-green-100 rounded">Flask</span>
             <span class="px-2 py-1 bg-green-700 text-green-100 rounded">MySQL</span>
           </div>
-          <div class="mt-auto">
+          <div class="mt-auto flex space-x-4">
             <a href="https://github.com/skeanster/baseball-data-analysis-app" target="_blank"
-              class="inline-block text-blue-400 hover:underline">
-              View on GitHub
-            </a>
+              class="text-gray-400 hover:text-gray-100">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/github.svg" alt="GitHub"
+                class="w-5 h-5 invert" /> </a>
           </div>
         </div>
 
@@ -137,11 +135,10 @@
             <span class="px-2 py-1 bg-pink-700 text-pink-100 rounded">Stock API</span>
             <span class="px-2 py-1 bg-pink-700 text-pink-100 rounded">Xcode</span>
           </div>
-          <div class="mt-auto">
-            <a href="https://github.com/skeanster/stock-app" target="_blank"
-              class="inline-block text-blue-400 hover:underline">
-              View on GitHub
-            </a>
+          <div class="mt-auto flex space-x-4">
+            <a href="https://github.com/skeanster/stock-app" target="_blank" class="text-gray-400 hover:text-gray-100">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/github.svg" alt="GitHub"
+                class="w-5 h-5 invert" /> </a>
           </div>
         </div>
 
@@ -157,11 +154,11 @@
             <span class="px-2 py-1 bg-yellow-700 text-yellow-100 rounded">Flask</span>
             <span class="px-2 py-1 bg-yellow-700 text-yellow-100 rounded">MySQL</span>
           </div>
-          <div class="mt-auto">
+          <div class="mt-auto flex space-x-4">
             <a href="https://github.com/skeanster/python-backend-project" target="_blank"
-              class="inline-block text-blue-400 hover:underline">
-              View on GitHub
-            </a>
+              class="text-gray-400 hover:text-gray-100">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/github.svg" alt="GitHub"
+                class="w-5 h-5 invert" /> </a>
           </div>
         </div>
       </div>
@@ -170,49 +167,142 @@
 
 
   <!-- Skills -->
-  <section id="skills" class="py-20">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-semibold mb-8">Languages & Tools</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="flex flex-col items-center">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/html5.svg" alt="HTML5"
-            class="w-12 h-12 mb-2 invert" />
-          <span>HTML5</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/css3.svg" alt="CSS3"
-            class="w-12 h-12 mb-2 invert" />
-          <span>CSS3</span>
-        </div>
-        <div class="flex flex-col items-center">
+  <section id="skills" class="py-24 bg-gray-950">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-8 tracking-tight text-gray-100">Languages & Tools</h2>
+
+      <!-- Filters -->
+      <div id="skill-filters" class="flex flex-wrap justify-center gap-4 mb-12">
+        <button data-filter="all"
+          class="filter-btn px-4 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-500 transition">All</button>
+        <button data-filter="languages"
+          class="filter-btn px-4 py-2 bg-gray-700 text-gray-200 rounded-full hover:bg-gray-600 transition">Languages</button>
+        <button data-filter="frameworks"
+          class="filter-btn px-4 py-2 bg-gray-700 text-gray-200 rounded-full hover:bg-gray-600 transition">Frameworks/Libraries</button>
+        <button data-filter="devops"
+          class="filter-btn px-4 py-2 bg-gray-700 text-gray-200 rounded-full hover:bg-gray-600 transition">Cloud/DevOps</button>
+      </div>
+
+      <!-- Grid -->
+      <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-4">
+        <!-- Languages -->
+        <div data-category="languages"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/javascript.svg" alt="JavaScript"
-            class="w-12 h-12 mb-2 invert" />
-          <span>JavaScript</span>
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">JavaScript</p>
         </div>
-        <div class="flex flex-col items-center">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/react.svg" alt="React"
-            class="w-12 h-12 mb-2 invert" />
-          <span>React</span>
+        <div data-category="languages"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/typescript.svg" alt="TypeScript"
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">TypeScript</p>
         </div>
-        <div class="flex flex-col items-center">
+        <div data-category="languages"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/html5.svg" alt="HTML5"
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">HTML5</p>
+        </div>
+        <div data-category="languages"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/css3.svg" alt="CSS3"
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">CSS3</p>
+        </div>
+        <div data-category="languages"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/python.svg" alt="Python"
-            class="w-12 h-12 mb-2 invert" />
-          <span>Python</span>
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">Python</p>
         </div>
-        <div class="flex flex-col items-center">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/nodedotjs.svg" alt="Node.js"
-            class="w-12 h-12 mb-2 invert" />
-          <span>Node.js</span>
+        <div data-category="languages"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/mysql.svg" alt="SQL"
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">SQL</p>
         </div>
-        <div class="flex flex-col items-center">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/git.svg" alt="Git"
-            class="w-12 h-12 mb-2 invert" />
-          <span>Git</span>
+
+        <!-- Frameworks -->
+        <div data-category="frameworks"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-indigo-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/react.svg" alt="React"
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">React</p>
         </div>
-        <div class="flex flex-col items-center">
+        <div data-category="frameworks"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-indigo-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/webcomponentsdotorg.svg" alt="Web Components"
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">Web Components</p>
+        </div>
+        <div data-category="frameworks"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-indigo-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/nodedotjs.svg" alt="nodedotjs"
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">Node.js</p>
+        </div>
+        <div data-category="frameworks"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-indigo-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/express.svg" alt="Express.js"
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">Express.js</p>
+        </div>
+        <div data-category="frameworks"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-indigo-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/graphql.svg" alt="GraphQL"
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">GraphQL</p>
+        </div>
+        <div data-category="frameworks"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-indigo-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/materialdesign.svg" alt="Material Design"
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">Material Design</p>
+        </div>
+        <div data-category="frameworks"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-indigo-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/d3dotjs.svg" alt="D3.js"
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">D3.js</p>
+        </div>
+        <div data-category="frameworks"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-indigo-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/tailwindcss.svg" alt="tailwindcss"
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">Tailwind</p>
+        </div>
+        <div data-category="frameworks"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-indigo-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/flask.svg" alt="flask"
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">Flask</p>
+        </div>
+
+        <!-- DevOps -->
+        <div data-category="devops"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-green-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/amazonaws.svg" alt="amazonaws"
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">Aws</p>
+        </div>
+        <div data-category="devops"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-green-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/docker.svg" alt="Docker"
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">Docker</p>
+        </div>
+        <div data-category="devops"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-green-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/jenkins.svg" alt="Jenkins"
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">Jenkins</p>
+        </div>
+        <div data-category="devops"
+          class="skill-card group p-4 bg-gray-800/80 rounded-xl shadow-md border-t-4 border-green-500 hover:shadow-xl hover:scale-105 transition-all duration-300">
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/firebase.svg" alt="Firebase"
-            class="w-12 h-12 mb-2 invert" />
-          <span>Firebase</span>
+            class="w-10 h-10 mx-auto mb-4 invert" />
+          <p class="text-sm text-gray-300 group-hover:text-white transition">Firebase</p>
         </div>
       </div>
     </div>
