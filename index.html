@@ -2,244 +2,240 @@
 <html lang="en">
 
 <head>
-  <title>Ryan Skeans</title>
-  <link href="index.css" rel="stylesheet" />
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script type="module" src="index.js" defer></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
-  <link rel="shortcut icon" type="image/jpg" href="./images/favicon.ico" />
-  <meta name="description" content="Ryan's Portfolio" />
-  <meta name="keywords" content="HTML, CSS, JavaScript, Ryan, Ryan Skeans" />
-  <meta name="author" content="Ryan Skeans" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta charset="UTF-8" />
-  <meta name="theme-color" content="#1b1b1b" />
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ryan Skeans</title>
+  <meta name="description" content="Ryan Skeans – Software Engineer" />
+  <link rel="shortcut icon" type="image/jpg" href="./images/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
-  <div class="pageWrap">
-    <div class="aboutWrap">
-      <div class="about">
-        <div class="about-container">
-          <div class="text">
-            <h1 class="big-name" id="big-name">Hi, I'm Ryan</h1>
-            <p class="bio" id="bio">
-              I excel at working with diverse groups in order to deliver
-              intuitive products that my users love. Scroll down to see some
-              of my projects outside the workplace.
-            </p>
-            <div class="resumeFlex" id="resumeFlex">
-              <a class="cv1" id="resume1" href="files/Resume.pdf" download id="download">
-                Resume
-              </a>
-              <a class="cv1" id="linkedin1" href="https://www.linkedin.com/in/ryanskeans/" id="download" target="_blank"
-                rel="noopener" rel="noreferrer">
-                Linkedin
-              </a>
-              <a class="cv1" id="github1" href="https://github.com/skeanster" id="download" target="_blank"
-                rel="noopener" rel="noreferrer">
-                Github
-              </a>
-            </div>
-          </div>
-        </div>
-        <div>
-          <img id="profile-desktop" src="images/IMG_4031.PNG" alt="profile picture" />
-        </div>
-      </div>
-      <img src="/images/arrow_down.svg" class="arrow1" alt="scroll down" />
-    </div>
-    <div class="skills-title">
-      <div class="line"></div>
-      <h2>Languages and Tools</h2>
-    </div>
-    <div class="skillsSection">
-      <div class="skillsCard">
-        <div class="languagesContainer">
-          <h3 class="languagesTitle">Languages</h3>
-          <div class="language">
-            <img class="iconClass" src="images/icon_html.svg" alt="html icon" />
-            HTML
-          </div>
-          <div class="language">
-            <img class="iconClass" src="images/icon_css.svg" alt="css icon" />
-            CSS
-          </div>
-          <div class="language">
-            <img class="iconClass" src="images/icon_sass.svg" alt="sass icon" />
-            SASS
-          </div>
-          <div class="language">
-            <img class="iconClass" src="images/icon_javascript.svg" alt="javascript icon" />
-            Javascript
-          </div>
-          <div class="language">
-            <img class="iconClass" src="images/icon_react.svg" alt="react icon" />
-            React
-          </div>
-          <div class="language">
-            <img class="iconClass" src="images/icon_nodejs.svg" alt="node.js icon" />
-            Node.Js
-          </div>
-          <div class="language">
-            <img class="iconClass" src="images/icon_express.svg" alt="express icon" />
-            Express
-          </div>
-          <div class="language">
-            <img class="iconClass" src="images/icon_mysql.svg" alt="MySQLIcon" />
-            MySQL
-          </div>
-          <div class="language">
-            <img class="iconClass" src="images/python-127-svgrepo-com.svg" alt="PythonIcon" />
-            Python
-          </div>
-        </div>
-      </div>
-      <div class="toolsCard">
-        <div class="toolsContainer">
-          <h3 class="toolsTitle">Tools</h3>
-          <div class="tool">
-            <img class="iconClass" src="images/icon_git.svg" alt="git icon" />
-            Git
-          </div>
-          <div class="tool">
-            <img class="iconClass" src="images/icon_github.svg" alt="github icon" />
-            Github
-          </div>
-          <div class="tool">
-            <img class="iconClass" src="images/icon_firebase.svg" alt="Firebase icon" />
-            Firebase
-          </div>
-          <div class="tool">
-            <img class="iconClass" src="images/icon_webpack.svg" alt="Webpackicon" />
-            Webpack
-          </div>
-          <div class="tool">
-            <img class="iconClass" src="images/icon_figma.svg" alt="Figma icon" />
-            Figma
-          </div>
-          <div class="tool">
-            <img class="iconClass" src="images/icon_linux.svg" alt="Linux icon" />
-            Linux
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="projects-title">
-      <h2>My Favorite Projects</h2>
-      <div class="line"></div>
-    </div>
-    <div class="projectsContainer">
-      <div class="projects">
-        <div class="project">
-          <img class="projectImage" src="images/facebook.png" alt="facebook project screenshot" />
-          <div class="projectText">
-            <div class="projectTextContainer">
-              <h4 class="projectTextHeading">Facebook Clone</h4>
-              <p class="projectTextDescripion">
-                Built with React and Firebase, this app lets users log in, post, comment, like, and update their
-                username.
+<body class="m-0 bg-gray-900 text-gray-100 antialiased">
 
-
-              </p>
-              <div class="project-tech-list">
-                <p>React</p>
-                <p>Firebase</p>
-                <p>CSS</p>
-              </div>
-              <div class="projectTextLinks">
-                <a class="projectLinks" href="https://github.com/skeanster/facebook-clone-react" target="_blank"
-                  rel="noopener" rel="noreferrer"><img class="project-github" src="images/github.svg"
-                    alt="project github link" />
-                </a>
-                <a class="projectLinks" href="https://skeanster.github.io/facebook-clone-react/" target="_blank"
-                  rel="noopener" rel="noreferrer"><img id="project-website" src="images/external-link-svg.svg"
-                    alt="project website link" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="project">
-          <img class="projectImage" src="images/baseball.png" alt="webstore project screenshot" />
-          <div class="projectText">
-            <div class="projectTextContainer">
-              <h4 class="projectTextHeading">Padres Pitcher/Batter Anlysis</h4>
-              <p class="projectTextDescripion">
-                A full-stack app for analyzing Padres pitcher and batter stats from July 2024.
-              </p>
-              <div class="project-tech-list">
-                <p>React</p>
-                <p>Flask</p>
-                <p>MySql</p>
-              </div>
-              <div class="projectTextLinks">
-                <a class="projectLinks" href="https://github.com/skeanster/baseball-data-analysis-app" target="_blank"
-                  rel="noopener" rel="noreferrer"><img class="project-github" src="images/github.svg"
-                    alt="project github link" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="project">
-          <img class="projectImage" src="images/ios_app.png" alt="ios app project screenshot" />
-          <div class="projectText">
-            <div class="projectTextContainer">
-              <h4 class="projectTextHeading">iOS Market Data App</h4>
-              <p class="projectTextDescripion">
-                A fun project to challenge myself with a new language and Xcode—an eye-opening shift from my usual
-                VSCode workflow.
-              </p>
-              <div class="project-tech-list">
-                <p>Swift</p>
-                <p>Stock Market API</p>
-                <p>Xcode</p>
-              </div>
-              <div class="projectTextLinks">
-                <a class="projectLinks" href="https://github.com/skeanster/stock-app" target="_blank" rel="noopener"
-                  rel="noreferrer"><img class="project-github" src="images/github.svg" alt="project github link" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="project">
-          <img class="projectImage" src="images/python-project.png" alt="python project screenshot" />
-          <div class="projectText">
-            <div class="projectTextContainer">
-              <h4 class="projectTextHeading">Python Mock Backend</h4>
-              <p class="projectTextDescripion">
-                Built using Python, Flask, and MySQL. This mock backend is a
-                collection of endpoints built to interact with Airbnb data sourced
-                from
-                <a href="http://insideairbnb.com/get-the-data/">Inside Airbnb</a>.
-              </p>
-              <div class="project-tech-list">
-                <p>Python</p>
-                <p>Flask</p>
-                <p>MySQL</p>
-              </div>
-              <div class="projectTextLinks">
-                <a class="projectLinks" href="https://github.com/skeanster/python-backend-project" target="_blank"
-                  rel="noopener" rel="noreferrer"><img target="_blank" class="project-github" src="images/github.svg"
-                    alt="project github link" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<!-- Nav -->
+<nav
+  class="w-[90%] max-w-[1200px] mx-auto fixed inset-x-0 top-4 z-50 bg-gray-800/40 backdrop-blur-md border border-white/10 drop-shadow-[0_4px_12px_rgba(255,255,255,0.1)] rounded-xl">
+  <div class="px-6 py-4 flex justify-between items-center">
+    <a href="#" class="text-2xl font-semibold text-white">Ryan Skeans</a>
+    <div class="space-x-6 text-white">
+      <a href="#projects" class="hover:text-indigo-300 transition">Projects</a>
+      <a href="#skills" class="hover:text-indigo-300 transition">Skills</a>
+      <a href="#contact" class="hover:text-indigo-300 transition">Contact</a>
     </div>
   </div>
-  <div class="footer">
-    <a href="https://github.com/skeanster" target="_blank" rel="noopener" rel="noreferrer"><img id="github-footer"
-        src="images/icon_github.svg" alt="github footer link" /></a>
-    <a href="https://www.linkedin.com/in/ryanskeans/" target="_blank" rel="noopener" rel="noreferrer"><img id="linkedin"
-        src="images/linkeding.svg" alt="linkedin footer link" /></a>
-    ryanskeans@gmail.com
-  </div>
+</nav>
+
+
+
+  <!-- Hero -->
+  <header class="relative bg-gray-800">
+    <div class="max-w-4xl mx-auto px-6 py-32 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <h1 class="text-6xl font-bold leading-tight">Hi, I’m Ryan.</h1>
+        <p class="text-lg leading-relaxed text-gray-300">
+          I partner with cross‑functional teams to craft intuitive digital products that delight users. Explore my work
+          below.
+        </p>
+        <!-- Button and Icons Container -->
+        <div class="flex items-center space-x-6">
+          <a href="files/Resume.pdf" download
+            class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Resume
+          </a>
+          <a href="https://www.linkedin.com/in/ryanskeans/" target="_blank"
+            class="inline-flex items-center justify-center p-2 hover:opacity-80">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/linkedin.svg" alt="LinkedIn"
+              class="w-8 h-8 invert" />
+          </a>
+          <a href="https://github.com/skeanster" target="_blank"
+            class="inline-flex items-center justify-center p-2 hover:opacity-80">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/github.svg" alt="GitHub"
+              class="w-8 h-8 invert" />
+          </a>
+        </div>
+      </div>
+
+      <div class="flex justify-center md:justify-end">
+        <img src="images/IMG_4031.PNG" alt="Ryan Skeans"
+          class="w-80 h-80 object-cover rounded-full shadow-lg ring-4 ring-gray-700" />
+      </div>
+    </div>
+
+    <div class="absolute bottom-6 inset-x-0 flex justify-center">
+      <a href="#projects" class="animate-bounce">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </a>
+    </div>
+  </header>
+
+
+
+
+  <!-- Projects -->
+  <section id="projects" class="py-20 bg-gray-900">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-semibold text-center mb-12">My Favorite Projects</h2>
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition p-6 flex flex-col">
+          <img src="images/facebook.png" alt="Facebook Clone" class="rounded-lg mb-4 object-cover h-48 w-full" />
+          <h3 class="text-xl font-bold mb-2">Facebook Clone</h3>
+          <p class="flex-1 mb-4 text-gray-300">
+            A React & Firebase app where users can post, comment, like, and customize their profile.
+          </p>
+          <div class="flex flex-wrap gap-2 text-sm mb-4">
+            <span class="px-2 py-1 bg-blue-700 text-blue-100 rounded">React</span>
+            <span class="px-2 py-1 bg-blue-700 text-blue-100 rounded">Firebase</span>
+            <span class="px-2 py-1 bg-blue-700 text-blue-100 rounded">CSS</span>
+          </div>
+          <div class="mt-auto flex space-x-4">
+            <a href="https://github.com/skeanster/facebook-clone-react" target="_blank"
+              class="text-gray-400 hover:text-gray-100">
+              <img src="images/github.svg" alt="GitHub" class="w-6 h-6 invert" />
+            </a>
+            <a href="https://skeanster.github.io/facebook-clone-react/" target="_blank"
+              class="text-gray-400 hover:text-gray-100">
+              <img src="images/external-link-svg.svg" alt="Live Demo" class="w-6 h-6 invert" />
+            </a>
+          </div>
+        </div>
+        <div class="bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition p-6 flex flex-col">
+          <img src="images/baseball.png" alt="Padres Analysis" class="rounded-lg mb-4 object-cover h-48 w-full" />
+          <h3 class="text-xl font-bold mb-2">Padres Pitcher/Batter Analysis</h3>
+          <p class="flex-1 mb-4 text-gray-300">
+            Full‑stack analytics dashboard for July 2024 Padres stats, built with React, Flask & MySQL.
+          </p>
+          <div class="flex flex-wrap gap-2 text-sm mb-4">
+            <span class="px-2 py-1 bg-green-700 text-green-100 rounded">React</span>
+            <span class="px-2 py-1 bg-green-700 text-green-100 rounded">Flask</span>
+            <span class="px-2 py-1 bg-green-700 text-green-100 rounded">MySQL</span>
+          </div>
+          <div class="mt-auto">
+            <a href="https://github.com/skeanster/baseball-data-analysis-app" target="_blank"
+              class="inline-block text-blue-400 hover:underline">
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition p-6 flex flex-col">
+          <img src="images/ios_app.png" alt="iOS Market Data App" class="rounded-lg mb-4 object-cover h-48 w-full" />
+          <h3 class="text-xl font-bold mb-2">iOS Market Data App</h3>
+          <p class="flex-1 mb-4 text-gray-300">
+            A Swift & Xcode experiment fetching live stock‑market data with a native iOS UI.
+          </p>
+          <div class="flex flex-wrap gap-2 text-sm mb-4">
+            <span class="px-2 py-1 bg-pink-700 text-pink-100 rounded">Swift</span>
+            <span class="px-2 py-1 bg-pink-700 text-pink-100 rounded">Stock API</span>
+            <span class="px-2 py-1 bg-pink-700 text-pink-100 rounded">Xcode</span>
+          </div>
+          <div class="mt-auto">
+            <a href="https://github.com/skeanster/stock-app" target="_blank"
+              class="inline-block text-blue-400 hover:underline">
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition p-6 flex flex-col">
+          <img src="images/python-project.png" alt="Python Mock Backend"
+            class="rounded-lg mb-4 object-cover h-48 w-full" />
+          <h3 class="text-xl font-bold mb-2">Python Mock Backend</h3>
+          <p class="flex-1 mb-4 text-gray-300">
+            Flask & MySQL API endpoints serving Airbnb data—practice in backend design and data modeling.
+          </p>
+          <div class="flex flex-wrap gap-2 text-sm mb-4">
+            <span class="px-2 py-1 bg-yellow-700 text-yellow-100 rounded">Python</span>
+            <span class="px-2 py-1 bg-yellow-700 text-yellow-100 rounded">Flask</span>
+            <span class="px-2 py-1 bg-yellow-700 text-yellow-100 rounded">MySQL</span>
+          </div>
+          <div class="mt-auto">
+            <a href="https://github.com/skeanster/python-backend-project" target="_blank"
+              class="inline-block text-blue-400 hover:underline">
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Skills -->
+  <section id="skills" class="py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-semibold mb-8">Languages & Tools</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="flex flex-col items-center">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/html5.svg" alt="HTML5"
+            class="w-12 h-12 mb-2 invert" />
+          <span>HTML5</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/css3.svg" alt="CSS3"
+            class="w-12 h-12 mb-2 invert" />
+          <span>CSS3</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/javascript.svg" alt="JavaScript"
+            class="w-12 h-12 mb-2 invert" />
+          <span>JavaScript</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/react.svg" alt="React"
+            class="w-12 h-12 mb-2 invert" />
+          <span>React</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/python.svg" alt="Python"
+            class="w-12 h-12 mb-2 invert" />
+          <span>Python</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/nodedotjs.svg" alt="Node.js"
+            class="w-12 h-12 mb-2 invert" />
+          <span>Node.js</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/git.svg" alt="Git"
+            class="w-12 h-12 mb-2 invert" />
+          <span>Git</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/firebase.svg" alt="Firebase"
+            class="w-12 h-12 mb-2 invert" />
+          <span>Firebase</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-gray-800 py-12">
+    <div class="max-w-4xl mx-auto px-6 text-center space-y-4">
+      <a href="mailto:ryanskeans@gmail.com" class="text-blue-400 hover:underline">ryanskeans@gmail.com</a>
+      <div class="flex justify-center space-x-6 pt-4">
+        <a href="https://github.com/skeanster" target="_blank">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/github.svg" alt="GitHub"
+            class="w-6 h-6 invert" />
+        </a>
+        <a href="https://www.linkedin.com/in/ryanskeans/" target="_blank">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/linkedin.svg" alt="LinkedIn"
+            class="w-6 h-6 invert" />
+        </a>
+      </div>
+      <p class="text-sm text-gray-500">&copy; 2025 Ryan Skeans. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 
 </html>
