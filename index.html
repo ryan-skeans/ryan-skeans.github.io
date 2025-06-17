@@ -9,22 +9,44 @@
   <link rel="shortcut icon" type="image/jpg" href="./images/favicon.ico" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script type="module" src="index.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="m-0 bg-gray-900 text-gray-100 antialiased">
 
   <!-- Nav -->
-  <nav
-    class="w-[90%] max-w-[1300px] mx-auto fixed inset-x-0 top-4 z-50 backdrop-blur-md border border-white/10 drop-shadow-[0_2px_6px_rgba(255,255,255,0.1)] rounded-xl">
-    <div class="px-4 py-3 flex justify-between items-center">
-      <a href="#" class="text-2xl font-medium text-white">Ryan Skeans</a>
-      <div class="space-x-6 text-white">
-        <a href="#projects" class="hover:text-indigo-400 transition">Projects</a>
-        <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
-        <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
+  <nav class="fixed inset-x-0 top-4 mx-auto w-[90%] max-w-[1300px] z-50
+         backdrop-filter backdrop-blur-[40px] backdrop-brightness-85
+         bg-black/15 ring-1 ring-black/25
+         drop-shadow-[0_8px_24px_rgba(0,0,0,0.22)]
+         rounded-3xl
+         transition-colors duration-300 hover:bg-black/20">
+    <div class="px-6 py-3 flex justify-between items-center">
+      <a href="#" class="text-2xl font-semibold text-white drop-shadow-md">
+        Ryan Skeans
+      </a>
+      <div class="flex space-x-8 text-white">
+        <a href="#projects" class="relative hover:text-indigo-300 transition-colors duration-200">
+          Projects
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-indigo-300 scale-x-0 origin-left
+                     hover:scale-x-100 transition-transform duration-200"></span>
+        </a>
+        <a href="#skills" class="relative hover:text-indigo-300 transition-colors duration-200">
+          Skills
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-indigo-300 scale-x-0 origin-left
+                     hover:scale-x-100 transition-transform duration-200"></span>
+        </a>
+        <a href="#contact" class="relative hover:text-indigo-300 transition-colors duration-200">
+          Contact
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-indigo-300 scale-x-0 origin-left
+                     hover:scale-x-100 transition-transform duration-200"></span>
+        </a>
       </div>
     </div>
   </nav>
+
+
+
 
   <!-- Hero -->
   <header class="relative bg-gray-800">
