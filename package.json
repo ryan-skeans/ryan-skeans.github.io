@@ -1,7 +1,7 @@
 {
-  "name": "skeanster.github.io",
+  "name": "ryanskeans.github.io",
   "version": "1.0.0",
-  "description": "Check it out: [Live Demo](https://skeanster.github.io/) :point_left:",
+  "description": "Check it out: [Live Demo](https://ryanskeans.github.io/) :point_left:",
   "main": "index.js",
   "dependencies": {
     "countapi-js": "^1.0.2"
@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/skeanster/skeanster.github.io.git"
+    "url": "git+https://github.com/ryanskeans/ryanskeans.github.io.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/skeanster/skeanster.github.io/issues"
+    "url": "https://github.com/ryanskeans/ryanskeans.github.io/issues"
   },
-  "homepage": "https://github.com/skeanster/skeanster.github.io#readme"
+  "homepage": "https://github.com/ryanskeans/ryanskeans.github.io#readme"
 }
