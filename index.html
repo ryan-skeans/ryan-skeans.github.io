@@ -141,15 +141,42 @@
             <span class="px-2 py-1 bg-blue-700 text-blue-100 rounded">CSS</span>
           </div>
           <div class="mt-auto flex space-x-4">
-            <a href="https://github.com/ryanskeans/facebook-clone-react" target="_blank"
-              class="text-gray-400 hover:text-gray-100">
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/github.svg" alt="GitHub"
-                class="w-5 h-5 invert" /> </a>
-            <a href="https://ryanskeans.github.io/facebook-clone-react/" target="_blank"
-              class="text-gray-400 hover:text-gray-100">
-              <img src="images/external-link-svg.svg" alt="Live Demo" class="transform scale-125 w-5 h-5 invert" />
-            </a>
+            <!-- GitHub icon (disabled) -->
+            <div class="relative group">
+              <a class="text-gray-400 inline-flex items-center pointer-events-none opacity-70"
+                 aria-disabled="true" tabindex="-1" role="link" aria-label="GitHub — under construction">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/github.svg" alt="GitHub"
+                     class="w-5 h-5 invert" />
+              </a>
+          
+              <!-- Larger, dark-themed tooltip -->
+              <div
+                class="absolute -top-12 left-1/2 z-50 transform -translate-x-1/2 whitespace-nowrap px-3 py-2 rounded-lg
+                       bg-gray-800/95 ring-1 ring-white/10 text-base font-medium text-white shadow-2xl
+                       opacity-0 pointer-events-none group-hover:opacity-100 group-focus:opacity-100
+                       transition-all duration-180 -translate-y-1 group-hover:-translate-y-2">
+                Under construction
+              </div>
+            </div>
+          
+            <!-- Live Demo icon (disabled) -->
+            <div class="relative group">
+              <a class="text-gray-400 inline-flex items-center pointer-events-none opacity-70"
+                 aria-disabled="true" tabindex="-1" role="link" aria-label="Live demo — under construction">
+                <img src="images/external-link-svg.svg" alt="Live Demo"
+                     class="transform scale-125 w-5 h-5 invert" />
+              </a>
+          
+              <div
+                class="absolute -top-12 left-1/2 z-50 transform -translate-x-1/2 whitespace-nowrap px-3 py-2 rounded-lg
+                       bg-gray-800/95 ring-1 ring-white/10 text-base font-medium text-white shadow-2xl
+                       opacity-0 pointer-events-none group-hover:opacity-100 group-focus:opacity-100
+                       transition-all duration-180 -translate-y-1 group-hover:-translate-y-2">
+                Under construction
+              </div>
+            </div>
           </div>
+          
         </div>
         <div class="bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition p-6 flex flex-col">
           <img src="images/baseball.png" alt="Padres Analysis"
