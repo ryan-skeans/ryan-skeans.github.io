@@ -22,8 +22,8 @@ const projects: Project[] = [
         status: "Construction"
     },
     {
-        title: "Padres Analysis Dashboard",
-        description: "Full-stack analytics dashboard for Padres stats, built with React, Flask & MySQL.",
+        title: "Padres Data Analysis",
+        description: "Full-stack analytics dashboards for Padres pitching/batting stats, built with React, Flask & MySQL.",
         tags: ["React", "Flask", "MySQL"],
         image: "images/baseball.png",
         github: "https://github.com/ryan-skeans/baseball-data-analysis-app",
@@ -38,8 +38,8 @@ const projects: Project[] = [
         demo: null,
     },
     {
-        title: "Python Mock Backend",
-        description: "API endpoints serving Airbnb data. Practice in backend design and data modeling.",
+        title: "Mock AirBnb Backend",
+        description: "API endpoints serving Airbnb data from a MySQL database. Practice in backend design and data modeling.",
         tags: ["Python", "Flask", "MySQL"],
         image: "images/python-project.png",
         github: "https://github.com/ryan-skeans/python-backend-project",
