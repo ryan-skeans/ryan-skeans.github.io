@@ -49,7 +49,7 @@ const projects: Project[] = [
 
 export const Projects = () => {
     return (
-        <section id="projects" className="py-24 bg-dark-900 relative">
+        <section id="projects" className="py-24 bg-gray-50 dark:bg-dark-900 relative">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export const Projects = () => {
                     viewport={{ once: true }}
                     className="mb-16 text-center"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Featured Projects</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Featured Projects</h2>
                     <div className="h-1 w-20 bg-primary mx-auto rounded-full" />
                 </motion.div>
 
@@ -78,9 +78,9 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="group relative bg-[#1A1A1A] rounded-2xl overflow-hidden border border-white/5 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10"
+            className="group relative bg-white dark:bg-[#1A1A1A] rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 shadow-sm"
         >
-            <div className="aspect-video overflow-hidden bg-gray-800">
+            <div className="aspect-video overflow-hidden bg-gray-100 dark:bg-gray-800">
                 <img
                     src={project.image}
                     alt={project.title}
@@ -89,16 +89,16 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
             </div>
 
             <div className="p-8">
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-primary-light transition-colors">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
                     {project.title}
                 </h3>
-                <p className="text-gray-400 mb-6 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                     {project.description}
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-8">
                     {project.tags.map(tag => (
-                        <span key={tag} className="px-3 py-1 text-xs font-semibold bg-white/5 text-gray-300 rounded-full border border-white/5">
+                        <span key={tag} className="px-3 py-1 text-xs font-semibold bg-black/5 dark:bg-white/5 text-gray-600 dark:text-gray-300 rounded-full border border-black/5 dark:border-white/5">
                             {tag}
                         </span>
                     ))}
@@ -110,7 +110,7 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
                             href={project.github}
                             target="_blank"
                             rel="noreferrer"
-                            className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary-light transition-colors"
+                            className="flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary-light transition-colors"
                         >
                             <Github size={18} />
                             View Code
@@ -127,7 +127,7 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
                             href={project.demo}
                             target="_blank"
                             rel="noreferrer"
-                            className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary-light transition-colors"
+                            className="flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary-light transition-colors"
                         >
                             <ExternalLink size={18} />
                             Live Demo

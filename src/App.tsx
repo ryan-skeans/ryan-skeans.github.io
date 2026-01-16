@@ -7,7 +7,7 @@ import { Contact } from './sections/Contact';
 
 function App() {
   return (
-    <div className="bg-[#050505] min-h-screen text-white selection:bg-indigo-500/30">
+    <div className="min-h-screen selection:bg-primary/30 bg-gray-50 text-gray-900 dark:bg-[#050505] dark:text-gray-100 transition-colors duration-300">
       <Navbar />
       <main>
         <Hero />

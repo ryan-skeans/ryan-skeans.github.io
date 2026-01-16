@@ -21,27 +21,27 @@ export const Hero = () => {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.2, duration: 0.8 }}
-                        className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-primary-light text-sm font-medium"
+                        className="inline-block px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 text-primary-light text-sm font-medium"
                     >
                         Software Engineer
                     </motion.div>
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 dark:text-white leading-[1.1]">
                         Building User-First Digital Products.
                     </h1>
-                    <p className="text-lg text-gray-400 max-w-lg leading-relaxed">
+                    <p className="text-lg text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed">
                         I’m Ryan Skeans. A frontend-leaning product engineer who collaborates across teams to ship clean, intuitive experiences at scale.
                     </p>
 
                     <div className="flex flex-wrap gap-4 pt-4">
                         <a
                             href="#projects"
-                            className="px-8 py-4 bg-primary hover:bg-primary-hover text-white font-semibold rounded-full transition-all shadow-lg shadow-primary/25"
+                            className="px-8 py-4 bg-primary hover:bg-primary-hover text-white dark:text-gray-900 font-semibold rounded-full transition-all shadow-lg shadow-primary/25"
                         >
                             View Work
                         </a>
                         <a
                             href="#contact"
-                            className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold rounded-full transition-all"
+                            className="px-8 py-4 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 border border-black/5 dark:border-white/10 text-gray-900 dark:text-white font-semibold rounded-full transition-all"
                         >
                             Contact Me
                         </a>
