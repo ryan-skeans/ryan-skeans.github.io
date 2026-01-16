@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# Ryan Skeans - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website repository! This site showcases my work as a software engineer, featuring my projects, skills, and contact information. It's built with modern web technologies to be fast, responsive, and visually appealing.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check out the live site here: [ryan-skeans.github.io](https://ryan-skeans.github.io)
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project is built using the following technologies:
 
-## Expanding the ESLint configuration
+- **[React](https://react.dev/)**: For building the user interface.
+- **[TypeScript](https://www.typescriptlang.org/)**: For static type checking and better developer experience.
+- **[Vite](https://vitejs.dev/)**: Next Generation Frontend Tooling for blazing fast build times.
+- **[Tailwind CSS](https://tailwindcss.com/)**: For utility-first styling and a custom design system.
+- **[Framer Motion](https://www.framer.com/motion/)**: For smooth animations and interactive elements.
+- **[Lucide React](https://lucide.dev/)**: For clean and consistent icons.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Modern & Clean Design**: A minimalistic, "user-first" aesthetic with a focus on typography and spacing.
+- **Dark/Light Mode**: Fully supported theming with a persistent toggle.
+- **Responsive Layout**: Looks great on everything from mobile phones to large desktop screens.
+- **Smooth Animations**: Subtle entrance animations and hover effects using Framer Motion.
+- **Interactive Elements**: Dynamic project cards and skills display.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+To run this project locally on your machine, follow these steps:
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ryan-skeans/ryan-skeans.github.io.git
+   cd ryan-skeans.github.io
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+
+## Building for Production
+
+To create a production build:
+
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This will generate a `dist` folder ready to be deployed to GitHub Pages or any static site host.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## License
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project is open source and available under the [MIT License](LICENSE).
