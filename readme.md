@@ -54,7 +54,17 @@ To create a production build:
 npm run build
 ```
 
-This will generate a `dist` folder ready to be deployed to GitHub Pages or any static site host.
+This will generate a `dist` folder ready to be deployed.
+
+## Deployment
+
+To deploy this project to GitHub Pages, run:
+
+```bash
+npm run deploy
+```
+
+This will automatically build the project and push the build artifacts to the `gh-pages` branch.
 
 ## License
 
