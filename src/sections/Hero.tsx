@@ -67,7 +67,7 @@ export const Hero = () => {
             <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ repeat: Infinity, duration: 2 }}
-                className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-gray-500"
+                className="hidden md:block absolute bottom-10 left-1/2 transform -translate-x-1/2 text-gray-500"
             >
                 <ArrowDown size={24} />
             </motion.div>
