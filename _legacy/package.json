@@ -1,0 +1,23 @@
+{
+  "name": "ryanskeans.github.io",
+  "version": "1.0.0",
+  "description": "Check it out: [Live Demo](https://ryanskeans.github.io/) :point_left:",
+  "main": "index.js",
+  "dependencies": {
+    "countapi-js": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanskeans/ryanskeans.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanskeans/ryanskeans.github.io/issues"
+  },
+  "homepage": "https://github.com/ryanskeans/ryanskeans.github.io#readme"
+}
