@@ -61,31 +61,34 @@ export const Navbar = () => {
 
                     {/* Desktop Nav */}
                     <div className="hidden md:flex items-center space-x-8">
-                        {navLinks.map((link) => (
-                            <a
-                                key={link.name}
-                                href={link.href}
-                                className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white transition-colors"
-                            >
-                                {link.name}
-                            </a>
-                        ))}
-                        <div className="h-4 w-px bg-gray-300 dark:bg-gray-700" />
-                        <div className="flex items-center space-x-4">
+                        <div className="flex items-center space-x-8">
+                            {navLinks.map((link) => (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white transition-colors"
+                                >
+                                    {link.name}
+                                </a>
+                            ))}
+                        </div>
+
+                        <div className="flex items-center gap-4 pl-4">
                             <button
                                 onClick={toggleTheme}
-                                className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white transition-colors"
+                                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white transition-all"
                                 aria-label="Toggle theme"
                             >
-                                {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+                                {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
                             </button>
-                            <div className="h-4 w-px bg-gray-300 dark:bg-gray-700" />
+
                             <SocialLink href="https://github.com/ryan-skeans" icon={<Github size={18} />} label="GitHub" />
                             <SocialLink href="https://www.linkedin.com/in/ryanskeans/" icon={<Linkedin size={18} />} label="LinkedIn" />
+
                             <a
                                 href="/files/Resume.pdf"
                                 target="_blank"
-                                className="flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white dark:text-black bg-primary hover:bg-primary-hover rounded-full transition-all"
+                                className="flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white dark:text-black bg-primary hover:bg-primary-hover rounded-full transition-all ml-2"
                             >
                                 Resume
                             </a>
