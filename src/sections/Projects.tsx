@@ -10,8 +10,17 @@ interface Project {
     demo: string | null;
     status?: string;
 }
-
+// https://www.advent.com/genesis/?utm_source=google&utm_medium=cpc&utm_campaign=M-AD-Info-Kit-Advent-Genesis-gg&utm_content=CampaignID-21335411412-AdGroupID-166063573594-Keyword-ss%26c+genesis
 const projects: Project[] = [
+    {
+        title: "The Genesis Platform UI",
+        description: "The Genesis platform offers deep, purpose-built applications covering all facets of the investment lifecycle - portfolio management, trading, analytics, accounting, and reporting.",
+        tags: ["React", "TypeScript", "Redux", "Web Components"],
+        image: "images/genesis.jpeg",
+        github: null,
+        demo: "https://www.advent.com/genesis/?utm_source=google&utm_medium=cpc&utm_campaign=M-AD-Info-Kit-Advent-Genesis-gg&utm_content=CampaignID-21335411412-AdGroupID-166063573594-Keyword-ss%26c+genesis",
+        status: "ProductPage"
+    },
     {
         title: "Facebook Clone",
         description: "A social media platform where users can post, comment, like, and customize their profile.",
@@ -130,7 +139,7 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
                             className="flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary-light transition-colors"
                         >
                             <ExternalLink size={18} />
-                            Live Demo
+                            {project.status === "ProductPage" ? "Product Page" : "Live Demo"}
                         </a>
                     )}
                 </div>
