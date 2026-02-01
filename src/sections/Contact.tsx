@@ -8,7 +8,7 @@ export const Contact = () => {
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.1 }}
                     className="mb-12"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Let's build something amazing.</h2>
@@ -36,7 +36,7 @@ export const Contact = () => {
             </div>
 
             {/* Soft subtle glow at bottom */}
-            <div className="absolute bottom-[-20%] left-1/2 transform -translate-x-1/2 w-[800px] h-[300px] bg-primary/10 blur-[100px] rounded-full point-events-none" />
+            <div className="absolute bottom-[-20%] left-1/2 transform -translate-x-1/2 w-[800px] h-[300px] bg-primary/10 blur-[80px] rounded-full pointer-events-none will-change-transform" />
         </section>
     );
 };

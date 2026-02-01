@@ -15,7 +15,7 @@ export const Navbar = () => {
 
     const [theme, setTheme] = useState(() => {
         if (typeof window !== "undefined" && window.localStorage) {
-            return localStorage.getItem("theme") || "light";
+            return localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
         }
         return "light";
     });

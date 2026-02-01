@@ -37,7 +37,7 @@ export const Skills = () => {
         <section id="skills" className="py-32 relative bg-white dark:bg-[#0a0a0a]">
             {/* Background gradient */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-20 pointer-events-none">
-                <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-primary/30 rounded-full blur-[120px]" />
+                <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[80px] will-change-transform" />
             </div>
 
             <div className="relative z-10 max-w-5xl mx-auto px-6">
