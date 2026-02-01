@@ -32,6 +32,7 @@ const allTabs = ["Languages", "Frameworks", "Tools"];
 
 export const Skills = () => {
     const [activeTab, setActiveTab] = useState("Languages");
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
     return (
         <section id="skills" className="py-32 relative bg-white dark:bg-[#0a0a0a]">
@@ -72,14 +73,16 @@ export const Skills = () => {
 
                 <motion.div
                     key={activeTab}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.4 }}
+                    {...(!isMobile ? {
+                        initial: { opacity: 0, y: 10 },
+                        animate: { opacity: 1, y: 0 },
+                        exit: { opacity: 0, y: -10 },
+                        transition: { duration: 0.4 }
+                    } : {})}
                     className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"
                 >
                     {skills[activeTab as keyof typeof skills].map((skill) => (
-                        <SkillCard key={skill.name} skill={skill} />
+                        <SkillCard key={skill.name} skill={skill} isMobile={isMobile} />
                     ))}
                 </motion.div>
             </div>
@@ -87,13 +90,13 @@ export const Skills = () => {
     );
 };
 
-const SkillCard = ({ skill }: { skill: { name: string, icon: string } }) => {
+const SkillCard = ({ skill, isMobile }: { skill: { name: string, icon: string }, isMobile: boolean }) => {
     // Determine icon URL (using simpleicons CDN as before)
     const iconUrl = `https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/${skill.icon}.svg`;
 
     return (
         <motion.div
-            whileHover={{ y: -5 }}
+            {...(!isMobile ? { whileHover: { y: -5 } } : {})}
             className="flex flex-col items-center p-6 bg-gray-50 dark:bg-white/5 border border-black/5 dark:border-white/5 rounded-xl hover:bg-gray-100 dark:hover:bg-white/10 hover:border-primary/30 transition-all duration-300 group"
         >
             <img

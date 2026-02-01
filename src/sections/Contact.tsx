@@ -2,13 +2,17 @@ import { motion } from "framer-motion";
 import { Mail, Linkedin, Github } from "lucide-react";
 
 export const Contact = () => {
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
     return (
         <section id="contact" className="py-24 relative overflow-hidden bg-gray-50 dark:bg-black border-t border-black/5 dark:border-white/10">
             <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, amount: 0.1 }}
+                    {...(!isMobile ? {
+                        initial: { opacity: 0, scale: 0.9 },
+                        whileInView: { opacity: 1, scale: 1 },
+                        viewport: { once: true, amount: 0.1 }
+                    } : {})}
                     className="mb-12"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Let's build something amazing.</h2>
