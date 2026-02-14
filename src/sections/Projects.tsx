@@ -6,6 +6,7 @@ interface Project {
     description: string;
     tags: string[];
     image: string;
+    video?: string;
     github: string | null;
     demo: string | null;
     status?: string;
@@ -22,21 +23,24 @@ const projects: Project[] = [
         status: "ProductPage"
     },
     {
-        title: "Facebook Clone",
-        description: "A social media platform where users can post, comment, like, and customize their profile.",
-        tags: ["React", "Firebase", "CSS"],
-        image: "images/facebook.png",
+        title: "Score Island – Live Sports Scores",
+        description: "Chrome extension featuring a draggable Dynamic Island overlay for live sports scores across NBA, NFL, MLB, NHL, and more — no tab switching needed.",
+        tags: ["React", "TypeScript", "Chrome Extension", "Cloudflare Workers"],
+        image: "",
+        video: "https://www.youtube.com/embed/2ohyGmZjGzY",
         github: null,
-        demo: null,
-        status: "Construction"
+        demo: "https://chromewebstore.google.com/detail/score-island-live-sports/ohbnnnjjpgcekodkajamnocfbedmeknh",
+        status: "ChromeWebStore"
     },
     {
-        title: "Padres Data Analysis",
-        description: "Full-stack analytics dashboards for Padres pitching/batting stats, built with React, Flask & MySQL.",
-        tags: ["React", "Flask", "MySQL"],
-        image: "images/baseball.png",
-        github: "https://github.com/ryan-skeans/baseball-data-analysis-app",
-        demo: null,
+        title: "PolyDiscover – Polymarket Search",
+        description: "Chrome extension for instant Polymarket discovery. Highlight any text, right-click, and search prediction markets in a lightweight overlay.",
+        tags: ["React", "TypeScript", "Chrome Extension"],
+        image: "",
+        video: "https://www.youtube.com/embed/cXLsZNLs-pU",
+        github: null,
+        demo: "https://chromewebstore.google.com/detail/polydiscover-%E2%80%93-polymarket/agebcajnepddkkdigcloncjdfnacmaji",
+        status: "ChromeWebStore"
     },
     {
         title: "iOS Market Data App",
@@ -96,11 +100,21 @@ const ProjectCard = ({ project, index, isMobile }: { project: Project, index: nu
             className="group relative bg-white dark:bg-[#1A1A1A] rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 shadow-sm"
         >
             <div className="aspect-video overflow-hidden bg-gray-100 dark:bg-gray-800">
-                <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                {project.video ? (
+                    <iframe
+                        src={project.video}
+                        title={project.title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full"
+                    />
+                ) : (
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                )}
             </div>
 
             <div className="p-8">
@@ -145,7 +159,7 @@ const ProjectCard = ({ project, index, isMobile }: { project: Project, index: nu
                             className="flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary-light transition-colors"
                         >
                             <ExternalLink size={18} />
-                            {project.status === "ProductPage" ? "Product Page" : "Live Demo"}
+                            {project.status === "ProductPage" ? "Product Page" : project.status === "ChromeWebStore" ? "Chrome Web Store" : "Live Demo"}
                         </a>
                     )}
                 </div>
