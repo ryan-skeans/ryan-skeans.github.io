@@ -20,10 +20,10 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['IBM Plex Sans', 'system-ui', 'sans-serif'],
+        mono: ['Geist Mono', 'monospace'],
       }
     },
   },
   plugins: [],
 }
-

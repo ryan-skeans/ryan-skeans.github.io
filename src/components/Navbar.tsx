@@ -15,7 +15,12 @@ export const Navbar = () => {
 
     const [theme, setTheme] = useState(() => {
         if (typeof window !== "undefined" && window.localStorage) {
-            return localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            return (
+                localStorage.getItem("theme") ||
+                (window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "dark"
+                    : "light")
+            );
         }
         return "light";
     });
@@ -55,7 +60,10 @@ export const Navbar = () => {
                 )}
             >
                 <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-                    <a href="#" className="text-2xl font-bold tracking-tighter text-gray-900 dark:text-white">
+                    <a
+                        href="#"
+                        className="text-2xl tracking-tighter text-gray-900 dark:text-white"
+                    >
                         Ryan<span className="text-primary">.</span>
                     </a>
 
@@ -76,19 +84,31 @@ export const Navbar = () => {
                         <div className="flex items-center gap-4 pl-4">
                             <button
                                 onClick={toggleTheme}
-                                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white transition-all"
+                                className="p-2 rounded-sm bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white transition-all"
                                 aria-label="Toggle theme"
                             >
-                                {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
+                                {theme === "light" ? (
+                                    <Moon size={18} />
+                                ) : (
+                                    <Sun size={18} />
+                                )}
                             </button>
 
-                            <SocialLink href="https://github.com/ryan-skeans" icon={<Github size={18} />} label="GitHub" />
-                            <SocialLink href="https://www.linkedin.com/in/ryanskeans/" icon={<Linkedin size={18} />} label="LinkedIn" />
+                            <SocialLink
+                                href="https://github.com/ryan-skeans"
+                                icon={<Github size={18} />}
+                                label="GitHub"
+                            />
+                            <SocialLink
+                                href="https://www.linkedin.com/in/ryanskeans/"
+                                icon={<Linkedin size={18} />}
+                                label="LinkedIn"
+                            />
 
                             <a
                                 href="/files/Resume.pdf"
                                 target="_blank"
-                                className="flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white dark:text-black bg-primary hover:bg-primary-hover rounded-full transition-all ml-2"
+                                className="flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white dark:text-black bg-primary hover:bg-primary-hover rounded-sm transition-all ml-2"
                             >
                                 Resume
                             </a>
@@ -125,7 +145,7 @@ export const Navbar = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-2xl font-bold text-gray-900 dark:text-white"
+                                className="text-2xl text-gray-900 dark:text-white"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 {link.name}
@@ -134,7 +154,7 @@ export const Navbar = () => {
                         <a
                             href="/files/Resume.pdf"
                             target="_blank"
-                            className="px-6 py-3 text-sm font-bold text-white dark:text-black bg-primary rounded-full mb-8"
+                            className="px-6 py-3 text-sm text-white dark:text-black bg-primary rounded-sm mb-8"
                         >
                             Resume
                         </a>
@@ -160,7 +180,15 @@ export const Navbar = () => {
     );
 };
 
-const SocialLink = ({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) => (
+const SocialLink = ({
+    href,
+    icon,
+    label,
+}: {
+    href: string;
+    icon: React.ReactNode;
+    label: string;
+}) => (
     <a
         href={href}
         target="_blank"

@@ -15,48 +15,35 @@ interface Project {
 const projects: Project[] = [
     {
         title: "The Genesis Platform UI",
-        description: "The Genesis platform offers deep, purpose-built applications covering all facets of the investment lifecycle - portfolio management, trading, analytics, accounting, and reporting.",
+        description:
+            "The Genesis platform offers deep, purpose-built applications covering all facets of the investment lifecycle - portfolio management, trading, analytics, accounting, and reporting.",
         tags: ["React", "TypeScript", "Redux", "Web Components"],
         image: "images/genesis.jpeg",
         github: null,
         demo: "https://www.advent.com/genesis/?utm_source=google&utm_medium=cpc&utm_campaign=M-AD-Info-Kit-Advent-Genesis-gg&utm_content=CampaignID-21335411412-AdGroupID-166063573594-Keyword-ss%26c+genesis",
-        status: "ProductPage"
+        status: "ProductPage",
     },
     {
         title: "Score Island – Live Sports Scores",
-        description: "Chrome extension featuring a draggable Dynamic Island overlay for live sports scores across NBA, NFL, MLB, NHL, and more — no tab switching needed.",
+        description:
+            "Chrome extension featuring a draggable Dynamic Island overlay for live sports scores across NBA, NFL, MLB, NHL, and more — no tab switching needed.",
         tags: ["React", "TypeScript", "Chrome Extension", "Cloudflare Workers"],
         image: "",
         video: "https://www.youtube.com/embed/2ohyGmZjGzY",
         github: null,
         demo: "https://chromewebstore.google.com/detail/score-island-live-sports/ohbnnnjjpgcekodkajamnocfbedmeknh",
-        status: "ChromeWebStore"
+        status: "ChromeWebStore",
     },
     {
         title: "PolyDiscover – Polymarket Search",
-        description: "Chrome extension for instant Polymarket discovery. Highlight any text, right-click, and search prediction markets in a lightweight overlay.",
+        description:
+            "Chrome extension for instant Polymarket discovery. Highlight any text, right-click, and search prediction markets in a lightweight overlay.",
         tags: ["React", "TypeScript", "Chrome Extension"],
         image: "",
         video: "https://www.youtube.com/embed/cXLsZNLs-pU",
         github: null,
         demo: "https://chromewebstore.google.com/detail/polydiscover-%E2%80%93-polymarket/agebcajnepddkkdigcloncjdfnacmaji",
-        status: "ChromeWebStore"
-    },
-    {
-        title: "iOS Market Data App",
-        description: "Native iOS app fetching live stock-market data using swift and Xcode.",
-        tags: ["Swift", "Stock API", "Xcode"],
-        image: "images/ios_app.png",
-        github: "https://github.com/ryan-skeans/stock-app",
-        demo: null,
-    },
-    {
-        title: "Mock AirBnb Backend",
-        description: "API endpoints serving Airbnb data from a MySQL database. Practice in backend design and data modeling.",
-        tags: ["Python", "Flask", "MySQL"],
-        image: "images/python-project.png",
-        github: "https://github.com/ryan-skeans/python-backend-project",
-        demo: null,
+        status: "ChromeWebStore",
     },
 ];
 
@@ -64,23 +51,35 @@ export const Projects = () => {
     const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
     return (
-        <section id="projects" className="py-24 bg-gray-50 dark:bg-dark-900 relative">
+        <section
+            id="projects"
+            className="py-24 bg-gray-50 dark:bg-dark-900 relative"
+        >
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
-                    {...(!isMobile ? {
-                        initial: { opacity: 0, y: 20 },
-                        whileInView: { opacity: 1, y: 0 },
-                        viewport: { once: true, amount: 0.1 }
-                    } : {})}
+                    {...(!isMobile
+                        ? {
+                              initial: { opacity: 0, y: 20 },
+                              whileInView: { opacity: 1, y: 0 },
+                              viewport: { once: true, amount: 0.1 },
+                          }
+                        : {})}
                     className="mb-16 text-center"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Featured Projects</h2>
-                    <div className="h-1 w-20 bg-primary mx-auto rounded-full" />
+                    <h2 className="text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">
+                        Featured Projects
+                    </h2>
+                    <div className="h-1 w-20 bg-primary mx-auto rounded-sm" />
                 </motion.div>
 
                 <div className="grid md:grid-cols-2 gap-8">
                     {projects.map((project, index) => (
-                        <ProjectCard key={index} project={project} index={index} isMobile={isMobile} />
+                        <ProjectCard
+                            key={index}
+                            project={project}
+                            index={index}
+                            isMobile={isMobile}
+                        />
                     ))}
                 </div>
             </div>
@@ -88,16 +87,26 @@ export const Projects = () => {
     );
 };
 
-const ProjectCard = ({ project, index, isMobile }: { project: Project, index: number, isMobile: boolean }) => {
+const ProjectCard = ({
+    project,
+    index,
+    isMobile,
+}: {
+    project: Project;
+    index: number;
+    isMobile: boolean;
+}) => {
     return (
         <motion.div
-            {...(!isMobile ? {
-                initial: { opacity: 0, y: 20 },
-                whileInView: { opacity: 1, y: 0 },
-                viewport: { once: true, amount: 0.1 },
-                transition: { delay: index * 0.1 }
-            } : {})}
-            className="group relative bg-white dark:bg-[#1A1A1A] rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 shadow-sm"
+            {...(!isMobile
+                ? {
+                      initial: { opacity: 0, y: 20 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: true, amount: 0.1 },
+                      transition: { delay: index * 0.1 },
+                  }
+                : {})}
+            className="group relative bg-white dark:bg-[#1A1A1A] rounded-sm overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 shadow-sm"
         >
             <div className="aspect-video overflow-hidden bg-gray-100 dark:bg-gray-800">
                 {project.video ? (
@@ -118,7 +127,7 @@ const ProjectCard = ({ project, index, isMobile }: { project: Project, index: nu
             </div>
 
             <div className="p-8">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-2xl text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
                     {project.title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
@@ -126,8 +135,11 @@ const ProjectCard = ({ project, index, isMobile }: { project: Project, index: nu
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-8">
-                    {project.tags.map(tag => (
-                        <span key={tag} className="px-3 py-1 text-xs font-semibold bg-black/5 dark:bg-white/5 text-gray-600 dark:text-gray-300 rounded-full border border-black/5 dark:border-white/5">
+                    {project.tags.map((tag) => (
+                        <span
+                            key={tag}
+                            className="px-3 py-1 text-xs font-semibold bg-black/5 dark:bg-white/5 text-gray-600 dark:text-gray-300 rounded-sm border border-black/5 dark:border-white/5"
+                        >
                             {tag}
                         </span>
                     ))}
@@ -159,7 +171,11 @@ const ProjectCard = ({ project, index, isMobile }: { project: Project, index: nu
                             className="flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary-light transition-colors"
                         >
                             <ExternalLink size={18} />
-                            {project.status === "ProductPage" ? "Product Page" : project.status === "ChromeWebStore" ? "Chrome Web Store" : "Live Demo"}
+                            {project.status === "ProductPage"
+                                ? "Product Page"
+                                : project.status === "ChromeWebStore"
+                                ? "Chrome Web Store"
+                                : "Live Demo"}
                         </a>
                     )}
                 </div>

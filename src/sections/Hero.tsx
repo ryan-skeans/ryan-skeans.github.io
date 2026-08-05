@@ -8,10 +8,10 @@ export const Hero = () => {
             {/* Background Elements */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                 <div
-                    className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-primary/20 blur-[80px] will-change-transform animate-pulse"
+                    className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-sm bg-primary/20 blur-[80px] will-change-transform animate-pulse"
                     style={{ animationDuration: "4s" }}
                 />
-                <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-black/10 dark:bg-primary/10 blur-[80px] will-change-transform" />
+                <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-sm bg-black/10 dark:bg-primary/10 blur-[80px] will-change-transform" />
             </div>
 
             <div className="relative z-10 max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
@@ -21,27 +21,25 @@ export const Hero = () => {
                     transition={{ duration: 0.8 }}
                     className="space-y-6"
                 >
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 dark:text-white leading-[1.1]">
-                        Building User-First Digital Products.
+                    <h1 className="text-5xl md:text-7xl tracking-tight text-gray-900 dark:text-white leading-[1.1]">
+                        Ryan Skeans
                     </h1>
                     <p className="text-lg text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed">
-                        I’m Ryan Skeans. A frontend-leaning product engineer who
-                        collaborates across teams to ship clean, intuitive
-                        experiences at scale.
+                        Software Dev at SS&C Technologies.
                     </p>
 
                     <div className="flex flex-wrap gap-4 pt-4">
                         <a
                             href="#projects"
-                            className="px-8 py-4 bg-primary hover:bg-primary-hover text-white dark:text-gray-900 font-semibold rounded-full transition-all shadow-lg shadow-primary/25"
+                            className="px-4 py-2 bg-primary hover:bg-primary-hover text-white dark:text-gray-900 rounded-sm transition-all"
                         >
-                            View Work
+                            Projects
                         </a>
                         <a
                             href="#contact"
-                            className="px-8 py-4 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 border border-black/5 dark:border-white/10 text-gray-900 dark:text-white font-semibold rounded-full transition-all"
+                            className="px-4 py-2 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 border border-black/5 dark:border-white/10 text-gray-900 dark:text-white rounded-sm transition-all"
                         >
-                            Contact Me
+                            Contact
                         </a>
                     </div>
                 </motion.div>
