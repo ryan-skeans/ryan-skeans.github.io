@@ -1,63 +1,117 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: 'IBM Plex Sans', system-ui, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
-  --scrollbar-track: #f1f1f1;
-  --scrollbar-thumb: #888;
-  --scrollbar-thumb-hover: #555;
+    --scrollbar-track: #f1f1f1;
+    --scrollbar-thumb: #888;
+    --scrollbar-thumb-hover: #555;
 }
 
 :root.dark {
-  --scrollbar-track: #111;
-  --scrollbar-thumb: #333;
-  --scrollbar-thumb-hover: #444;
+    --scrollbar-track: #111;
+    --scrollbar-thumb: #333;
+    --scrollbar-thumb-hover: #444;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-  @apply bg-gray-50 text-gray-900 dark:bg-[#050505] dark:text-gray-100 transition-colors duration-300;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    @apply bg-gray-50 text-gray-900 dark:bg-[#050505] dark:text-gray-100 transition-colors duration-300;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--scrollbar-track);
+    background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb);
-  border-radius: 4px;
+    background: var(--scrollbar-thumb);
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--scrollbar-thumb-hover);
+    background: var(--scrollbar-thumb-hover);
 }
 
 .gradient-text {
-  background: linear-gradient(to right, #027E6F, #22d3ee, #0d9488);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    background: linear-gradient(to right, #027e6f, #22d3ee, #0d9488);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Keep the face drawing as the only animated work during a mobile first paint. */
+@media (max-width: 767px) {
+    *:not(.face-stroke),
+    *:not(.face-stroke)::before,
+    *:not(.face-stroke)::after {
+        animation-duration: 0s !important;
+        animation-delay: 0s !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+    }
+}
+
+/* Skip layout and paint work for sections that have not approached the viewport. */
+.deferred-section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 900px;
+}
+
+@media (min-width: 768px) {
+    .desktop-nav-in {
+        animation: slide-down 0.35s ease-out both;
+    }
+
+    .desktop-bounce {
+        animation: bounce 2s ease-in-out infinite;
+    }
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes rise-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    50% {
+        transform: translate(-50%, 10px);
+    }
 }

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import clsx from "clsx";
 
 const skills = {
@@ -32,15 +31,14 @@ const allTabs = ["Languages", "Frameworks", "Tools"];
 
 export const Skills = () => {
     const [activeTab, setActiveTab] = useState("Languages");
-    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
     return (
         <section
             id="skills"
-            className="py-32 relative bg-white dark:bg-[#0a0a0a]"
+            className="deferred-section py-32 relative bg-white dark:bg-[#0a0a0a]"
         >
             {/* Background gradient */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-20 pointer-events-none">
+            <div className="hidden md:block absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-20 pointer-events-none">
                 <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-sm blur-[80px] will-change-transform" />
             </div>
 
@@ -65,15 +63,7 @@ export const Skills = () => {
                                 )}
                             >
                                 {activeTab === tab && (
-                                    <motion.div
-                                        layoutId="activeTab"
-                                        className="absolute inset-0 bg-primary rounded-sm"
-                                        transition={{
-                                            type: "spring",
-                                            bounce: 0.2,
-                                            duration: 0.6,
-                                        }}
-                                    />
+                                    <div className="absolute inset-0 bg-primary rounded-sm" />
                                 )}
                                 <span className="relative z-10">{tab}</span>
                             </button>
@@ -81,54 +71,34 @@ export const Skills = () => {
                     </div>
                 </div>
 
-                <motion.div
-                    key={activeTab}
-                    {...(!isMobile
-                        ? {
-                              initial: { opacity: 0, y: 10 },
-                              animate: { opacity: 1, y: 0 },
-                              exit: { opacity: 0, y: -10 },
-                              transition: { duration: 0.4 },
-                          }
-                        : {})}
-                    className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"
-                >
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                     {skills[activeTab as keyof typeof skills].map((skill) => (
-                        <SkillCard
-                            key={skill.name}
-                            skill={skill}
-                            isMobile={isMobile}
-                        />
+                        <SkillCard key={skill.name} skill={skill} />
                     ))}
-                </motion.div>
+                </div>
             </div>
         </section>
     );
 };
 
-const SkillCard = ({
-    skill,
-    isMobile,
-}: {
+const SkillCard = ({ skill }: {
     skill: { name: string; icon: string };
-    isMobile: boolean;
 }) => {
     // Determine icon URL (using simpleicons CDN as before)
     const iconUrl = `https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/${skill.icon}.svg`;
 
     return (
-        <motion.div
-            {...(!isMobile ? { whileHover: { y: -5 } } : {})}
-            className="flex flex-col items-center p-6 bg-gray-50 dark:bg-white/5 border border-black/5 dark:border-white/5 rounded-sm hover:bg-gray-100 dark:hover:bg-white/10 hover:border-primary/30 transition-all duration-300 group"
-        >
+        <div className="flex flex-col items-center p-6 bg-gray-50 dark:bg-white/5 border border-black/5 dark:border-white/5 rounded-sm hover:bg-gray-100 dark:hover:bg-white/10 hover:border-primary/30 transition-all duration-300 group">
             <img
                 src={iconUrl}
                 alt={skill.name}
+                loading="lazy"
+                decoding="async"
                 className="w-10 h-10 mb-4 dark:invert opacity-70 group-hover:opacity-100 transition-opacity"
             />
             <span className="text-sm font-medium text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
                 {skill.name}
             </span>
-        </motion.div>
+        </div>
     );
 };

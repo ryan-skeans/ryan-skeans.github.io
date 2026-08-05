@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { HandDrawnFace } from "../components/HandDrawnFace";
 
@@ -8,19 +7,14 @@ export const Hero = () => {
             {/* Background Elements */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                 <div
-                    className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-sm bg-primary/20 blur-[80px] will-change-transform animate-pulse"
+                    className="hidden md:block absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-sm bg-primary/20 blur-[80px] will-change-transform animate-pulse"
                     style={{ animationDuration: "4s" }}
                 />
-                <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-sm bg-black/10 dark:bg-primary/10 blur-[80px] will-change-transform" />
+                <div className="hidden md:block absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-sm bg-black/10 dark:bg-primary/10 blur-[80px] will-change-transform" />
             </div>
 
             <div className="relative z-10 max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="space-y-6"
-                >
+                <div className="space-y-6">
                     <h1 className="text-5xl md:text-7xl tracking-tight text-gray-900 dark:text-white leading-[1.1]">
                         Ryan Skeans
                     </h1>
@@ -42,7 +36,7 @@ export const Hero = () => {
                             Contact
                         </a>
                     </div>
-                </motion.div>
+                </div>
 
                 <div className="relative flex justify-center md:justify-end">
                     <div className="relative w-72 h-72 md:w-96 md:h-96">
@@ -51,13 +45,9 @@ export const Hero = () => {
                 </div>
             </div>
 
-            <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ repeat: Infinity, duration: 2 }}
-                className="hidden md:block absolute bottom-10 left-1/2 transform -translate-x-1/2 text-gray-500"
-            >
+            <div className="hidden md:block desktop-bounce absolute bottom-10 left-1/2 transform -translate-x-1/2 text-gray-500">
                 <ArrowDown size={24} />
-            </motion.div>
+            </div>
         </section>
     );
 };

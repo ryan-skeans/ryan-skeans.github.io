@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Github, Linkedin, Sun, Moon } from "lucide-react";
 import clsx from "clsx";
 
@@ -49,11 +48,9 @@ export const Navbar = () => {
 
     return (
         <>
-            <motion.nav
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
+            <nav
                 className={clsx(
-                    "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
+                    "fixed top-0 left-0 right-0 z-50 desktop-nav-in transition-all duration-300 border-b border-transparent",
                     isScrolled
                         ? "bg-white/80 dark:bg-black/50 backdrop-blur-md border-black/5 dark:border-white/10 py-4"
                         : "bg-transparent py-6"
@@ -123,18 +120,11 @@ export const Navbar = () => {
                         <Menu />
                     </button>
                 </div>
-            </motion.nav>
+            </nav>
 
             {/* Mobile Menu */}
-            <AnimatePresence>
-                {isMobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, x: "100%" }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: "100%" }}
-                        transition={{ type: "tween" }}
-                        className="fixed inset-0 z-[60] bg-white dark:bg-black flex flex-col items-center justify-center space-y-8"
-                    >
+            {isMobileMenuOpen && (
+                <div className="fixed inset-0 z-[60] bg-white dark:bg-black flex flex-col items-center justify-center space-y-8">
                         <button
                             className="absolute top-6 right-6 text-gray-900 dark:text-white"
                             onClick={() => setIsMobileMenuOpen(false)}
@@ -173,9 +163,8 @@ export const Navbar = () => {
                                 </>
                             )}
                         </button>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                </div>
+            )}
         </>
     );
 };

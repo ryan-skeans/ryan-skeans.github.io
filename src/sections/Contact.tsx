@@ -1,25 +1,13 @@
-import { motion } from "framer-motion";
 import { Mail, Linkedin, Github } from "lucide-react";
 
 export const Contact = () => {
-    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-
     return (
         <section
             id="contact"
-            className="py-24 relative overflow-hidden bg-gray-50 dark:bg-black border-t border-black/5 dark:border-white/10"
+            className="deferred-section py-24 relative overflow-hidden bg-gray-50 dark:bg-black border-t border-black/5 dark:border-white/10"
         >
             <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-                <motion.div
-                    {...(!isMobile
-                        ? {
-                              initial: { opacity: 0, scale: 0.9 },
-                              whileInView: { opacity: 1, scale: 1 },
-                              viewport: { once: true, amount: 0.1 },
-                          }
-                        : {})}
-                    className="mb-12"
-                >
+                <div className="mb-12">
                     <a
                         href="mailto:ryanskeans@gmail.com"
                         className="inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white dark:bg-white dark:text-black rounded-sm hover:bg-primary hover:text-white dark:hover:bg-primary/10 dark:hover:scale-105 transition-all duration-300"
@@ -27,7 +15,7 @@ export const Contact = () => {
                         <Mail size={20} />
                         Email
                     </a>
-                </motion.div>
+                </div>
 
                 <div className="flex justify-center items-center gap-8 mb-12">
                     <SocialLink
@@ -47,7 +35,7 @@ export const Contact = () => {
             </div>
 
             {/* Soft subtle glow at bottom */}
-            <div className="absolute bottom-[-20%] left-1/2 transform -translate-x-1/2 w-[800px] h-[300px] bg-primary/10 blur-[80px] rounded-sm pointer-events-none will-change-transform" />
+            <div className="hidden md:block absolute bottom-[-20%] left-1/2 transform -translate-x-1/2 w-[800px] h-[300px] bg-primary/10 blur-[80px] rounded-sm pointer-events-none will-change-transform" />
         </section>
     );
 };

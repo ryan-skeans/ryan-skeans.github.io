@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
 
 interface Project {
@@ -48,37 +47,24 @@ const projects: Project[] = [
 ];
 
 export const Projects = () => {
-    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-
     return (
         <section
             id="projects"
-            className="py-24 bg-gray-50 dark:bg-dark-900 relative"
+            className="deferred-section py-24 bg-gray-50 dark:bg-dark-900 relative"
         >
             <div className="max-w-7xl mx-auto px-6">
-                <motion.div
-                    {...(!isMobile
-                        ? {
-                              initial: { opacity: 0, y: 20 },
-                              whileInView: { opacity: 1, y: 0 },
-                              viewport: { once: true, amount: 0.1 },
-                          }
-                        : {})}
-                    className="mb-16 text-center"
-                >
+                <div className="mb-16 text-center">
                     <h2 className="text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">
                         Featured Projects
                     </h2>
                     <div className="h-1 w-20 bg-primary mx-auto rounded-sm" />
-                </motion.div>
+                </div>
 
                 <div className="grid md:grid-cols-2 gap-8">
                     {projects.map((project, index) => (
                         <ProjectCard
                             key={index}
                             project={project}
-                            index={index}
-                            isMobile={isMobile}
                         />
                     ))}
                 </div>
@@ -89,30 +75,17 @@ export const Projects = () => {
 
 const ProjectCard = ({
     project,
-    index,
-    isMobile,
 }: {
     project: Project;
-    index: number;
-    isMobile: boolean;
 }) => {
     return (
-        <motion.div
-            {...(!isMobile
-                ? {
-                      initial: { opacity: 0, y: 20 },
-                      whileInView: { opacity: 1, y: 0 },
-                      viewport: { once: true, amount: 0.1 },
-                      transition: { delay: index * 0.1 },
-                  }
-                : {})}
-            className="group relative bg-white dark:bg-[#1A1A1A] rounded-sm overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 shadow-sm"
-        >
+        <div className="group relative bg-white dark:bg-[#1A1A1A] rounded-sm overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 shadow-sm">
             <div className="aspect-video overflow-hidden bg-gray-100 dark:bg-gray-800">
                 {project.video ? (
                     <iframe
                         src={project.video}
                         title={project.title}
+                        loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                         className="w-full h-full"
@@ -121,6 +94,8 @@ const ProjectCard = ({
                     <img
                         src={project.image}
                         alt={project.title}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                 )}
@@ -180,6 +155,6 @@ const ProjectCard = ({
                     )}
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 };
