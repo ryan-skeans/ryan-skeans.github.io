@@ -23,16 +23,17 @@ export const Hero = () => {
                         Technologies.
                     </p>
 
-                    <div className="flex flex-wrap gap-4 pt-4">
+                    <div className="mt-10 flex items-center gap-8 text-base">
                         <a
                             href="#projects"
-                            className="px-4 py-2 bg-primary hover:bg-primary-hover text-white dark:text-gray-900 rounded-sm transition-all"
+                            className="font-medium text-teal-700 underline-offset-4 hover:underline"
                         >
-                            Projects
+                            Projects →
                         </a>
+
                         <a
                             href="#contact"
-                            className="px-4 py-2 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 border border-black/5 dark:border-white/10 text-gray-900 dark:text-white rounded-sm transition-all"
+                            className="text-gray-600 underline-offset-4 hover:underline"
                         >
                             Contact
                         </a>

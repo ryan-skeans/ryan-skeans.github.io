@@ -65,8 +65,8 @@ export const Navbar = () => {
                     </a>
 
                     {/* Desktop Nav */}
-                    <div className="hidden md:flex items-center space-x-8">
-                        <div className="flex items-center space-x-8">
+                    <div className="hidden md:flex items-center gap-8">
+                        <div className="flex items-center gap-8">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.name}
@@ -78,10 +78,10 @@ export const Navbar = () => {
                             ))}
                         </div>
 
-                        <div className="flex items-center gap-4 pl-4">
+                        <div className="flex items-center gap-1 border-l border-gray-200 pl-5 dark:border-white/10">
                             <button
                                 onClick={toggleTheme}
-                                className="p-2 rounded-sm bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white transition-all"
+                                className="flex h-9 w-9 items-center justify-center rounded-md text-gray-600 transition-colors hover:bg-gray-100 hover:text-primary dark:text-gray-300 dark:hover:bg-white/10 dark:hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                                 aria-label="Toggle theme"
                             >
                                 {theme === "light" ? (
@@ -105,7 +105,7 @@ export const Navbar = () => {
                             <a
                                 href="/files/Resume.pdf"
                                 target="_blank"
-                                className="flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white dark:text-black bg-primary hover:bg-primary-hover rounded-sm transition-all ml-2"
+                                className="ml-2 inline-flex h-9 items-center rounded-md bg-primary px-3.5 text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:text-black dark:focus-visible:ring-offset-black"
                             >
                                 Resume
                             </a>
@@ -182,7 +182,7 @@ const SocialLink = ({
         href={href}
         target="_blank"
         rel="noreferrer"
-        className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors"
+        className="flex h-9 w-9 items-center justify-center rounded-md text-gray-600 transition-colors hover:bg-gray-100 hover:text-primary dark:text-gray-300 dark:hover:bg-white/10 dark:hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         aria-label={label}
     >
         {icon}
