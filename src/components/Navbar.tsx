@@ -71,7 +71,7 @@ export const Navbar = () => {
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white transition-colors"
+                                    className="text-sm text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white transition-colors"
                                 >
                                     {link.name}
                                 </a>
@@ -125,44 +125,44 @@ export const Navbar = () => {
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
                 <div className="fixed inset-0 z-[60] bg-white dark:bg-black flex flex-col items-center justify-center space-y-8">
-                        <button
-                            className="absolute top-6 right-6 text-gray-900 dark:text-white"
+                    <button
+                        className="absolute top-6 right-6 text-gray-900 dark:text-white"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                        <X size={32} />
+                    </button>
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.name}
+                            href={link.href}
+                            className="text-2xl text-gray-900 dark:text-white"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
-                            <X size={32} />
-                        </button>
-                        {navLinks.map((link) => (
-                            <a
-                                key={link.name}
-                                href={link.href}
-                                className="text-2xl text-gray-900 dark:text-white"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                {link.name}
-                            </a>
-                        ))}
-                        <a
-                            href="/files/Resume.pdf"
-                            target="_blank"
-                            className="px-6 py-3 text-sm text-white dark:text-black bg-primary rounded-sm mb-8"
-                        >
-                            Resume
+                            {link.name}
                         </a>
+                    ))}
+                    <a
+                        href="/files/Resume.pdf"
+                        target="_blank"
+                        className="px-6 py-3 text-sm text-white dark:text-black bg-primary rounded-sm mb-8"
+                    >
+                        Resume
+                    </a>
 
-                        <button
-                            onClick={toggleTheme}
-                            className="flex items-center gap-2 text-gray-900 dark:text-white"
-                        >
-                            {theme === "light" ? (
-                                <>
-                                    <Moon size={24} /> <span>Dark Mode</span>
-                                </>
-                            ) : (
-                                <>
-                                    <Sun size={24} /> <span>Light Mode</span>
-                                </>
-                            )}
-                        </button>
+                    <button
+                        onClick={toggleTheme}
+                        className="flex items-center gap-2 text-gray-900 dark:text-white"
+                    >
+                        {theme === "light" ? (
+                            <>
+                                <Moon size={24} /> <span>Dark Mode</span>
+                            </>
+                        ) : (
+                            <>
+                                <Sun size={24} /> <span>Light Mode</span>
+                            </>
+                        )}
+                    </button>
                 </div>
             )}
         </>

@@ -1,70 +1,90 @@
-import { Github, ExternalLink } from "lucide-react";
+import { ArrowUpRight, Github, Play } from "lucide-react";
 
 interface Project {
+    number: string;
+    category: string;
     title: string;
     description: string;
+    role: string;
     tags: string[];
     image: string;
-    video?: string;
+    mediaUrl?: string;
     github: string | null;
     demo: string | null;
-    status?: string;
+    demoLabel: string;
+    status: "Live" | "Professional work";
 }
-// https://www.advent.com/genesis/?utm_source=google&utm_medium=cpc&utm_campaign=M-AD-Info-Kit-Advent-Genesis-gg&utm_content=CampaignID-21335411412-AdGroupID-166063573594-Keyword-ss%26c+genesis
+
 const projects: Project[] = [
     {
+        number: "01",
+        category: "Professional work",
         title: "The Genesis Platform UI",
         description:
-            "The Genesis platform offers deep, purpose-built applications covering all facets of the investment lifecycle - portfolio management, trading, analytics, accounting, and reporting.",
+            "UI lead for portfolio-management and trade-creation workflows across SS&C’s Genesis platform, supporting trading, analytics, accounting, and reporting.",
+        role: "Senior UI Engineer",
         tags: ["React", "TypeScript", "Redux", "Web Components"],
         image: "images/genesis.jpeg",
         github: null,
-        demo: "https://www.advent.com/genesis/?utm_source=google&utm_medium=cpc&utm_campaign=M-AD-Info-Kit-Advent-Genesis-gg&utm_content=CampaignID-21335411412-AdGroupID-166063573594-Keyword-ss%26c+genesis",
-        status: "ProductPage",
+        demo: "https://www.advent.com/genesis/",
+        demoLabel: "Product overview",
+        status: "Professional work",
     },
     {
-        title: "Score Island – Live Sports Scores",
+        number: "02",
+        category: "Independent project",
+        title: "Score Island",
         description:
-            "Chrome extension featuring a draggable Dynamic Island overlay for live sports scores across NBA, NFL, MLB, NHL, and more — no tab switching needed.",
+            "Live sports scores in a draggable Dynamic Island overlay, without leaving the page you’re on.",
+        role: "Design and development",
         tags: ["React", "TypeScript", "Chrome Extension", "Cloudflare Workers"],
-        image: "",
-        video: "https://www.youtube.com/embed/2ohyGmZjGzY",
+        image: "https://i.ytimg.com/vi/2ohyGmZjGzY/sddefault.jpg",
+        mediaUrl: "https://www.youtube.com/watch?v=2ohyGmZjGzY",
         github: null,
         demo: "https://chromewebstore.google.com/detail/score-island-live-sports/ohbnnnjjpgcekodkajamnocfbedmeknh",
-        status: "ChromeWebStore",
+        demoLabel: "Chrome Web Store",
+        status: "Live",
     },
     {
-        title: "PolyDiscover – Polymarket Search",
+        number: "03",
+        category: "Independent project",
+        title: "PolyDiscover",
         description:
-            "Chrome extension for instant Polymarket discovery. Highlight any text, right-click, and search prediction markets in a lightweight overlay.",
+            "Highlight anything on the web and find related prediction markets in two clicks.",
+        role: "Design and development",
         tags: ["React", "TypeScript", "Chrome Extension"],
-        image: "",
-        video: "https://www.youtube.com/embed/cXLsZNLs-pU",
+        image: "https://i.ytimg.com/vi/cXLsZNLs-pU/maxresdefault.jpg",
+        mediaUrl: "https://www.youtube.com/watch?v=cXLsZNLs-pU",
         github: null,
         demo: "https://chromewebstore.google.com/detail/polydiscover-%E2%80%93-polymarket/agebcajnepddkkdigcloncjdfnacmaji",
-        status: "ChromeWebStore",
+        demoLabel: "Chrome Web Store",
+        status: "Live",
     },
 ];
 
 export const Projects = () => {
+    const [featuredProject, ...independentProjects] = projects;
+
     return (
         <section
             id="projects"
-            className="deferred-section py-24 bg-gray-50 dark:bg-dark-900 relative"
+            className="deferred-section bg-gray-50 py-24 dark:bg-dark-900 md:py-24"
         >
-            <div className="max-w-7xl mx-auto px-6">
-                <div className="mb-16 text-center">
-                    <h2 className="text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">
-                        Featured Projects
+            <div className="mx-auto max-w-7xl px-6">
+                <header className="flex items-end justify-between border-black/15 pb-6 dark:border-white/15">
+                    <h2 className="text-3xl tracking-tight text-gray-900 dark:text-white md:text-4xl">
+                        Projects
                     </h2>
-                    <div className="h-1 w-20 bg-primary mx-auto rounded-sm" />
-                </div>
+                </header>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                    {projects.map((project, index) => (
-                        <ProjectCard
-                            key={index}
+                <FeaturedProject project={featuredProject} />
+
+                <div className="grid border-black/15 dark:border-white/15 md:grid-cols-2">
+                    {independentProjects.map((project, index) => (
+                        <SecondaryProject
+                            key={project.title}
                             project={project}
+                            isSecond={index === 1}
                         />
                     ))}
                 </div>
@@ -73,88 +93,194 @@ export const Projects = () => {
     );
 };
 
-const ProjectCard = ({
+const FeaturedProject = ({ project }: { project: Project }) => {
+    return (
+        <article className="group border-b border-black/15 py-12 dark:border-white/15 md:py-16">
+            <div className="grid gap-10 md:grid-cols-12 md:gap-14">
+                <div className="md:col-span-7">
+                    <ProjectMedia project={project} priority />
+                </div>
+
+                <div className="flex flex-col md:col-span-5">
+                    <ProjectEyebrow project={project} />
+
+                    <h3 className="mt-5 text-3xl tracking-tight text-gray-900 dark:text-white md:text-4xl">
+                        {project.title}
+                    </h3>
+
+                    <p className="mt-5 max-w-xl leading-relaxed text-gray-600 dark:text-gray-400">
+                        {project.description}
+                    </p>
+
+                    <ProjectMetadata project={project} />
+
+                    <ProjectLinks project={project} />
+                </div>
+            </div>
+        </article>
+    );
+};
+
+const SecondaryProject = ({
     project,
+    isSecond,
 }: {
     project: Project;
+    isSecond: boolean;
 }) => {
     return (
-        <div className="group relative bg-white dark:bg-[#1A1A1A] rounded-sm overflow-hidden border border-black/5 dark:border-white/5 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 shadow-sm">
-            <div className="aspect-video overflow-hidden bg-gray-100 dark:bg-gray-800">
-                {project.video ? (
-                    <iframe
-                        src={project.video}
-                        title={project.title}
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="w-full h-full"
-                    />
-                ) : (
-                    <img
-                        src={project.image}
-                        alt={project.title}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                )}
-            </div>
+        <article
+            className={[
+                "group py-12 md:py-16",
+                isSecond
+                    ? "border-t border-black/15 dark:border-white/15 md:border-l md:border-t-0 md:pl-10"
+                    : "md:pr-10",
+            ].join(" ")}
+        >
+            <ProjectMedia project={project} />
 
-            <div className="p-8">
-                <h3 className="text-2xl text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
+            <div className="mt-8">
+                <ProjectEyebrow project={project} />
+
+                <h3 className="mt-4 text-2xl tracking-tight text-gray-900 dark:text-white md:text-3xl">
                     {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+
+                <p className="mt-4 max-w-xl leading-relaxed text-gray-600 dark:text-gray-400">
                     {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-8">
-                    {project.tags.map((tag) => (
-                        <span
-                            key={tag}
-                            className="px-3 py-1 text-xs font-semibold bg-black/5 dark:bg-white/5 text-gray-600 dark:text-gray-300 rounded-sm border border-black/5 dark:border-white/5"
-                        >
-                            {tag}
-                        </span>
-                    ))}
-                </div>
+                <ProjectMetadata project={project} compact />
 
-                <div className="flex items-center gap-4">
-                    {project.github ? (
-                        <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary-light transition-colors"
-                        >
-                            <Github size={18} />
-                            View Code
-                        </a>
-                    ) : (
-                        <span className="flex items-center gap-2 text-sm font-medium text-gray-600 cursor-not-allowed">
-                            <Github size={18} />
-                            Private / WIP
-                        </span>
-                    )}
-
-                    {project.demo && (
-                        <a
-                            href={project.demo}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary-light transition-colors"
-                        >
-                            <ExternalLink size={18} />
-                            {project.status === "ProductPage"
-                                ? "Product Page"
-                                : project.status === "ChromeWebStore"
-                                ? "Chrome Web Store"
-                                : "Live Demo"}
-                        </a>
-                    )}
-                </div>
+                <ProjectLinks project={project} />
             </div>
+        </article>
+    );
+};
+
+const ProjectMedia = ({
+    project,
+    priority = false,
+}: {
+    project: Project;
+    priority?: boolean;
+}) => {
+    const image = (
+        <img
+            src={project.image}
+            alt={`${project.title} preview`}
+            loading={priority ? "eager" : "lazy"}
+            decoding="async"
+            className="h-full w-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.01]"
+        />
+    );
+
+    if (!project.mediaUrl) {
+        return (
+            <div className="aspect-video overflow-hidden rounded-[2px] border border-black/10 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                {image}
+            </div>
+        );
+    }
+
+    return (
+        <a
+            href={project.mediaUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Watch the ${project.title} demo`}
+            className="relative block aspect-video overflow-hidden rounded-[2px] border border-black/10 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+        >
+            {image}
+
+            <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-[2px] bg-gray-950 px-3 py-2 text-[11px] uppercase tracking-[0.14em] text-white">
+                <Play size={13} fill="currentColor" />
+                Play
+            </span>
+        </a>
+    );
+};
+
+const ProjectEyebrow = ({ project }: { project: Project }) => {
+    return (
+        <p className="text-[11px] uppercase tracking-[0.18em]">
+            <span className="text-primary">{project.number}</span>
+            <span className="mx-2 text-gray-300 dark:text-gray-700">/</span>
+            <span className="text-gray-500 dark:text-gray-400">
+                {project.category}
+            </span>
+        </p>
+    );
+};
+
+const ProjectMetadata = ({
+    project,
+    compact = false,
+}: {
+    project: Project;
+    compact?: boolean;
+}) => {
+    return (
+        <dl
+            className={[
+                "grid grid-cols-[5rem_1fr] gap-x-4 gap-y-3",
+                compact ? "mt-7" : "mt-8",
+            ].join(" ")}
+        >
+            <dt className="text-[10px] uppercase tracking-[0.16em] text-gray-400">
+                Role
+            </dt>
+            <dd className="text-gray-700 dark:text-gray-300">{project.role}</dd>
+
+            <dt className="text-[10px] uppercase tracking-[0.16em] text-gray-400">
+                Stack
+            </dt>
+            <dd className="text-gray-700 dark:text-gray-300">
+                {project.tags.join(" · ")}
+            </dd>
+
+            <dt className="text-[10px] uppercase tracking-[0.16em] text-gray-400">
+                Status
+            </dt>
+            <dd className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+                {project.status === "Live" && (
+                    <span
+                        className="h-1.5 w-1.5 rounded-full bg-emerald-500"
+                        aria-hidden="true"
+                    />
+                )}
+                {project.status}
+            </dd>
+        </dl>
+    );
+};
+
+const ProjectLinks = ({ project }: { project: Project }) => {
+    return (
+        <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+            {project.github && (
+                <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 border-b border-current pb-0.5 text-sm text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary-light"
+                >
+                    <Github size={15} />
+                    View code
+                </a>
+            )}
+
+            {project.demo && (
+                <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 border-b border-current pb-0.5 text-sm text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary-light"
+                >
+                    {project.demoLabel}
+                    <ArrowUpRight size={15} />
+                </a>
+            )}
         </div>
     );
 };

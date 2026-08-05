@@ -19,7 +19,8 @@ export const Hero = () => {
                         Ryan Skeans
                     </h1>
                     <p className="text-lg text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed">
-                        Software Dev at SS&C Technologies.
+                        Software Engineer in San Diego. Currently at SS&C
+                        Technologies.
                     </p>
 
                     <div className="flex flex-wrap gap-4 pt-4">

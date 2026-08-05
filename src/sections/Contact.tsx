@@ -10,7 +10,7 @@ export const Contact = () => {
                 <div className="mb-12">
                     <a
                         href="mailto:ryanskeans@gmail.com"
-                        className="inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white dark:bg-white dark:text-black rounded-sm hover:bg-primary hover:text-white dark:hover:bg-primary/10 dark:hover:scale-105 transition-all duration-300"
+                        className="inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white dark:bg-white dark:text-black rounded-sm hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white dark:hover:scale-105 transition-all duration-300"
                     >
                         <Mail size={20} />
                         Email
