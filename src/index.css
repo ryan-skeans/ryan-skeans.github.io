@@ -81,21 +81,8 @@ body {
 }
 
 @media (min-width: 768px) {
-    .desktop-nav-in {
-        animation: slide-down 0.35s ease-out both;
-    }
-
     .desktop-bounce {
         animation: bounce 2s ease-in-out infinite;
-    }
-}
-
-@keyframes slide-down {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
     }
 }
 

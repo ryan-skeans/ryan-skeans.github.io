@@ -50,7 +50,7 @@ export const Navbar = () => {
         <>
             <nav
                 className={clsx(
-                    "fixed top-0 left-0 right-0 z-50 desktop-nav-in transition-all duration-300 border-b border-transparent",
+                    "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
                     isScrolled
                         ? "bg-white/80 dark:bg-black/50 backdrop-blur-md border-black/5 dark:border-white/10 py-4"
                         : "bg-transparent py-6"
