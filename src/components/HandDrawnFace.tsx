@@ -13,23 +13,30 @@ const FACE_STROKES = [
     "M85.7334 94.7276C85.7334 95.8179 86.9023 100.839 90.1056 106.179C91.384 108.31 93.7829 109.516 96.6125 110.748C100.013 112.229 106.237 113.164 113.268 114.527C116.226 115.1 117.994 115.15 119.166 115.012C120.876 114.472 121.931 113.156 122.865 111.611C123.298 110.97 123.646 110.618 124.005 110.256",
 ];
 
+const VIEWBOX_WIDTH = 151;
+const VIEWBOX_HEIGHT = 129;
+
 const DRAW_SPEED_PX_PER_SECOND = 1500;
 const STROKE_WIDTH_PX = 5.25;
-const CAP_BUFFER_PX = STROKE_WIDTH_PX;
 
-const getRenderedLength = (stroke: SVGGeometryElement) => {
-    const svgLength = stroke.getTotalLength();
-    const matrix = stroke.getScreenCTM();
+const getRenderedScale = (svg: SVGSVGElement) => {
+    const rect = svg.getBoundingClientRect();
 
-    if (!matrix) {
-        return Math.max(svgLength, 0.1);
+    if (!rect.width || !rect.height) {
+        return 1;
     }
 
-    const horizontalScale = Math.hypot(matrix.a, matrix.b);
-    const verticalScale = Math.hypot(matrix.c, matrix.d);
-    const renderedScale = (horizontalScale + verticalScale) / 2;
-
-    return Math.max(svgLength * renderedScale, 0.1);
+    /*
+     * The SVG uses preserveAspectRatio="xMidYMid meet", so its
+     * coordinate system is uniformly scaled by the smaller dimension.
+     */
+    return Math.max(
+        Math.min(
+            rect.width / VIEWBOX_WIDTH,
+            rect.height / VIEWBOX_HEIGHT
+        ),
+        0.01
+    );
 };
 
 export const HandDrawnFace = () => {
@@ -42,9 +49,33 @@ export const HandDrawnFace = () => {
             return;
         }
 
-        const strokes = Array.from(
-            svg.querySelectorAll<SVGGeometryElement>(".face-stroke")
-        );
+        const strokes = [
+            ...svg.querySelectorAll<SVGGeometryElement>(".face-stroke"),
+        ];
+
+        const updateStrokeWidth = () => {
+            const renderedScale = getRenderedScale(svg);
+            const svgStrokeWidth = STROKE_WIDTH_PX / renderedScale;
+
+            strokes.forEach((stroke) => {
+                stroke.style.setProperty(
+                    "stroke-width",
+                    `${svgStrokeWidth}`
+                );
+            });
+        };
+
+        /*
+         * Instead of vector-effect="non-scaling-stroke", calculate the
+         * equivalent SVG-unit stroke width ourselves.
+         */
+        updateStrokeWidth();
+
+        const resizeObserver = new ResizeObserver(() => {
+            updateStrokeWidth();
+        });
+
+        resizeObserver.observe(svg);
 
         const prefersReducedMotion = window.matchMedia(
             "(prefers-reduced-motion: reduce)"
@@ -52,24 +83,49 @@ export const HandDrawnFace = () => {
 
         if (prefersReducedMotion) {
             svg.style.visibility = "visible";
-            return;
+
+            return () => {
+                resizeObserver.disconnect();
+            };
         }
 
+        const renderedScale = getRenderedScale(svg);
+
         const steps = strokes.map((stroke) => {
-            const renderedLength = getRenderedLength(stroke);
+            /*
+             * With vector-effect removed, getTotalLength(), dasharray,
+             * and dashoffset all live in the same SVG coordinate space.
+             */
+            const pathLength = Math.max(
+                stroke.getTotalLength(),
+                0.1
+            );
+
+            const renderedLengthPx =
+                pathLength * renderedScale;
+
+            const durationSeconds = Math.max(
+                renderedLengthPx /
+                    DRAW_SPEED_PX_PER_SECOND,
+                0.04
+            );
 
             /*
-             * The oversized gap hides the rounded line caps while each
-             * stroke is waiting for its turn to be drawn.
+             * Standard SVG draw-on technique:
+             *
+             * one dash exactly as long as the path,
+             * shifted completely off the visible path.
              */
-            const hiddenOffset = renderedLength + CAP_BUFFER_PX;
-            const gapLength = renderedLength + CAP_BUFFER_PX * 2;
+            stroke.style.strokeDasharray =
+                `${pathLength} ${pathLength}`;
+            stroke.style.strokeDashoffset =
+                `${pathLength}`;
 
-            const durationSeconds = hiddenOffset / DRAW_SPEED_PX_PER_SECOND;
-
-            stroke.style.strokeDasharray = `${renderedLength} ${gapLength}`;
-
-            stroke.style.strokeDashoffset = `${hiddenOffset}`;
+            /*
+             * Prevent the rounded starting cap from appearing as a
+             * dot while this stroke waits for its turn.
+             */
+            stroke.style.opacity = "0";
             stroke.style.transition = "none";
 
             return {
@@ -81,8 +137,7 @@ export const HandDrawnFace = () => {
         svg.style.visibility = "visible";
 
         /*
-         * Force the browser to commit the completely hidden state before
-         * transitioning the dash offsets to zero.
+         * Commit the hidden state before starting transitions.
          */
         svg.getBoundingClientRect();
 
@@ -92,17 +147,25 @@ export const HandDrawnFace = () => {
             secondFrameId = window.requestAnimationFrame(() => {
                 let delaySeconds = 0;
 
-                steps.forEach(({ stroke, durationSeconds }) => {
-                    stroke.style.transition = `stroke-dashoffset ${durationSeconds}s linear ${delaySeconds}s`;
+                steps.forEach(
+                    ({ stroke, durationSeconds }) => {
+                        stroke.style.transition = [
+                            `stroke-dashoffset ${durationSeconds}s linear ${delaySeconds}s`,
+                            `opacity 0s linear ${delaySeconds}s`,
+                        ].join(", ");
 
-                    stroke.style.strokeDashoffset = "0";
+                        stroke.style.strokeDashoffset = "0";
+                        stroke.style.opacity = "1";
 
-                    delaySeconds += durationSeconds;
-                });
+                        delaySeconds += durationSeconds;
+                    }
+                );
             });
         });
 
         return () => {
+            resizeObserver.disconnect();
+
             window.cancelAnimationFrame(firstFrameId);
 
             if (secondFrameId !== undefined) {
@@ -113,6 +176,8 @@ export const HandDrawnFace = () => {
                 stroke.style.transition = "none";
                 stroke.style.strokeDasharray = "";
                 stroke.style.strokeDashoffset = "";
+                stroke.style.opacity = "";
+                stroke.style.removeProperty("stroke-width");
             });
         };
     }, []);
@@ -120,7 +185,8 @@ export const HandDrawnFace = () => {
     return (
         <svg
             ref={svgRef}
-            viewBox="0 0 151 129"
+            viewBox={`0 0 ${VIEWBOX_WIDTH} ${VIEWBOX_HEIGHT}`}
+            preserveAspectRatio="xMidYMid meet"
             role="img"
             aria-label="Hand-drawn face illustration"
             className="h-full w-full text-gray-900 dark:text-white"
@@ -136,10 +202,8 @@ export const HandDrawnFace = () => {
                     d={pathData}
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth={STROKE_WIDTH_PX}
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    vectorEffect="non-scaling-stroke"
                 />
             ))}
         </svg>
