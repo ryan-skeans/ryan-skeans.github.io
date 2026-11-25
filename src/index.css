@@ -26,7 +26,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
 }
 
 body {
@@ -62,11 +62,11 @@ body {
     color: transparent;
 }
 
-/* Keep the face drawing as the only animated work during a mobile first paint. */
+/* Keep the mobile first paint free of animations. */
 @media (max-width: 767px) {
-    *:not(.face-stroke),
-    *:not(.face-stroke)::before,
-    *:not(.face-stroke)::after {
+    *,
+    *::before,
+    *::after {
         animation-duration: 0s !important;
         animation-delay: 0s !important;
         transition-duration: 0s !important;
@@ -80,12 +80,6 @@ body {
     contain-intrinsic-size: auto 900px;
 }
 
-@media (min-width: 768px) {
-    .desktop-bounce {
-        animation: bounce 2s ease-in-out infinite;
-    }
-}
-
 @keyframes rise-in {
     from {
         opacity: 0;
@@ -94,11 +88,5 @@ body {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@keyframes bounce {
-    50% {
-        transform: translate(-50%, 10px);
     }
 }

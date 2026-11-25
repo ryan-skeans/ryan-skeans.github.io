@@ -7,7 +7,10 @@ import { Contact } from './sections/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen selection:bg-primary/30 bg-gray-50 text-gray-900 dark:bg-[#050505] dark:text-gray-100 transition-colors duration-300">
+    <div
+      id="top"
+      className="min-h-screen selection:bg-primary/30 bg-gray-50 text-gray-900 dark:bg-[#050505] dark:text-gray-100 transition-colors duration-300"
+    >
       <Navbar />
       <main>
         <Hero />

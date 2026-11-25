@@ -1,22 +1,41 @@
 const skills = {
-    Languages: ["JavaScript", "TypeScript", "Python", "SQL", "HTML", "CSS"],
-    Frameworks: [
+    Frontend: [
         "React",
-        "Redux Toolkit",
-        "Node.js",
-        "Express",
+        "TypeScript",
+        "Next.js",
+        "React Native",
+        "Web Components",
+        "Microfrontends",
+        "HTML",
+        "CSS",
+        "Sass",
         "Tailwind CSS",
-        "Flask",
-        "GraphQL",
     ],
-    Tools: ["Git", "Docker", "AWS", "Jenkins", "Firebase", "Kubernetes"],
+    "AI & Automation": [
+        "Claude Code",
+        "Agent orchestration",
+        "Multimodal LLMs",
+        "GitHub Actions",
+    ],
+    "Backend & Cloud": [
+        "Node.js",
+        "Python",
+        "Flask",
+        "SQL",
+        "PostgreSQL",
+        "REST APIs",
+        "GraphQL",
+        "Serverless functions",
+        "Kubernetes",
+    ],
+    "Testing & Tools": ["Playwright", "MSW", "Cypress", "Jest", "Git"],
 };
 
 export const Skills = () => {
     return (
         <section
             id="skills"
-            className="deferred-section bg-white py-20 dark:bg-[#0a0a0a] md:py-24"
+            className="deferred-section pb-16 md:pb-24"
         >
             <div className="mx-auto max-w-7xl px-6">
                 <div className="grid gap-8 md:grid-cols-[140px_minmax(0,1fr)] md:gap-12">

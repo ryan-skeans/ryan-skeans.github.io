@@ -1,5 +1,3 @@
-import { useLayoutEffect, useRef } from "react";
-
 const FACE_STROKES = [
     "M67.6421 59.0543C66.7541 56.8541 64.3447 46.2722 63.9071 37.8097C63.8039 35.8132 64.7095 32.6073 66.2493 27.4082C67.9297 21.7347 70.7411 17.9865 72.7611 15.7858C75.0264 13.3179 79.3621 10.7516 85.1768 7.37505C91.6381 3.62306 96.6038 2.13948 101.49 1.64363C105.282 1.25879 111.778 1.06167 116.454 1.00477C127.806 0.866644 132.924 3.74847 136.083 6.41519C137.339 7.47555 138.286 8.92271 139.492 10.2921C140.787 11.7637 143.482 19.7932 147.086 30.8208C148.718 40.2003 148.419 48.1973 147.64 49.3248C147.159 49.9127 146.504 50.5326 145.83 51.1712",
     "M69.7903 56.1699C70.5853 56.1699 74.8294 56.6853 86.4733 57.466C94.2696 57.9887 105.95 57.7307 113.897 57.454C130.369 56.8807 133.09 55.0153 135.42 54.2962C139.337 53.1207 145.138 51.8818 146.203 51.6679C146.743 51.5601 147.283 51.4539 148.577 51.1337",
@@ -13,199 +11,19 @@ const FACE_STROKES = [
     "M85.7334 94.7276C85.7334 95.8179 86.9023 100.839 90.1056 106.179C91.384 108.31 93.7829 109.516 96.6125 110.748C100.013 112.229 106.237 113.164 113.268 114.527C116.226 115.1 117.994 115.15 119.166 115.012C120.876 114.472 121.931 113.156 122.865 111.611C123.298 110.97 123.646 110.618 124.005 110.256",
 ];
 
-const VIEWBOX_WIDTH = 151;
-const VIEWBOX_HEIGHT = 129;
-
-const DRAW_SPEED_PX_PER_SECOND = 1500;
-const STROKE_WIDTH_PX = 5.25;
-
-const getRenderedScale = (svg: SVGSVGElement) => {
-    const rect = svg.getBoundingClientRect();
-
-    if (!rect.width || !rect.height) {
-        return 1;
-    }
-
-    /*
-     * The SVG uses preserveAspectRatio="xMidYMid meet", so its
-     * coordinate system is uniformly scaled by the smaller dimension.
-     */
-    return Math.max(
-        Math.min(
-            rect.width / VIEWBOX_WIDTH,
-            rect.height / VIEWBOX_HEIGHT
-        ),
-        0.01
-    );
-};
-
-export const HandDrawnFace = () => {
-    const svgRef = useRef<SVGSVGElement>(null);
-
-    useLayoutEffect(() => {
-        const svg = svgRef.current;
-
-        if (!svg) {
-            return;
-        }
-
-        const strokes = [
-            ...svg.querySelectorAll<SVGGeometryElement>(".face-stroke"),
-        ];
-
-        const updateStrokeWidth = () => {
-            const renderedScale = getRenderedScale(svg);
-            const svgStrokeWidth = STROKE_WIDTH_PX / renderedScale;
-
-            strokes.forEach((stroke) => {
-                stroke.style.setProperty(
-                    "stroke-width",
-                    `${svgStrokeWidth}`
-                );
-            });
-        };
-
-        /*
-         * Instead of vector-effect="non-scaling-stroke", calculate the
-         * equivalent SVG-unit stroke width ourselves.
-         */
-        updateStrokeWidth();
-
-        const resizeObserver = new ResizeObserver(() => {
-            updateStrokeWidth();
-        });
-
-        resizeObserver.observe(svg);
-
-        const prefersReducedMotion = window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches;
-
-        if (prefersReducedMotion) {
-            svg.style.visibility = "visible";
-
-            return () => {
-                resizeObserver.disconnect();
-            };
-        }
-
-        const renderedScale = getRenderedScale(svg);
-
-        const steps = strokes.map((stroke) => {
-            /*
-             * With vector-effect removed, getTotalLength(), dasharray,
-             * and dashoffset all live in the same SVG coordinate space.
-             */
-            const pathLength = Math.max(
-                stroke.getTotalLength(),
-                0.1
-            );
-
-            const renderedLengthPx =
-                pathLength * renderedScale;
-
-            const durationSeconds = Math.max(
-                renderedLengthPx /
-                    DRAW_SPEED_PX_PER_SECOND,
-                0.04
-            );
-
-            /*
-             * Standard SVG draw-on technique:
-             *
-             * one dash exactly as long as the path,
-             * shifted completely off the visible path.
-             */
-            stroke.style.strokeDasharray =
-                `${pathLength} ${pathLength}`;
-            stroke.style.strokeDashoffset =
-                `${pathLength}`;
-
-            /*
-             * Prevent the rounded starting cap from appearing as a
-             * dot while this stroke waits for its turn.
-             */
-            stroke.style.opacity = "0";
-            stroke.style.transition = "none";
-
-            return {
-                stroke,
-                durationSeconds,
-            };
-        });
-
-        svg.style.visibility = "visible";
-
-        /*
-         * Commit the hidden state before starting transitions.
-         */
-        svg.getBoundingClientRect();
-
-        let secondFrameId: number | undefined;
-
-        const firstFrameId = window.requestAnimationFrame(() => {
-            secondFrameId = window.requestAnimationFrame(() => {
-                let delaySeconds = 0;
-
-                steps.forEach(
-                    ({ stroke, durationSeconds }) => {
-                        stroke.style.transition = [
-                            `stroke-dashoffset ${durationSeconds}s linear ${delaySeconds}s`,
-                            `opacity 0s linear ${delaySeconds}s`,
-                        ].join(", ");
-
-                        stroke.style.strokeDashoffset = "0";
-                        stroke.style.opacity = "1";
-
-                        delaySeconds += durationSeconds;
-                    }
-                );
-            });
-        });
-
-        return () => {
-            resizeObserver.disconnect();
-
-            window.cancelAnimationFrame(firstFrameId);
-
-            if (secondFrameId !== undefined) {
-                window.cancelAnimationFrame(secondFrameId);
-            }
-
-            steps.forEach(({ stroke }) => {
-                stroke.style.transition = "none";
-                stroke.style.strokeDasharray = "";
-                stroke.style.strokeDashoffset = "";
-                stroke.style.opacity = "";
-                stroke.style.removeProperty("stroke-width");
-            });
-        };
-    }, []);
-
-    return (
-        <svg
-            ref={svgRef}
-            viewBox={`0 0 ${VIEWBOX_WIDTH} ${VIEWBOX_HEIGHT}`}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            aria-label="Hand-drawn face illustration"
-            className="h-full w-full text-gray-900 dark:text-white"
-            style={{
-                visibility: "hidden",
-                overflow: "visible",
-            }}
-        >
-            {FACE_STROKES.map((pathData, index) => (
-                <path
-                    key={index}
-                    className="face-stroke"
-                    d={pathData}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-            ))}
-        </svg>
-    );
-};
+export const HandDrawnFace = () => (
+    <svg
+        viewBox="-3 -3 157 135"
+        aria-hidden="true"
+        className="block w-full"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="4.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    >
+        {FACE_STROKES.map((path) => (
+            <path key={path} d={path} />
+        ))}
+    </svg>
+);

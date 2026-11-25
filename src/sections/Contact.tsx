@@ -4,7 +4,7 @@ export const Contact = () => {
     return (
         <section
             id="contact"
-            className="deferred-section py-24 relative overflow-hidden bg-gray-50 dark:bg-black border-t border-black/5 dark:border-white/10"
+            className="deferred-section relative overflow-hidden border-t border-black/5 py-12 dark:border-white/10 md:py-16"
         >
             <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
                 <div className="mb-12">

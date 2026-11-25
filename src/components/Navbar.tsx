@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Github, Linkedin, Sun, Moon } from "lucide-react";
-import clsx from "clsx";
+import { ArrowUpRight, Menu, X, Github, Linkedin, Sun, Moon } from "lucide-react";
+import { HandDrawnFace } from "./HandDrawnFace";
 
 const navLinks = [
     { name: "Projects", href: "#projects" },
@@ -9,7 +9,6 @@ const navLinks = [
 ];
 
 export const Navbar = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const [theme, setTheme] = useState(() => {
@@ -38,30 +37,16 @@ export const Navbar = () => {
         setTheme((prev) => (prev === "light" ? "dark" : "light"));
     };
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
     return (
         <>
-            <nav
-                className={clsx(
-                    "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
-                    isScrolled
-                        ? "bg-white/80 dark:bg-black/50 backdrop-blur-md border-black/5 dark:border-white/10 py-4"
-                        : "bg-transparent py-6"
-                )}
-            >
-                <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <nav aria-label="Main" className="sticky top-0 z-50 border-b border-black/10 bg-gray-50 dark:border-white/10 dark:bg-[#050505]">
+                <div className="mx-auto flex min-h-[4.5rem] max-w-7xl items-center justify-between px-6">
                     <a
-                        href="#"
-                        className="text-2xl tracking-tighter text-gray-900 dark:text-white"
+                        href="#top"
+                        aria-label="Ryan Skeans, home"
+                        className="inline-flex h-12 w-12 items-center rounded-md text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary dark:text-white sm:w-14"
                     >
-                        Ryan<span className="text-primary">.</span>
+                        <HandDrawnFace />
                     </a>
 
                     {/* Desktop Nav */}
@@ -105,17 +90,21 @@ export const Navbar = () => {
                             <a
                                 href="/files/Resume.pdf"
                                 target="_blank"
-                                className="ml-2 inline-flex h-9 items-center rounded-md bg-primary px-3.5 text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:text-black dark:focus-visible:ring-offset-black"
+                                rel="noreferrer"
+                                className="ml-3 inline-flex min-h-9 items-center gap-1 text-sm text-gray-900 underline decoration-gray-400 underline-offset-4 hover:decoration-current dark:text-gray-100 dark:decoration-gray-500"
                             >
                                 Resume
+                                <ArrowUpRight size={13} aria-hidden="true" />
                             </a>
                         </div>
                     </div>
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="md:hidden text-gray-900 dark:text-white"
+                        className="-mr-2.5 flex h-11 w-11 items-center justify-center rounded-md text-gray-900 dark:text-white md:hidden"
                         onClick={() => setIsMobileMenuOpen(true)}
+                        aria-label="Open menu"
+                        aria-expanded={isMobileMenuOpen}
                     >
                         <Menu />
                     </button>
@@ -126,8 +115,9 @@ export const Navbar = () => {
             {isMobileMenuOpen && (
                 <div className="fixed inset-0 z-[60] bg-white dark:bg-black flex flex-col items-center justify-center space-y-8">
                     <button
-                        className="absolute top-6 right-6 text-gray-900 dark:text-white"
+                        className="absolute right-3.5 top-3.5 flex h-11 w-11 items-center justify-center rounded-md text-gray-900 dark:text-white"
                         onClick={() => setIsMobileMenuOpen(false)}
+                        aria-label="Close menu"
                     >
                         <X size={32} />
                     </button>
@@ -144,6 +134,7 @@ export const Navbar = () => {
                     <a
                         href="/files/Resume.pdf"
                         target="_blank"
+                        rel="noreferrer"
                         className="px-6 py-3 text-sm text-white dark:text-black bg-primary rounded-sm mb-8"
                     >
                         Resume
