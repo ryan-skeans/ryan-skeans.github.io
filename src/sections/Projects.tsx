@@ -14,6 +14,19 @@ const projects = [
         ],
     },
     {
+        title: "CM Vision",
+        description:
+            "An AI-assisted property inspection platform for web and iOS that helps turn photos and field notes into repair plans and reports.",
+        role: "Full-Stack Software Engineer",
+        stack: "Next.js · React Native · TypeScript · PostgreSQL",
+        image: "images/cm-vision.webp",
+        imageAlt: "CM Vision dashboard showing an inspection overview for a sample property",
+        links: [
+            { label: "Visit website", href: "https://cmvision.app/" },
+            { label: "App Store", href: "https://apps.apple.com/us/app/cm-vision/id6817621078" },
+        ],
+    },
+    {
         title: "Score Island",
         description:
             "Live sports scores in a draggable, Dynamic Island–style browser overlay.",

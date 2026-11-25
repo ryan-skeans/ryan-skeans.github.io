@@ -39,7 +39,7 @@ export const Navbar = () => {
 
     return (
         <>
-            <nav aria-label="Main" className="sticky top-0 z-50 border-b border-black/10 bg-gray-50 dark:border-white/10 dark:bg-[#050505]">
+            <nav aria-label="Main">
                 <div className="mx-auto flex min-h-[4.5rem] max-w-7xl items-center justify-between px-6">
                     <a
                         href="#top"
@@ -63,7 +63,7 @@ export const Navbar = () => {
                             ))}
                         </div>
 
-                        <div className="flex items-center gap-1 border-l border-gray-200 pl-5 dark:border-white/10">
+                        <div className="flex items-center gap-1">
                             <button
                                 onClick={toggleTheme}
                                 className="flex h-9 w-9 items-center justify-center rounded-md text-gray-600 transition-colors hover:bg-gray-100 hover:text-primary dark:text-gray-300 dark:hover:bg-white/10 dark:hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
